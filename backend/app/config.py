@@ -11,7 +11,7 @@ class Settings(BaseSettings):
 
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 
-    app_name: str = "GeoDiscover"
+    app_name: str = "JSAN Places"
     environment: str = "development"
     # Railway Postgres exposes DATABASE_URL; unset means the app runs without a database.
     database_url: str | None = None

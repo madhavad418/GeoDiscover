@@ -3,3 +3,4 @@
     from .layer import Layer  # noqa: F401
 """
 from ..db import Base  # noqa: F401
+from .customer import CustomerDataset, CustomerPoi  # noqa: F401

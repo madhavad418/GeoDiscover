@@ -1,315 +1,92 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import MapView from './components/MapView.jsx';
-import Sidebar from './components/Sidebar.jsx';
-import Toolbar from './components/Toolbar.jsx';
-import InfoPanel from './components/InfoPanel.jsx';
-import EmptyState from './components/EmptyState.jsx';
-import Toasts, { useToasts } from './components/Toasts.jsx';
+import { lazy, Suspense, useCallback, useEffect, useRef, useState } from 'react';
 import Icon from './components/Icon.jsx';
-import { ACCEPT, LAYER_COLORS, readFiles, exportableFeature, download, slug } from './lib/loaders.js';
-import { BASEMAPS } from './lib/mapStyle.js';
-import { mergeBbox, fmtNum, inBbox, pointInGeom } from './lib/geo.js';
-import { streetViewUrl, visiblePlaces } from './lib/places.js';
+import Loading from './components/Loading.jsx';
+import CustomerData from './components/CustomerData.jsx';
+import { api } from './lib/api.js';
+import './workspace.css';
 
-/** Zoom box and centre for a boundary or a place. */
-function focusOf(L, fid) {
-  if (L.kind === 'points') {
-    const [x, y] = L.data.features[fid].geometry.coordinates;
-    return { bbox: [x, y, x, y], center: [x, y] };
-  }
-  return L.stats[fid];
-}
-
-const params = new URLSearchParams(location.search);
-let layerSeq = 0;
+const AoiViewer = lazy(() => import('./AoiViewer.jsx'));
+const AREAS = [
+  { name: 'Divisoria', country: 'Philippines', code: 'PHL', city: 'Metro Manila', color: '#61b8ff' },
+  { name: 'Kampung Bali', country: 'Indonesia', code: 'IDN', city: 'Jakarta', color: '#379fdf' },
+  { name: 'Thanon Phaya Thai', country: 'Thailand', code: 'THA', city: 'Bangkok', color: '#a3d6ff' },
+];
+const route = () => location.pathname === '/aoi-viewer' ? 'viewer' : location.pathname === '/customer-data' ? 'data' : 'overview';
 
 export default function App() {
-  const [layers, setLayers] = useState([]);
-  const [selected, setSelected] = useState(null); // { layerId, fid }
-  const [hover, setHover] = useState(null);
-  const [basemap, setBasemap] = useState(BASEMAPS[params.get('basemap')] ? params.get('basemap') : 'dark');
-  const [labelsOn, setLabelsOn] = useState(true);
-  const [measuring, setMeasuring] = useState(false);
-  const [basemapOpen, setBasemapOpen] = useState(false);
-  const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [dragging, setDragging] = useState(false);
-  const [toasts, toast] = useToasts();
-
-  const mapRef = useRef(null);
-  const fileInputRef = useRef(null);
-  const searchRef = useRef(null);
-  const colorIdx = useRef(0);
-  const pendingMeta = useRef(new Map()); // .qmd metadata that arrived before its layer
-  const layersRef = useRef(layers);
-  layersRef.current = layers;
-  const measuringRef = useRef(measuring);
-  measuringRef.current = measuring;
-
-  const selectedLayer = selected && layers.find((l) => l.id === selected.layerId);
-  const sel = selectedLayer ? selected : null;
-
-  useEffect(() => { document.body.classList.toggle('info-open', !!sel); }, [sel]);
-  useEffect(() => { document.body.classList.toggle('sidebar-open', sidebarOpen); }, [sidebarOpen]);
-
-  const fitBbox = useCallback((b) => mapRef.current?.fitBbox(b), []);
-
-  /* ----- Loading ----- */
-  const handleFiles = useCallback(async (fileList) => {
-    const files = [...fileList];
-    if (!files.length) return;
-    const { layers: loaded, qmds } = await readFiles(files, toast);
-
-    // Match .qmd sidecars to layers by base name; keep unmatched ones for later loads.
-    for (const { base, meta } of qmds) pendingMeta.current.set(base, meta);
-    const metaFor = new Map();
-    for (const base of [...layersRef.current, ...loaded].map((l) => l.base)) {
-      if (pendingMeta.current.has(base)) {
-        metaFor.set(base, pendingMeta.current.get(base));
-        pendingMeta.current.delete(base);
-      }
-    }
-    const withMeta = (l) => (metaFor.has(l.base) ? { ...l, meta: { ...l.meta, ...metaFor.get(l.base) } } : l);
-    const added = loaded.map((L) => withMeta({ ...L, id: `L${++layerSeq}`, color: LAYER_COLORS[colorIdx.current++ % LAYER_COLORS.length] }));
-
-    setLayers((prev) => {
-      // Re-loading a file with the same name replaces the old layer.
-      const kept = prev.filter((l) => !added.some((a) => a.base === l.base)).map(withMeta);
-      const next = [...kept, ...added];
-      if (next.length && !next.some((l) => l.expanded)) next[0] = { ...next[0], expanded: true };
-      return next;
-    });
-
-    if (added.length) {
-      fitBbox(mergeBbox(added.map((l) => l.bbox)));
-      const n = added.reduce((s, l) => s + l.data.features.length, 0);
-      toast(`Added ${added.length} layer${added.length > 1 ? 's' : ''} · ${fmtNum(n)} feature${n > 1 ? 's' : ''}`);
-    } else if (qmds.length) {
-      toast(`Read metadata from ${qmds.length} .qmd file${qmds.length > 1 ? 's' : ''}`);
-    }
-  }, [toast, fitBbox]);
-
-  // ?file=a.geojson&file=b.geojson loads files by URL (when served over http).
+  const [page, setPage] = useState(route);
+  const [datasets, setDatasets] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
+  const [selectedDataset, setSelectedDataset] = useState(null);
+  const mainRef = useRef(null);
+  const [mapDataset, setMapDataset] = useState(() => new URLSearchParams(location.search).get('dataset'));
+  const refresh = useCallback(async () => {
+    setLoading(true);
+    try { const data = await api('/customer-data/datasets'); setDatasets(data.datasets); setError(''); }
+    catch (e) { setError(e.message); }
+    finally { setLoading(false); }
+  }, []);
+  useEffect(() => { refresh(); }, [refresh]);
+  useEffect(() => { if (mainRef.current) mainRef.current.scrollTop = 0; }, [page]);
   useEffect(() => {
-    const urls = [...params.getAll('file'), ...(params.get('files') || '').split(',').filter(Boolean)];
-    if (!urls.length) return;
-    Promise.allSettled(urls.map(async (u) => {
-      const res = await fetch(u);
-      if (!res.ok) throw new Error(`${u}: HTTP ${res.status}`);
-      const buf = await res.arrayBuffer();
-      const name = decodeURIComponent(u.split('/').pop().split('?')[0]);
-      return { name, text: async () => new TextDecoder().decode(buf), arrayBuffer: async () => buf };
-    })).then((results) => {
-      results.filter((r) => r.status === 'rejected').forEach((r) => toast(String(r.reason.message || r.reason), 'error'));
-      handleFiles(results.filter((r) => r.status === 'fulfilled').map((r) => r.value));
-    });
-  }, [handleFiles, toast]);
-
-  const openPicker = () => fileInputRef.current?.click();
-
-  /* ----- Layer actions ----- */
-  const select = useCallback((layerId, fid, fly = false) => {
-    setSelected({ layerId, fid });
-    setSidebarOpen(false);
-    if (fly) {
-      const L = layersRef.current.find((l) => l.id === layerId);
-      // Wait a frame so the info panel's padding is applied before flying.
-      if (L) requestAnimationFrame(() => fitBbox(focusOf(L, fid).bbox));
-    }
-  }, [fitBbox]);
-
-  const layerHandlers = useMemo(() => ({
-    update: (id, patch) => {
-      setLayers((prev) => prev.map((l) => (l.id === id ? { ...l, ...patch } : l)));
-      const L = layersRef.current.find((l) => l.id === id);
-      // Drop the selection if its layer was hidden or its category filtered out.
-      setSelected((s) => {
-        if (s?.layerId !== id) return s;
-        if (patch.visible === false) return null;
-        if (patch.hiddenCats && patch.hiddenCats.includes(L?.data.features[s.fid]?.properties._cat)) return null;
-        return s;
-      });
-    },
-    zoom: fitBbox,
-    select,
-    hover: setHover,
-    export: (L) => {
-      const features = L.kind === 'points' ? visiblePlaces(L) : L.data.features;
-      download(JSON.stringify({ type: 'FeatureCollection', features: features.map(exportableFeature) }), `${slug(L.base)}.geojson`, 'application/geo+json');
-    },
-    remove: (id) => {
-      const L = layersRef.current.find((l) => l.id === id);
-      setLayers((prev) => prev.filter((l) => l.id !== id));
-      setSelected((s) => (s?.layerId === id ? null : s));
-      setHover(null);
-      if (L) toast(`Removed ${L.title}`);
-    },
-  }), [fitBbox, select, toast]);
-
-  const clearAll = () => {
-    setLayers([]);
-    setSelected(null);
-    setHover(null);
-    toast('Cleared all layers');
+    const pop = () => { setPage(route()); setMapDataset(new URLSearchParams(location.search).get('dataset')); };
+    window.addEventListener('popstate', pop);
+    return () => window.removeEventListener('popstate', pop);
+  }, []);
+  const navigate = (next, dataset = null) => {
+    if (next === 'viewer') setMapDataset(dataset);
+    const path = next === 'viewer' ? '/aoi-viewer' : next === 'data' ? '/customer-data' : '/';
+    history.pushState({}, '', path + (next === 'viewer' && dataset ? `?dataset=${encodeURIComponent(dataset)}` : ''));
+    setPage(next);
   };
-
-  const fitAll = useCallback(() => {
-    const b = mergeBbox(layersRef.current.filter((l) => l.visible).map((l) => l.bbox));
-    if (b) fitBbox(b);
-    else toast('No visible layers to zoom to', 'warn');
-  }, [fitBbox, toast]);
-
-  const screenshot = async () => {
-    const blob = await mapRef.current?.screenshot();
-    if (!blob) return toast('Could not capture the map', 'error');
-    download(blob, `geodiscover-${new Date().toISOString().slice(0, 19).replace(/[:T]/g, '-')}.png`);
-    toast('Map saved as PNG');
-  };
-
-  const pickSearch = (h) => {
-    if (!h.L.visible) layerHandlers.update(h.L.id, { visible: true });
-    if (h.fid != null) return select(h.L.id, h.fid, true);
-    setSelected(null);
-    requestAnimationFrame(() => fitBbox(h.L.bbox));
-  };
-
-  /* ----- Keyboard shortcuts ----- */
-  useEffect(() => {
-    const onKey = (e) => {
-      if (e.target.closest?.('input, textarea') || e.ctrlKey || e.metaKey || e.altKey) return;
-      const k = e.key.toLowerCase();
-      if (k === '/') { e.preventDefault(); searchRef.current?.focus(); }
-      else if (k === 'f') fitAll();
-      else if (k === 'l') setLabelsOn((v) => !v);
-      else if (k === 'm') setMeasuring((v) => !v);
-      else if (k === 'b') setBasemapOpen((v) => !v);
-      else if (k === 'escape') {
-        setBasemapOpen(false);
-        if (measuringRef.current) setMeasuring(false);
-        else setSelected(null);
-      }
-    };
-    document.addEventListener('keydown', onKey);
-    return () => document.removeEventListener('keydown', onKey);
-  }, [fitAll]);
-
-  /* ----- Drag & drop anywhere ----- */
-  useEffect(() => {
-    let depth = 0;
-    const hasFiles = (e) => [...(e.dataTransfer?.types || [])].includes('Files');
-    const enter = (e) => { if (!hasFiles(e)) return; e.preventDefault(); depth++; setDragging(true); };
-    const over = (e) => { if (hasFiles(e)) e.preventDefault(); };
-    const leave = () => { if (--depth <= 0) { depth = 0; setDragging(false); } };
-    const drop = (e) => {
-      if (!hasFiles(e)) return;
-      e.preventDefault();
-      depth = 0;
-      setDragging(false);
-      handleFiles(e.dataTransfer.files);
-    };
-    window.addEventListener('dragenter', enter);
-    window.addEventListener('dragover', over);
-    window.addEventListener('dragleave', leave);
-    window.addEventListener('drop', drop);
-    return () => {
-      window.removeEventListener('dragenter', enter);
-      window.removeEventListener('dragover', over);
-      window.removeEventListener('dragleave', leave);
-      window.removeEventListener('drop', drop);
-    };
-  }, [handleFiles]);
-
-  // Boundary names that contain the selected place.
-  const containers = useMemo(() => {
-    if (selectedLayer?.kind !== 'points') return [];
-    const pt = selectedLayer.data.features[sel.fid].geometry.coordinates;
-    return layers.filter((l) => l.kind === 'shapes').flatMap((l) => l.data.features
-      .filter((f, i) => inBbox(pt, l.stats[i].bbox) && pointInGeom(pt, f.geometry))
-      .map((f) => (f.properties._name === l.title ? l.displayName : `${f.properties._name} · ${l.displayName}`)));
-  }, [layers, selectedLayer, sel?.fid]);
-
-  const openStreetView = (point) => {
-    window.open(streetViewUrl(point), '_blank', 'noopener,noreferrer');
-  };
-
-  const copyCentre = async () => {
-    const [lon, lat] = focusOf(selectedLayer, sel.fid).center;
-    const txt = `${lat.toFixed(6)}, ${lon.toFixed(6)}`;
-    try { await navigator.clipboard.writeText(txt); toast(`Copied ${txt}`); } catch { toast(txt); }
-  };
-
-  return (
-    <>
-      <MapView
-        ref={mapRef}
-        layers={layers}
-        basemap={basemap}
-        labelsOn={labelsOn}
-        selected={sel}
-        hover={hover}
-        measuring={measuring}
-        onHover={setHover}
-        onSelect={select}
-        onClearSelection={() => setSelected(null)}
-        onZoomTo={fitBbox}
-        onExitMeasure={() => setMeasuring(false)}
-      />
-
-      <Sidebar
-        layers={layers}
-        selected={sel}
-        dragging={dragging}
-        onBrowse={openPicker}
-        onClose={() => setSidebarOpen(false)}
-        onClearAll={clearAll}
-        layerHandlers={layerHandlers}
-      />
-
-      <Toolbar
-        ref={searchRef}
-        layers={layers}
-        labelsOn={labelsOn}
-        measuring={measuring}
-        basemap={basemap}
-        basemapOpen={basemapOpen}
-        setBasemapOpen={setBasemapOpen}
-        onPick={pickSearch}
-        onFit={fitAll}
-        onToggleLabels={() => setLabelsOn((v) => !v)}
-        onToggleMeasure={() => setMeasuring((v) => !v)}
-        onScreenshot={screenshot}
-        onBasemap={setBasemap}
-        onOpenSidebar={() => setSidebarOpen(true)}
-      />
-
-      <InfoPanel
-        layer={selectedLayer}
-        fid={sel?.fid}
-        onClose={() => setSelected(null)}
-        containers={containers}
-        onZoom={() => fitBbox(focusOf(selectedLayer, sel.fid).bbox)}
-        onCopy={copyCentre}
-        onStreetView={openStreetView}
-        onExport={() => {
-          const f = selectedLayer.data.features[sel.fid];
-          download(JSON.stringify(exportableFeature(f), null, 2), `${slug(f.properties._name)}.geojson`, 'application/geo+json');
-        }}
-      />
-
-      {layers.length === 0 && <EmptyState onBrowse={openPicker} />}
-
-      <input
-        ref={fileInputRef}
-        type="file"
-        multiple
-        accept={ACCEPT}
-        hidden
-        onChange={(e) => { handleFiles(e.target.files); e.target.value = ''; }}
-      />
-
-      <div className={`drop-overlay ${dragging ? 'show' : ''}`}>
-        <div className="drop-card"><Icon name="upload" size={36} />Drop to add boundaries or places</div>
-      </div>
-      <Toasts toasts={toasts} />
-    </>
-  );
+  const total = datasets.reduce((n, d) => n + d.row_count, 0);
+  return <>
+    <header className="workspace-nav">
+      <a className="workspace-brand" href="/" onClick={e => { e.preventDefault(); navigate('overview'); }}>
+        <img src="/jsan-mark.svg" alt="" /><strong>JSAN</strong><span>Places intelligence</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <button className={page !== 'viewer' ? 'active' : ''} onClick={() => navigate('overview')}>POI workspace</button>
+        <button className={page === 'viewer' ? 'active' : ''} onClick={() => navigate('viewer')}><Icon name="map" />AOI Viewer</button>
+      </nav>
+      <span className="project-tag">SEA PLACES POC</span><span className="workspace-avatar" title="JSAN workspace">J</span>
+    </header>
+    {page === 'viewer' ? <div className="viewer-shell"><Suspense fallback={<div className="map-loading">Opening AOI Viewer…</div>}><AoiViewer datasetId={mapDataset} /></Suspense></div> :
+      <div className="workspace-layout">
+        <aside className="workspace-sidebar">
+          <div className="project-switch"><span className="project-symbol"><Icon name="globe" size={22} /></span><div><strong>SEA Places POC</strong><small>JSAN × HERE</small></div></div>
+          <p className="nav-caption">WORKSPACE</p>
+          <nav aria-label="Workspace navigation">
+            <button className={page === 'overview' ? 'active' : ''} onClick={() => navigate('overview')}><Icon name="layers" />Overview</button>
+            <button className={page === 'data' ? 'active' : ''} onClick={() => navigate('data')}><Icon name="copy" />Customer Data<span className="nav-count">{datasets.length}</span></button>
+          </nav>
+          <div className="scope-note"><span className="tiny-dot" /> THREE ASSIGNED AREAS<p>One workspace for your customer baseline and POI verification journey.</p></div>
+          <div className="sidebar-footer"><span className={`tiny-dot ${error ? 'offline' : ''}`} />{loading ? 'Checking storage…' : error ? 'Storage needs attention' : 'Customer storage connected'}<small>JSAN · Southeast Asia</small></div>
+        </aside>
+        <main className="workspace-main" ref={mainRef}>
+          {page === 'data' ? <CustomerData datasets={datasets} refresh={refresh} storageError={error} loading={loading}
+            selected={selectedDataset} setSelected={setSelectedDataset} onMap={id => navigate('viewer', id)} /> : <>
+            <div className="page-heading"><div><p className="eyebrow">YOUR DATA. A CLEARER PICTURE.</p><h1>Places start here.</h1><p>Build a trusted POI baseline across Southeast Asia.</p></div><button className="ws-button primary" onClick={() => navigate('data')}><Icon name="upload" />Import customer data</button></div>
+            <section className="workspace-hero">
+              <div className="hero-copy"><span className="hero-label"><span className="tiny-dot" /> SEA PLACES DATA PARTNERSHIP</span><h2>From local places<br />to reliable intelligence.</h2><p>Bring HERE’s baseline into one place. Explore the assigned areas and prepare the foundation for evidence-backed POI improvements.</p><button className="ws-button" onClick={() => navigate('viewer')}>Explore AOI Viewer <span aria-hidden="true">↗</span></button></div>
+              <div className="hero-map" aria-hidden="true"><svg viewBox="0 0 460 300"><defs><pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M30 0H0V30" fill="none" stroke="#294c6b" strokeWidth=".5" /></pattern></defs><rect width="460" height="300" fill="url(#grid)" /><path d="M30 65 100 42 143 76 180 55 202 98 179 138 208 170 252 185 270 215 225 240 186 211 152 190 132 143 95 124 53 130Z M300 66 321 87 315 112 339 133 326 156 312 135 300 104Z M352 145 373 170 360 195 342 180Z M197 244 260 257 303 267 295 281 241 273 200 259Z" fill="#12416a" stroke="#3686b8" /><path d="M181 95 323 123 242 257Z" fill="none" stroke="#71bfff" strokeDasharray="5 7" opacity=".6" />{[[181,95],[323,123],[242,257]].map(([x,y]) => <g key={x}><circle cx={x} cy={y} r="13" fill="#71bfff" opacity=".12"/><circle cx={x} cy={y} r="4" fill="#b4e0ff"/></g>)}<text x="90" y="85">BANGKOK</text><text x="335" y="115">MANILA</text><text x="267" y="246">JAKARTA</text></svg><span className="map-caption">THREE MARKETS. ONE SHARED STANDARD.</span></div>
+            </section>
+            <div className="metrics-grid">
+              {[['Assigned AOIs', '03', 'Across three countries', 'globe'], ['Saved datasets', loading || error ? '—' : datasets.length.toLocaleString(), 'Customer baseline imports', 'layers'], ['Stored POI records', loading || error ? '—' : total.toLocaleString(), 'Across saved dataset versions', 'pin']].map(([label,value,sub,icon]) => <div className="metric" key={label}><span className="metric-icon"><Icon name={icon} size={20}/></span><span>{label}</span><strong>{loading && label !== 'Assigned AOIs' ? <Loading size={24}>Loading?</Loading> : value}</strong><small>{sub}</small></div>)}
+            </div>
+            {error && <div className="ws-notice" role="status">Customer storage needs attention. {error}<button className="ws-link" onClick={refresh}>Retry connection</button></div>}
+            <div className="section-title"><div><h2>Your areas of interest</h2><p>The three markets in your HERE baseline package.</p></div><button className="ws-link" onClick={() => navigate('viewer')}>Open AOI Viewer ↗</button></div>
+            <div className="area-grid">{AREAS.map((area, i) => {
+              const saved = datasets.filter(d => d.aoi === area.name);
+              return <button className="area-card" key={area.code} onClick={() => { setSelectedDataset(saved[0]?.id || null); navigate('data'); }}>
+                <div className="area-card-top"><span style={{color:area.color}}>{area.code}</span><span>0{i + 1} ↗</span></div><h3>{area.name}</h3><p>{area.city} · {area.country}</p><div className="area-card-bottom"><span className="tiny-dot" style={{background:area.color}}/>{loading ? <Loading size={12}>Checking datasets?</Loading> : saved.length ? `${saved.length} saved dataset${saved.length === 1 ? '' : 's'}` : 'Awaiting baseline import'}</div>
+              </button>;
+            })}</div>
+            <section className="workflow-strip"><div><p className="eyebrow">THE POC JOURNEY</p><h2>A foundation for every decision.</h2></div><ol><li className="current"><b>01</b><span>Import baseline<small>Available now</small></span></li><li><b>02</b><span>Collect & compare<small>Next phase</small></span></li><li><b>03</b><span>Verify & deliver<small>Next phase</small></span></li></ol></section>
+          </>}
+          <footer className="workspace-bottom">JSAN Places Intelligence<span>SEA Places POC · Customer baseline workspace</span></footer>
+        </main>
+      </div>}
+  </>;
 }

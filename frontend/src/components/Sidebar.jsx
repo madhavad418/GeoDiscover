@@ -21,14 +21,7 @@ function Summary({ layers }) {
 export default function Sidebar({ layers, selected, dragging, onBrowse, onClose, onClearAll, layerHandlers }) {
   return (
     <aside className="panel sidebar">
-      <header className="brand">
-        <div className="logo"><Icon name="globe" size={20} /></div>
-        <div className="brand-text">
-          <h1>GeoDiscover</h1>
-          <p>AOI Boundary Viewer</p>
-        </div>
-        <button className="icon-btn only-mobile" onClick={onClose} title="Close"><Icon name="x" /></button>
-      </header>
+      <button className="icon-btn only-mobile sidebar-close" onClick={onClose} aria-label="Close sidebar" title="Close sidebar"><Icon name="x" /></button>
 
       <button className={`dropzone ${dragging ? 'over' : ''}`} onClick={onBrowse}>
         <span className="dz-icon"><Icon name="upload" size={18} /></span>

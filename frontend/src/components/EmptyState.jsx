@@ -7,7 +7,7 @@ export default function EmptyState({ onBrowse }) {
     <div className="panel empty">
       <div className="empty-art">
         <span className="ring r1" /><span className="ring r2" /><span className="ring r3" />
-        <span className="empty-ic"><Icon name="polygon" size={26} /></span>
+        <span className="empty-ic"><img src="/jsan-mark.svg" alt="JSAN" width="32" height="30" /></span>
       </div>
       <h2>Visualise your areas of interest</h2>
       <p>Load AOI boundary files and place extracts (CSV or Excel with latitude/longitude). Click any area or place for its details, then jump into Street View.</p>
