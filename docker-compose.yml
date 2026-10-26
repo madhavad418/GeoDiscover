@@ -1,0 +1,28 @@
+# Local production-like stack: `docker compose up --build`, then open http://localhost:8000
+services:
+  db:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: geodiscover
+      POSTGRES_PASSWORD: geodiscover
+      POSTGRES_DB: geodiscover
+    ports: ["5432:5432"]
+    volumes: [pgdata:/var/lib/postgresql/data]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U geodiscover"]
+      interval: 5s
+      retries: 10
+
+  app:
+    build: .
+    environment:
+      DATABASE_URL: postgresql://geodiscover:geodiscover@db:5432/geodiscover
+      ENVIRONMENT: local
+      PORT: "8000"
+    ports: ["8000:8000"]
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  pgdata:

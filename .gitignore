@@ -1,0 +1,13 @@
+node_modules
+dist
+.vite
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+
+# Local secrets
+.env
+!.env.example
