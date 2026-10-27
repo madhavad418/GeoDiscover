@@ -116,7 +116,9 @@ export function ResultsBrowser({ base, title, stats: s, actions = null, onError 
   return <>
     <div className="section-title"><div><h2>{title}</h2>
       <p>{s.here_records.toLocaleString()} HERE POIs · {Object.entries(s.provider_records).map(([p, n]) => `${n.toLocaleString()} ${p}`).join(' · ')}
-        {' '}· {s.linked_businesses.toLocaleString()} provider businesses after removing Google/Grab duplicates</p></div>
+        {' '}· {s.linked_businesses.toLocaleString()} provider businesses after removing Google/Grab duplicates</p>
+      {s.name_matching && <p className="muted">Names compared as written and transliterated ({s.name_matching.transliteration}) ·
+        translation to English: {s.name_matching.translation}</p>}</div>
       <div className="button-row">
         {actions}
         <button className="ws-button" onClick={() => setShowMap((v) => !v)}><Icon name="map" />{showMap ? 'Hide map' : 'Show map'}</button>

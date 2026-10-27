@@ -19,6 +19,8 @@ from collections import defaultdict
 from difflib import SequenceMatcher
 from urllib.parse import urlsplit
 
+from .names import variants
+
 RULES_VERSION = "match-20261027-v3"
 NAME_THRESHOLD = 0.85        # M1
 PLAUSIBLE_NAME = 0.60        # candidate worth a human look
@@ -254,13 +256,18 @@ def sha(*parts):
 
 
 # ---------- Record shapes ----------
-def here_record(row, country):
+def name_keys(names, translations=None):
+    """Normalized names plus transliterated / translated forms of non-Latin names (Thai, CJK, Arabic...)."""
+    return sorted({norm_name(v) for n in names if n for v in variants(str(n), translations)} - {""})
+
+
+def here_record(row, country, translations=None):
     """Normalize a HERE baseline row (customer_pois + raw columns) for matching."""
     raw = row.get("raw") or {}
     names = [row.get("name"), raw.get("name2")]
     return {
         "kind": "here", "id": row["id"], "place_id": str(row["place_id"]), "name": row.get("name") or "",
-        "names": (here_names := sorted({norm_name(n) for n in names if n} - {""})), "grams": name_grams(here_names),
+        "names": (here_names := name_keys(names, translations)), "grams": name_grams(here_names),
         "category_code": row.get("category_code"), "category_name": row.get("category_name"),
         "lat": float(row["latitude"]), "lon": float(row["longitude"]),
         "phones": norm_phones([raw.get("phone_numbers"), raw.get("mobile_numbers"), raw.get("tollfree_numbers")], country),
@@ -274,12 +281,12 @@ def here_record(row, country):
     }
 
 
-def observation_record(obs, country):
+def observation_record(obs, country, translations=None):
     names = [obs.get("name"), *(obs.get("alt_names") or [])]
     return {
         "kind": "obs", "id": obs["id"], "batch_id": str(obs["batch_id"]), "source_type": obs["source_type"],
         "source_name": obs.get("source_name", ""), "source_record_id": str(obs["source_record_id"]),
-        "name": obs.get("name") or "", "names": (obs_names := sorted({norm_name(n) for n in names if n} - {""})),
+        "name": obs.get("name") or "", "names": (obs_names := name_keys(names, translations)),
         "grams": name_grams(obs_names),
         "category_code": obs.get("category_code"), "category_name": obs.get("category_name"),
         "lat": float(obs["latitude"]), "lon": float(obs["longitude"]),
@@ -489,14 +496,14 @@ def _master_summary(m):
             "link_reasons": m["link_reasons"]}
 
 
-def compare(here_rows, observations, country, dataset_id, chain_names=()):
+def compare(here_rows, observations, country, dataset_id, chain_names=(), translations=None):
     """Link observations into masters and classify everything against the HERE baseline.
 
     Returns {"masters": [...], "results": [...], "stats": {...}}. Each result has a stable result_key
     (identity) and content_hash (what was found), which make task generation idempotent.
     """
-    here = [here_record(r, country) for r in here_rows]
-    obs = [observation_record(o, country) for o in observations]
+    here = [here_record(r, country, translations) for r in here_rows]
+    obs = [observation_record(o, country, translations) for o in observations]
     chain_names = {norm_name(n) for n in chain_names}
     here_grid = Grid(here)
     here_by_name, here_by_phone, here_by_web = defaultdict(list), defaultdict(list), defaultdict(list)

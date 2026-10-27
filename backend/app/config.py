@@ -23,6 +23,7 @@ class Settings(BaseSettings):
     # Set by Railway for each deploy.
     railway_git_commit_sha: str | None = None
     google_places_api_key: SecretStr | None = None
+    google_translate_api_key: SecretStr | None = None  # optional; else the Places key, if Cloud Translation is enabled on it
     grab_api_key: SecretStr | None = None
     grab_place_index: str = ""
     grab_region: str = "ap-southeast-1"

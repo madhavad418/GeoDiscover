@@ -7,3 +7,5 @@ alembic==1.20.1
 openpyxl==3.1.5
 python-multipart==0.0.20
 shapely==2.2.0
+pythainlp==5.4.0
+anyascii==0.3.3

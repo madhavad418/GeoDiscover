@@ -15,7 +15,8 @@ from openpyxl.styles import Font, PatternFill
 
 from .area_collection import HEADERS
 from .reference import chain_ids, chain_names
-from .matching import GENERIC_TOKENS, _ratio, attribute_differences, compare, here_record, norm_name
+from .matching import GENERIC_TOKENS, _ratio, attribute_differences, compare, here_record, name_keys, norm_name
+from .names import translate, translation_status
 
 PROVIDERS = {'Google': ('google', 'Google Places'), 'Grab': ('grab', 'GrabMaps')}
 KINDS = {
@@ -140,13 +141,14 @@ def _value(v):
     return '' if v is None else str(v)
 
 
-def generic_words(names, country):
-    """Words common to many names in this area (Trading, Grocery, Clinic...): they don't identify a business.
+def generic_words(name_sets, country):
+    """Words common to many names in this area (Trading, Grocery, Clinic; Thai 'ran', 'borisat'...): they don't identify
+    a business. Each entry is one POI's name keys (original, transliterated, translated).
 
     Brand words from the HERE chain lists (Indomaret, BRI, Mandiri) stay identifying even when common.
     """
-    df = Counter(w for n in names for w in set(norm_name(n).split()))
-    floor = max(GENERIC_MIN_NAMES, GENERIC_SHARE * len(names))
+    df = Counter(w for keys in name_sets for w in {w for n in keys for w in n.split()})
+    floor = max(GENERIC_MIN_NAMES, GENERIC_SHARE * len(name_sets))
     brands = {w for c in [*chain_names(country), *chain_ids(country)] for w in norm_name(c).split()} - GENERIC_TOKENS
     return ({w for w, n in df.items() if n >= floor} - brands) | GENERIC_TOKENS
 
@@ -155,14 +157,13 @@ def _shares_identity(m, c, here_names, generic):
     if c['M3'] or c['M5']:
         return True
     words = {w for n in m['names'] for w in n.split()} - generic
-    return bool(words & ({w for w in here_names[c['here_id']].split()} - generic))
+    return bool(words & ({w for n in here_names[c['here_id']] for w in n.split()} - generic))
 
 
 def _close_name(m, c, here_names):
     """Whole-name closeness: stops a one-word HERE name ('mandiri') matching any longer name that contains it."""
-    here = here_names[c['here_id']]
     return any(_ratio(n, here) >= CLOSE_NAME or (min(len(n), len(here)) >= 0.6 * max(len(n), len(here)) and (n in here or here in n))
-               for n in m['names'])
+               for n in m['names'] for here in here_names[c['here_id']])
 
 
 def _nearest_clear(same):
@@ -173,7 +174,7 @@ def _nearest_clear(same):
     return None
 
 
-def _resolve(output, here_rows, country):
+def _resolve(output, here_rows, country, translations=None):
     """Provider-specific final call on each discovered business: [outcome, master, here_id, match, diffs, reason, cands, merged].
 
     The base engine needs a unit-level signal or a 50 m pin to confirm identity. Provider pins are coarser, so a
@@ -181,8 +182,8 @@ def _resolve(output, here_rows, country):
     and lookalikes that share only words common in the area become New.
     """
     here_by_id = {r['id']: r for r in here_rows}
-    here_names = {r['id']: norm_name(r.get('name') or '') for r in here_rows}
-    generic = generic_words([r.get('name') or '' for r in here_rows], country)
+    here_names = {r['id']: name_keys([r.get('name'), (r.get('raw') or {}).get('name2')], translations) for r in here_rows}
+    generic = generic_words(list(here_names.values()), country)
     masters = {m['master_key']: m for m in output['masters']}
     decided = []
     for res in output['results']:
@@ -222,7 +223,7 @@ def _resolve(output, here_rows, country):
     here_recs = {}
     for d in decided:
         if d[0] == 'matched':
-            here = here_recs.setdefault(d[2], here_record(here_by_id[d[2]], country))
+            here = here_recs.setdefault(d[2], here_record(here_by_id[d[2]], country, translations))
             d[4] = attribute_differences(d[1], here)
             d[0] = 'potential_update'
         if d[0] in ('potential_update', 'no_change'):
@@ -239,8 +240,12 @@ def _address(here):
 
 def run(here_rows, extract, country, dataset_id):
     obs, rows = observations(extract)
-    output = compare(here_rows, obs, country, dataset_id, ())
-    decided, matched = _resolve(output, here_rows, country)
+    # Names in other scripts are also compared transliterated and (when Cloud Translation is enabled) in English.
+    all_names = [str(n) for r in here_rows for n in (r.get('name'), (r.get('raw') or {}).get('name2')) if n]
+    all_names += [o['name'] for o in obs if o['name']]
+    translations = translate(all_names)
+    output = compare(here_rows, obs, country, dataset_id, (), translations)
+    decided, matched = _resolve(output, here_rows, country, translations)
     here_by_id = {r['id']: r for r in here_rows}
     referenced = set()
     lists = {k: [] for k in KINDS}
@@ -283,6 +288,8 @@ def run(here_rows, extract, country, dataset_id):
                 'reason': 'Neither provider search returned this POI. Absence alone is not proof of closure (D7): verify before deleting.',
                 '_lat': float(h['latitude']), '_lon': float(h['longitude'])})
     stats = {'here_records': len(here_rows), 'provider_records': {s: len(r) for s, r in extract.items()},
+             'name_matching': {'transliteration': 'Thai RTGS (PyThaiNLP royin); other scripts anyascii',
+                               'translation': translation_status(), 'translated_names': len(translations)},
              'linked_businesses': len(output['masters']), 'multi_source': output['stats']['multi_source_masters'],
              'counts': {k: len(v) for k, v in lists.items()},
              'delete_breakdown': {b: sum(1 for r in lists['delete'] if r['delete_basis'] == b)
