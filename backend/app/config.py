@@ -2,6 +2,7 @@ from functools import lru_cache
 from pathlib import Path
 
 from pydantic_settings import BaseSettings, SettingsConfigDict
+from pydantic import SecretStr
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 
@@ -21,6 +22,14 @@ class Settings(BaseSettings):
     frontend_dist: Path = REPO_ROOT / "frontend" / "dist"
     # Set by Railway for each deploy.
     railway_git_commit_sha: str | None = None
+    google_places_api_key: SecretStr | None = None
+    grab_api_key: SecretStr | None = None
+    grab_place_index: str = ""
+    grab_region: str = "ap-southeast-1"
+    apple_maps_access_token: SecretStr | None = None
+    # Shown in delivery file names and the manifest ([Supplier]_[Country]_[AOI]_[Action]_[YYYYMMDD]_v[x].xlsx).
+    supplier_name: str = "JSAN"
+    supplier_contact: str = ""
 
     @property
     def sqlalchemy_url(self) -> str | None:

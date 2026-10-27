@@ -4,7 +4,10 @@ set -e
 
 if [ -n "$DATABASE_URL" ]; then
   echo "Applying database migrations…"
-  alembic upgrade head
+  # Keep serving the map viewer if the database is misconfigured; /api/health reports "schema".
+  if ! alembic upgrade head; then
+    echo "WARNING: database migrations failed. Customer Data stays unavailable until the database is fixed (PostGIS is required)." >&2
+  fi
 else
   echo "DATABASE_URL not set; starting without a database."
 fi

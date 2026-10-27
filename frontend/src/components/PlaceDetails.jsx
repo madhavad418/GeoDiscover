@@ -1,4 +1,5 @@
 import Icon from './Icon.jsx';
+import { TranslateToggle, TransliterateToggle, Tx, useTranslate } from './Translate.jsx';
 import { fmtCoord } from '../lib/geo.js';
 import { parseOpeningHours, safeUrls, splitList, streetViewPoint } from '../lib/places.js';
 
@@ -35,19 +36,22 @@ export default function PlaceDetails({ layer: L, fid, containers, onClose, onZoo
   const hours = parseOpeningHours(hoursRaw);
   const sv = streetViewPoint(L, f);
   const attrs = Object.entries(p).filter(([k, v]) => !k.startsWith('_') && v !== null && String(v).trim() !== '');
+  // One toggle translates every non-Latin value of this place (name, address, admin areas, …).
+  const tr = useTranslate([p._name, address, ...attrs.map(([, v]) => v)].filter((v) => typeof v === 'string'));
 
   return (
     <>
       <div className="info-hero" style={{ '--c': p._cc }}>
         <button className="icon-btn close" onClick={onClose} title="Close (Esc)"><Icon name="x" /></button>
         <div className="kicker">{p._cat}</div>
-        <h2>{p._name}</h2>
-        {address && <div className="local-name">{address}</div>}
+        <h2><Tx tr={tr} value={p._name} /></h2>
+        {address && <div className="local-name"><Tx tr={tr} value={address} /></div>}
         <div className="crumbs">
           {id && <span className="crumb"><span className="mono-chip" title="Place identifier">{id}</span></span>}
           <span className="crumb"><span>{L.displayName}</span></span>
           {p.status && <span className="crumb"><span className="status-chip">{p.status}</span></span>}
         </div>
+        <div className="hero-actions"><TranslateToggle tr={tr} /><TransliterateToggle tr={tr} /></div>
       </div>
 
       <div className="info-sec">
@@ -110,7 +114,7 @@ export default function PlaceDetails({ layer: L, fid, containers, onClose, onZoo
         <summary><h3>All attributes · {attrs.length}</h3><span className="chev"><Icon name="chevron" size={14} /></span></summary>
         <table className="kv">
           <tbody>
-            {attrs.map(([k, v]) => <tr key={k}><td>{k}</td><td>{String(v)}</td></tr>)}
+            {attrs.map(([k, v]) => <tr key={k}><td>{k}</td><td>{typeof v === 'string' ? <Tx tr={tr} value={v} /> : String(v)}</td></tr>)}
           </tbody>
         </table>
       </details>

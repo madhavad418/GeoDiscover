@@ -8,6 +8,7 @@ import { BASEMAPS, buildStyle } from '../lib/mapStyle.js';
 import { addToMap, removeFromMap, applyPaint, applyVisibility, applyPlaceFilter, INTERACTIVE_SUBLAYERS } from '../lib/mapLayers.js';
 import { fmtArea, fmtCoord, fmtDist, lineLength, ringArea, plural } from '../lib/geo.js';
 import MeasureHud from './MeasureHud.jsx';
+import Loading from './Loading.jsx';
 
 setWorkerUrl(workerUrl);
 
@@ -42,6 +43,8 @@ const MapView = forwardRef(function MapView(props, ref) {
   propsRef.current = props;
 
   const [ready, setReady] = useState(false);
+  const [mapLoading, setMapLoading] = useState(true);
+  const [mapError, setMapError] = useState(false);
   const [measure, setMeasure] = useState({ pts: [], done: false });
   const [cursor, setCursor] = useState(null);
 
@@ -50,11 +53,13 @@ const MapView = forwardRef(function MapView(props, ref) {
       const map = mapRef.current;
       if (!map || !b) return;
       const padding = viewPadding(!!propsRef.current.selected);
-      if (b[2] - b[0] < 1e-7 && b[3] - b[1] < 1e-7) {
-        map.flyTo({ center: [b[0], b[1]], zoom: 16, padding, duration: 1400 });
-      } else {
-        map.fitBounds([[b[0], b[1]], [b[2], b[3]]], { padding, maxZoom: 17, duration: 1500, essential: true });
-      }
+      // Always fitBounds: flyTo({ padding }) would leave that padding on the map permanently, and the
+      // next fitBounds would add its padding on top ("Map cannot fit within canvas").
+      const point = b[2] - b[0] < 1e-7 && b[3] - b[1] < 1e-7;
+      const d = point ? 0.0004 : 0; // ~45 m box around a single place
+      map.fitBounds([[b[0] - d, b[1] - d], [b[2] + d, b[3] + d]], {
+        padding, maxZoom: 17, duration: point ? 1400 : 1500, essential: true,
+      });
     },
     screenshot() {
       const map = mapRef.current;
@@ -81,14 +86,18 @@ const MapView = forwardRef(function MapView(props, ref) {
     map.addControl(new NavigationControl({ visualizePitch: true }), 'bottom-right');
     map.addControl(new FullscreenControl(), 'bottom-right');
 
+    map.on('dataloading', () => setMapLoading(true));
+    map.on('idle', () => setMapLoading(false));
+    map.on('error', () => { setMapLoading(false); setMapError(true); });
     map.on('load', () => {
       map.addSource('measure', { type: 'geojson', data: { type: 'FeatureCollection', features: [] } });
       map.addLayer({ id: 'measure-fill', type: 'fill', source: 'measure', filter: ['==', ['geometry-type'], 'Polygon'], paint: { 'fill-color': '#E8C27A', 'fill-opacity': 0.12 } });
       map.addLayer({ id: 'measure-line', type: 'line', source: 'measure', filter: ['==', ['geometry-type'], 'LineString'], layout: { 'line-cap': 'round', 'line-join': 'round' }, paint: { 'line-color': '#E8C27A', 'line-width': 2.5, 'line-dasharray': [2, 1.5] } });
       map.addLayer({ id: 'measure-pts', type: 'circle', source: 'measure', filter: ['==', ['geometry-type'], 'Point'], paint: { 'circle-radius': 5, 'circle-color': '#0a0d16', 'circle-stroke-color': '#E8C27A', 'circle-stroke-width': 2.5 } });
       setReady(true);
+      propsRef.current.onReady?.();
     });
-    map.on('error', (e) => console.warn('[map]', e.error?.message || e));
+    map.on('error', (e) => console.warn('[map]', e.error?.message || e.type, e.error ?? ''));
 
     const hitTest = (point) => {
       const visible = propsRef.current.layers.filter((l) => l.visible);
@@ -271,6 +280,7 @@ const MapView = forwardRef(function MapView(props, ref) {
       )}
       <div className="status">
         <span ref={coordsRef}>Move over the map</span>
+        {mapLoading ? <Loading size={12}>Loading map…</Loading> : mapError ? <span role="status">Some map resources could not load</span> : null}
         <span className="sep" />
         <span ref={zoomRef}>z 3.4</span>
       </div>

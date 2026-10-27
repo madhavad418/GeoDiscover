@@ -8,6 +8,11 @@ depends_on = None
 
 
 def upgrade():
+    available = op.get_bind().exec_driver_sql(
+        "SELECT 1 FROM pg_available_extensions WHERE name = 'postgis'").scalar()
+    if not available:
+        raise RuntimeError("PostGIS is not installed on this PostgreSQL server. "
+                           "Use a PostGIS-enabled database (e.g. Railway's PostGIS template).")
     op.execute("CREATE EXTENSION IF NOT EXISTS postgis")
     op.execute("""
         CREATE TABLE customer_datasets (

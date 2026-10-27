@@ -6,6 +6,7 @@ import { mergeBbox } from './geo.js';
 export const CATEGORY_COLORS = ['#4FC3F7', '#FFB547', '#7BD88F', '#FF6B8B', '#B98CFF', '#3DD6C6', '#FF8A4C', '#F06292', '#D4E157'];
 export const OTHER_COLOR = '#8A94A6';
 export const UNCATEGORISED = 'Uncategorised';
+const COMPLEX_SCRIPT = /[฀-໿က-႟ក-៿ༀ-࿿]/;
 
 const LAT_KEYS = ['displaylatitude', 'latitude', 'lat', 'y', 'point_y', 'ycoord', 'y_coord', 'routinglatitude'];
 const LON_KEYS = ['displaylongitude', 'longitude', 'lon', 'lng', 'long', 'x', 'point_x', 'xcoord', 'x_coord', 'routinglongitude'];
@@ -78,6 +79,9 @@ export function buildPointLayer({ fileName, base, title, iso, fields, keys, feat
     const cat = (keys.cat && String(p[keys.cat] ?? '').trim()) || UNCATEGORISED;
     p._name = (keys.name && String(p[keys.name] ?? '').trim()) || (keys.id && String(p[keys.id] ?? '')) || `Place ${i + 1}`;
     p._cat = cat;
+    // MapLibre's line breaking can fail on these scripts (Thai, Lao, Myanmar, Khmer, Tibetan),
+    // dropping a tile's labels; such places get single-line labels instead (see mapLayers.js).
+    p._nowrap = Object.values(p).some((v) => typeof v === 'string' && COMPLEX_SCRIPT.test(v));
     counts.set(cat, (counts.get(cat) || 0) + 1);
   });
   const categories = [...counts]

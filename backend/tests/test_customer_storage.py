@@ -54,6 +54,22 @@ def test_excel_persistence_search_geometry_and_duplicate_upload(client_and_db):
     assert data['records'][0]['raw']['phone_numbers'] == '0012345'
     geo = client.get(f'/api/customer-data/datasets/{dataset_id}/geojson').json()
     assert geo['features'][0]['geometry']['coordinates'] == [100.5, 13.75]
+    comparison = client.get(f'/api/customer-data/datasets/{dataset_id}/comparison')
+    assert comparison.status_code == 200
+    providers = comparison.json()['providers']
+    assert {provider['id'] for provider in providers} == {'google', 'apple', 'grab'}
+    proposal = next(proposal for proposal in providers[0]['proposals'] if proposal['action'] == 'update')
+    review = client.put(
+        f'/api/customer-data/datasets/{dataset_id}/comparison/{providers[0]["id"]}/{proposal["key"]}',
+        json={'status': 'approved', 'note': 'Verified against demo evidence'},
+    )
+    assert review.status_code == 200
+    reviewed = client.get(f'/api/customer-data/datasets/{dataset_id}/comparison').json()
+    saved_proposal = next(item for item in reviewed['providers'][0]['proposals'] if item['key'] == proposal['key'])
+    assert saved_proposal['review_status'] == 'approved'
+    delivery = client.get(f'/api/customer-data/datasets/{dataset_id}/comparison/delivery.csv')
+    assert delivery.status_code == 200
+    assert 'UPDATE' in delivery.text
     point = db.execute(text('SELECT ST_SRID(display_point), ST_X(display_point), ST_Y(routing_point) FROM customer_pois WHERE dataset_id=:id'), {'id':dataset_id}).one()
     assert tuple(point) == (4326, 100.5, 13.751)
     duplicate = client.post('/api/customer-data/imports', data={'aoi':'Thanon Phaya Thai'}, files={'file':('test.xlsx',payload)})

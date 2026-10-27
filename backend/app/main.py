@@ -1,9 +1,10 @@
 from pathlib import Path
 
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.middleware.gzip import GZipMiddleware
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, JSONResponse
+from sqlalchemy.exc import OperationalError, ProgrammingError
 
 from .api import api_router
 from .config import get_settings
@@ -27,6 +28,20 @@ if settings.cors_origin_list:
     )
 
 app.include_router(api_router, prefix="/api")
+
+
+@app.exception_handler(ProgrammingError)
+def schema_error(request: Request, exc: ProgrammingError):
+    """A missing table/column means migrations haven't run; say so instead of a bare 500."""
+    if "UndefinedTable" in type(exc.orig).__name__ or "UndefinedColumn" in type(exc.orig).__name__:
+        return JSONResponse(status_code=503, content={"detail": "The database schema is out of date. Run "
+                                                                "`python -m alembic upgrade head` in backend/ (Railway runs it on deploy)."})
+    raise exc
+
+
+@app.exception_handler(OperationalError)
+def database_unreachable(request: Request, exc: OperationalError):
+    return JSONResponse(status_code=503, content={"detail": "The database is unreachable. Check DATABASE_URL and try again."})
 
 
 # ---------- Frontend (built React app) ----------

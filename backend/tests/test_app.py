@@ -11,6 +11,7 @@ def test_health_without_database():
     body = res.json()
     assert body["status"] == "ok"
     assert body["database"] in {"not_configured", "ok", "unavailable"}
+    assert body["schema"] in {"current", "outdated", "unknown"}
 
 
 def test_unknown_api_route_is_json_404():

@@ -6,10 +6,16 @@ Run from backend/ with DATABASE_URL configured. Existing identical imports are s
 import argparse
 from pathlib import Path
 
+from types import SimpleNamespace
+
 from fastapi.testclient import TestClient
 
+from app.auth import current_user
 from app.main import app
 from app.services.customer_import import AOIS
+
+# Local command-line operator: the API now requires sign-in, so this script acts as a system Operations Manager.
+SYSTEM_OPERATOR = SimpleNamespace(id=None, username="cli", display_name="CLI import", roles=["ops_manager"], aois=[], active=True)
 
 
 def main():
@@ -17,6 +23,7 @@ def main():
     parser.add_argument('--aoi', required=True, choices=list(AOIS))
     parser.add_argument('file', type=Path)
     args = parser.parse_args()
+    app.dependency_overrides[current_user] = lambda: SYSTEM_OPERATOR
     with args.file.open('rb') as stream, TestClient(app) as client:
         response = client.post('/api/customer-data/imports', data={'aoi': args.aoi},
                                files={'file': (args.file.name, stream)})

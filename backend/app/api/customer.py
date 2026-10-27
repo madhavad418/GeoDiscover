@@ -1,13 +1,17 @@
 import hashlib
 import json
+import threading
+from collections import OrderedDict
 from uuid import UUID
 
-from fastapi import APIRouter, Depends, File, Form, HTTPException, Query, UploadFile
+from fastapi import APIRouter, Depends, File, Form, HTTPException, Query, Response, UploadFile
 from sqlalchemy import func, or_, select, text
 from sqlalchemy.exc import IntegrityError, SQLAlchemyError
 from sqlalchemy.orm import Session
 
+from ..auth import require_roles
 from ..db import get_db
+from ..models.platform import User
 from ..models.customer import CustomerDataset, CustomerPoi
 from ..services.customer_import import AOIS, MAX_BYTES, ImportInvalid, parse_file
 
@@ -40,7 +44,8 @@ def datasets(db: Session = Depends(storage)):
 
 
 @router.post("/imports", status_code=201)
-def import_data(aoi: str = Form(...), file: UploadFile = File(...), db: Session = Depends(storage)):
+def import_data(aoi: str = Form(...), file: UploadFile = File(...), db: Session = Depends(storage),
+                _: User = Depends(require_roles("ops_manager", "qc_lead"))):
     content = file.file.read(MAX_BYTES + 1)
     try:
         records, columns = parse_file(content, file.filename or "", aoi)
@@ -98,13 +103,40 @@ def records(dataset_id: UUID, q: str = Query("", max_length=200), category: str 
             "total": total, "page": page, "page_size": page_size, "categories": categories}
 
 
-@router.get("/datasets/{dataset_id}/geojson")
-def geojson(dataset_id: UUID, db: Session = Depends(storage)):
-    dataset = get_dataset(db, dataset_id)
+# Saved datasets are immutable (a changed file becomes a new dataset), so the serialized GeoJSON
+# can be cached per dataset. A per-dataset lock makes concurrent first views build it only once.
+_GEOJSON_CACHE_SIZE = 4
+_geojson_cache: OrderedDict[UUID, bytes] = OrderedDict()
+_geojson_locks: dict[UUID, threading.Lock] = {}
+_cache_lock = threading.Lock()
+
+
+def _build_geojson(db: Session, dataset: CustomerDataset) -> bytes:
     items = db.execute(select(CustomerPoi.raw, CustomerPoi.place_id, CustomerPoi.name, CustomerPoi.category_name,
-                              CustomerPoi.longitude, CustomerPoi.latitude).where(CustomerPoi.dataset_id == dataset_id)
+                              CustomerPoi.longitude, CustomerPoi.latitude).where(CustomerPoi.dataset_id == dataset.id)
                        .order_by(CustomerPoi.id)).all()
-    return {"type": "FeatureCollection", "name": f"{dataset.aoi.replace(' ', '_')}_{dataset.country}", "features": [
+    collection = {"type": "FeatureCollection", "name": f"{dataset.aoi.replace(' ', '_')}_{dataset.country}", "features": [
         {"type": "Feature", "geometry": {"type": "Point", "coordinates": [r.longitude, r.latitude]},
          "properties": {**r.raw, "placeid": r.place_id, "name1": r.name, "primarycategorynm": r.category_name}}
         for r in items]}
+    return json.dumps(collection, ensure_ascii=False, separators=(",", ":")).encode()
+
+
+@router.get("/datasets/{dataset_id}/geojson")
+def geojson(dataset_id: UUID, db: Session = Depends(storage)):
+    dataset = get_dataset(db, dataset_id)
+    with _cache_lock:
+        lock = _geojson_locks.setdefault(dataset_id, threading.Lock())
+    with lock:
+        with _cache_lock:
+            body = _geojson_cache.get(dataset_id)
+            if body is not None:
+                _geojson_cache.move_to_end(dataset_id)
+        if body is None:
+            body = _build_geojson(db, dataset)
+            with _cache_lock:
+                _geojson_cache[dataset_id] = body
+                while len(_geojson_cache) > _GEOJSON_CACHE_SIZE:
+                    _geojson_cache.popitem(last=False)
+    return Response(body, media_type="application/geo+json",
+                    headers={"Cache-Control": "private, max-age=86400", "ETag": f'"{dataset_id}"'})

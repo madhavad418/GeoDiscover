@@ -1,0 +1,10683 @@
+{
+ "sources": {
+  "categories": {
+   "file": "HERE Category Metadata-2.xlsx",
+   "sha256": "0ed906c6787987c9a3955f3b95c2f71650a6c9d0435a0b5bd5c83c527bdb90a5"
+  },
+  "profanity": {
+   "file": "Profanity_APR_2026.xlsx",
+   "sha256": "5bdb8f8591f22b4babc081137ec3c1950f4402f3524f8d61bb32127ee0dd6834"
+  },
+  "chains": {
+   "file": "Chains MetaData-2.xlsx",
+   "sha256": "c3b96e1cd663200db69073a942808a1ce6ed889c3fad747bbc6023a305e9d6b8"
+  }
+ },
+ "categories": {
+  "100-1000-0000": "Restaurant",
+  "100-1000-0001": "Casual Dining",
+  "100-1000-0002": "Fine Dining",
+  "100-1000-0003": "Take Out and Delivery Only",
+  "100-1000-0004": "Food Market-Stall",
+  "100-1000-0005": "Taqueria",
+  "100-1000-0006": "Deli",
+  "100-1000-0007": "Cafeteria",
+  "100-1000-0008": "Bistro",
+  "100-1000-0009": "Fast Food",
+  "100-1000-0230": "Hawker Centre",
+  "100-1100-0000": "Coffee-Tea",
+  "100-1100-0010": "Coffee Shop",
+  "100-1100-0331": "Tea House",
+  "200-2000-0000": "Nightlife-Entertainment",
+  "200-2000-0011": "Bar-Pub-Stube-Biergarten",
+  "200-2000-0012": "Night Club",
+  "200-2000-0013": "Dancing",
+  "200-2000-0014": "Karaoke",
+  "200-2000-0015": "Live Entertainment-Music",
+  "200-2000-0016": "Billiards-Pool Hall",
+  "200-2000-0017": "Video Arcade-Game Room",
+  "200-2000-0018": "Jazz Club",
+  "200-2000-0306": "Adult Entertainment",
+  "200-2000-0368": "Cocktail Lounge",
+  "200-2100-0019": "Cinema",
+  "200-2200-0000": "Theatre, Music and Culture",
+  "200-2200-0020": "Performing Arts",
+  "200-2300-0000": "Gambling-Lottery-Betting",
+  "200-2300-0021": "Casino",
+  "200-2300-0022": "Lottery Booth",
+  "300-3000-0000": "Landmark-Attraction",
+  "300-3000-0023": "Tourist Attraction",
+  "300-3000-0024": "Gallery",
+  "300-3000-0025": "Historical Monument",
+  "300-3000-0065": "Winery",
+  "300-3000-0231": "Flyover",
+  "300-3000-0232": "Named Intersection-Chowk",
+  "300-3000-0350": "Brewery",
+  "300-3000-0351": "Distillery",
+  "300-3100-0000": "Museum",
+  "300-3100-0026": "Science Museum",
+  "300-3100-0027": "Children's Museum",
+  "300-3100-0028": "History Museum",
+  "300-3100-0029": "Art Museum",
+  "300-3200-0000": "Religious Place",
+  "300-3200-0030": "Church",
+  "300-3200-0031": "Temple",
+  "300-3200-0032": "Synagogue",
+  "300-3200-0033": "Ashram",
+  "300-3200-0034": "Mosque",
+  "300-3200-0309": "Other Place of Worship",
+  "300-3200-0375": "Gurdwara",
+  "350-3500-0233": "Body of water",
+  "350-3500-0234": "Reservoir",
+  "350-3500-0235": "Waterfall",
+  "350-3500-0300": "Bay-Harbor",
+  "350-3500-0302": "River",
+  "350-3500-0303": "Canal",
+  "350-3500-0304": "Lake",
+  "350-3510-0236": "Mountain or Hill",
+  "350-3510-0237": "Mountain Passes",
+  "350-3510-0238": "Mountain Peaks",
+  "350-3520-0224": "Undersea Feature",
+  "350-3522-0239": "Forest, Heath or Other Vegetation",
+  "350-3550-0336": "Natural and Geographical",
+  "400-4000-4580": "Public Sports Airport",
+  "400-4000-4581": "Airport",
+  "400-4000-4582": "Airport Terminal",
+  "400-4100-0035": "Train Station",
+  "400-4100-0036": "Bus Station",
+  "400-4100-0037": "Underground Train-Subway",
+  "400-4100-0038": "Commuter Rail Station",
+  "400-4100-0039": "Commuter Train",
+  "400-4100-0040": "Public Transit Access",
+  "400-4100-0041": "Transportation Service",
+  "400-4100-0042": "Bus Stop",
+  "400-4100-0043": "Local Transit",
+  "400-4100-0044": "Ferry Terminal",
+  "400-4100-0045": "Boat Ferry",
+  "400-4100-0046": "Rail Ferry",
+  "400-4100-0047": "Taxi Stand",
+  "400-4100-0226": "Highway Exit",
+  "400-4100-0326": "Tollbooth",
+  "400-4100-0337": "Lightrail",
+  "400-4100-0338": "Water Transit",
+  "400-4100-0339": "Monorail",
+  "400-4100-0340": "Aerial Tramway",
+  "400-4100-0341": "Bus Rapid Transit",
+  "400-4100-0342": "Inclined Rail",
+  "400-4100-0347": "Bicycle Sharing Location",
+  "400-4100-0348": "Bicycle Parking",
+  "400-4200-0048": "Weigh Station",
+  "400-4200-0049": "Cargo Center",
+  "400-4200-0050": "Rail Yard",
+  "400-4200-0051": "Seaport-Harbour",
+  "400-4200-0052": "Airport Cargo",
+  "400-4200-0240": "Couriers",
+  "400-4200-0241": "Cargo Transportation",
+  "400-4200-0311": "Delivery Entrance",
+  "400-4200-0312": "Loading Dock",
+  "400-4200-0313": "Loading Zone",
+  "400-4300-0000": "Rest Area",
+  "400-4300-0199": "Complete Rest Area",
+  "400-4300-0200": "Parking and Rest Room Only",
+  "400-4300-0201": "Parking Only",
+  "400-4300-0202": "Motorway Service Area",
+  "400-4300-0308": "Scenic Overlook",
+  "500-5000-0000": "Hotel or Motel",
+  "500-5000-0053": "Hotel",
+  "500-5000-0054": "Motel",
+  "500-5100-0000": "Lodging",
+  "500-5100-0055": "Hostel",
+  "500-5100-0056": "Campground",
+  "500-5100-0057": "Guest House",
+  "500-5100-0058": "Bed and Breakfast",
+  "500-5100-0059": "Holiday Park",
+  "500-5100-0060": "Short-Time Motel",
+  "500-5100-0354": "Trekking Hut",
+  "500-5510-0374": "Off-Road Vehicle Area",
+  "550-5510-0000": "Park-Recreation",
+  "550-5510-0202": "Park-Recreation Area",
+  "550-5510-0203": "Sports Field",
+  "550-5510-0204": "Garden",
+  "550-5510-0205": "Beach",
+  "550-5510-0206": "Recreation Center",
+  "550-5510-0227": "Ski Lift",
+  "550-5510-0242": "Scenic Point",
+  "550-5510-0243": "Surf Life Savings Clubs",
+  "550-5510-0349": "Bicycle Trailhead",
+  "550-5510-0357": "Hiking Trailhead",
+  "550-5510-0358": "Off Road Trailhead",
+  "550-5510-0359": "Trailhead",
+  "550-5510-0374": "Off-Road Vehicle Area",
+  "550-5520-0000": "Amusement or Holiday Park",
+  "550-5520-0207": "Amusement Park",
+  "550-5520-0208": "Zoo",
+  "550-5520-0209": "Wild Animal Park",
+  "550-5520-0210": "Wildlife Refuge",
+  "550-5520-0211": "Aquarium",
+  "550-5520-0212": "Ski Resort",
+  "550-5520-0228": "Animal Park",
+  "550-5520-0357": "Water Park",
+  "600-6000-0000": "Other Convenience Store",
+  "600-6000-0061": "Convenience Store",
+  "600-6100-0062": "Shopping Mall",
+  "600-6200-0063": "Department Store",
+  "600-6300-0064": "Food-Beverage Specialty Store",
+  "600-6300-0066": "Grocery",
+  "600-6300-0067": "Specialty Food Store",
+  "600-6300-0068": "Wine and Liquor",
+  "600-6300-0244": "Bakery and Baked Goods Store",
+  "600-6300-0245": "Sweet Shop",
+  "600-6300-0363": "Butcher",
+  "600-6300-0364": "Dairy Goods",
+  "600-6400-0000": "Drug-Pharmacy",
+  "600-6400-0069": "Drug Store",
+  "600-6400-0070": "Pharmacy",
+  "600-6500-0072": "Consumer Electronics Store",
+  "600-6500-0073": "Mobile Retailer",
+  "600-6500-0074": "Mobile Service Center",
+  "600-6500-0075": "Computer and Software",
+  "600-6500-0076": "Entertainment Electronics",
+  "600-6500-0333": "Electronics",
+  "600-6600-0000": "Hardware, House and Garden",
+  "600-6600-0077": "Home Improvement-Hardware Store",
+  "600-6600-0078": "Home Specialty Store",
+  "600-6600-0079": "Floor and Carpet",
+  "600-6600-0080": "Furniture Store",
+  "600-6600-0082": "Garden Center",
+  "600-6600-0083": "Glass and Window",
+  "600-6600-0084": "Lumber",
+  "600-6600-0085": "Major Appliance",
+  "600-6600-0310": "Power Equipment Dealer",
+  "600-6600-0319": "Paint Store",
+  "600-6700-0000": "Other Bookshop",
+  "600-6700-0087": "Book Store",
+  "600-6800-0000": "Clothing and Accessories",
+  "600-6800-0089": "Men's Apparel",
+  "600-6800-0090": "Women's Apparel",
+  "600-6800-0091": "Children's Apparel",
+  "600-6800-0092": "Shoes-Footwear",
+  "600-6800-0093": "Specialty Clothing Store",
+  "600-6900-0000": "Consumer Goods",
+  "600-6900-0094": "Sporting Goods Store",
+  "600-6900-0095": "Office Supply and Services Store",
+  "600-6900-0096": "Specialty Store",
+  "600-6900-0097": "Pet Supply",
+  "600-6900-0098": "Warehouse-Wholesale Store",
+  "600-6900-0099": "General Merchandise",
+  "600-6900-0100": "Discount Store",
+  "600-6900-0101": "Flowers and Jewelry",
+  "600-6900-0102": "Variety Store",
+  "600-6900-0103": "Gift, Antique and Art",
+  "600-6900-0104": "Hair and Beauty",
+  "600-6900-0105": "Record, CD and Video",
+  "600-6900-0106": "Video and Game Rental",
+  "600-6900-0246": "Bicycle and Bicycle Accessories Shop",
+  "600-6900-0247": "Market",
+  "600-6900-0248": "Motorcycle Accessories",
+  "600-6900-0249": "Non-Store Retailers",
+  "600-6900-0250": "Pawnshop",
+  "600-6900-0251": "Used-Second Hand Merchandise Stores",
+  "600-6900-0305": "Adult Shop",
+  "600-6900-0307": "Arts and Crafts Supplies",
+  "600-6900-0355": "Florist",
+  "600-6900-0356": "Jeweler",
+  "600-6900-0358": "Toy Store",
+  "700-7000-0107": "Bank",
+  "700-7010-0108": "ATM",
+  "700-7050-0109": "Money Transferring Service",
+  "700-7050-0110": "Check Cashing Service-Currency Exchange",
+  "700-7100-0000": "Communication-Media",
+  "700-7100-0134": "Telephone Service",
+  "700-7200-0000": "Commercial Services",
+  "700-7200-0252": "Advertising-Marketing, PR and Market Research",
+  "700-7200-0253": "Catering and Other Food Services",
+  "700-7200-0254": "Construction",
+  "700-7200-0255": "Customer Care-Service Center",
+  "700-7200-0256": "Engineering and Scientific Services",
+  "700-7200-0257": "Farming",
+  "700-7200-0258": "Food Production",
+  "700-7200-0259": "Human Resources and Recruiting Services",
+  "700-7200-0260": "Investigation Services",
+  "700-7200-0261": "IT and Office Equipment Services",
+  "700-7200-0262": "Landscaping Services",
+  "700-7200-0263": "Locksmiths and Security Systems Services",
+  "700-7200-0264": "Management and Consulting Services",
+  "700-7200-0265": "Manufacturing",
+  "700-7200-0266": "Mining",
+  "700-7200-0267": "Modeling Agencies",
+  "700-7200-0268": "Motorcycle Service and Maintenance",
+  "700-7200-0269": "Organizations and Societies",
+  "700-7200-0270": "Entertainment and Recreation",
+  "700-7200-0271": "Finance and Insurance",
+  "700-7200-0272": "Healthcare and Healthcare Support Services",
+  "700-7200-0273": "Real Estate and Brokers",
+  "700-7200-0274": "Rental and Leasing",
+  "700-7200-0275": "Repair and Maintenance Services",
+  "700-7200-0276": "Printing and Publishing",
+  "700-7200-0277": "Specialty Trade Contractors",
+  "700-7200-0278": "Towing Service",
+  "700-7200-0279": "Translation and Interpretation Services",
+  "700-7200-0324": "Apartment Rental-Flat Rental",
+  "700-7200-0328": "B2B Sales and Services",
+  "700-7200-0329": "B2B Restaurant Services",
+  "700-7200-0330": "Aviation",
+  "700-7200-0342": "Interior and Exterior Design",
+  "700-7200-0344": "Property Management",
+  "700-7200-0345": "Financial Investment Firm",
+  "700-7250-0136": "Business Facility",
+  "700-7300-0111": "Police Station",
+  "700-7300-0112": "Police Services-Security",
+  "700-7300-0113": "Fire Department",
+  "700-7300-0280": "Ambulance Services",
+  "700-7400-0000": "Consumer Services",
+  "700-7400-0133": "Travel Agent-Ticketing",
+  "700-7400-0137": "Dry Cleaning and Laundry",
+  "700-7400-0138": "Attorney",
+  "700-7400-0139": "Banquet Hall",
+  "700-7400-0140": "Boating",
+  "700-7400-0141": "Business Service",
+  "700-7400-0142": "Funeral Director",
+  "700-7400-0143": "Mover",
+  "700-7400-0144": "Photography",
+  "700-7400-0145": "Realtor",
+  "700-7400-0146": "Repair Service",
+  "700-7400-0147": "Social Service",
+  "700-7400-0148": "Storage",
+  "700-7400-0149": "Tailor and Alteration",
+  "700-7400-0150": "Tax Service",
+  "700-7400-0151": "Utilities",
+  "700-7400-0152": "Waste and Sanitary",
+  "700-7400-0281": "Bicycle Service and Maintenance",
+  "700-7400-0282": "Bill Payment Service",
+  "700-7400-0283": "Body Piercing and Tattoos",
+  "700-7400-0284": "Wedding Services and Bridal Studio",
+  "700-7400-0285": "Internet Cafe",
+  "700-7400-0286": "Kindergarten and Childcare",
+  "700-7400-0287": "Maid Services",
+  "700-7400-0288": "Marriage and Match Making Services",
+  "700-7400-0289": "Public Administration",
+  "700-7400-0290": "Misc. Consumer Services",
+  "700-7400-0291": "Self Service Kiosk",
+  "700-7400-0292": "Wellness Center and Services",
+  "700-7400-0293": "Pet Care",
+  "700-7400-0327": "Legal Services",
+  "700-7400-0343": "Tanning Salon",
+  "700-7400-0352": "Recycling Center",
+  "700-7400-0365": "Electrical",
+  "700-7400-0366": "Plumbing",
+  "700-7450-0114": "Post Office",
+  "700-7450-0294": "Post Box",
+  "700-7460-0115": "Tourist Information",
+  "700-7600-0000": "Fueling Station",
+  "700-7600-0116": "Petrol-Gasoline Station",
+  "700-7600-0322": "EV Charging Station",
+  "700-7800-0118": "Automobile Dealership-New Cars",
+  "700-7800-0119": "Automobile Dealership-Used Cars",
+  "700-7800-0120": "Motorcycle Dealership",
+  "700-7850-0000": "Car Repair-Service",
+  "700-7850-0121": "Car Wash-Detailing",
+  "700-7850-0122": "Car Repair",
+  "700-7850-0123": "Auto Parts",
+  "700-7850-0124": "Emission Testing",
+  "700-7850-0125": "Tire Repair",
+  "700-7850-0126": "Truck Repair",
+  "700-7850-0127": "Van Repair",
+  "700-7850-0128": "Road Assistance",
+  "700-7850-0129": "Automobile Club",
+  "700-7851-0117": "Rental Car Agency",
+  "700-7900-0000": "Truck-Semi Dealer-Services",
+  "700-7900-0130": "Truck Dealership",
+  "700-7900-0131": "Truck Parking",
+  "700-7900-0132": "Truck Stop-Plaza",
+  "700-7900-0323": "Truck Wash",
+  "800-8000-0000": "Hospital or Health Care Facility",
+  "800-8000-0154": "Dentist-Dental Office",
+  "800-8000-0155": "Family-General Practice Physicians",
+  "800-8000-0156": "Psychiatric Institute",
+  "800-8000-0157": "Nursing Home",
+  "800-8000-0158": "Medical Services-Clinics",
+  "800-8000-0159": "Hospital",
+  "800-8000-0161": "Optical",
+  "800-8000-0162": "Veterinarian",
+  "800-8000-0325": "Hospital Emergency Room",
+  "800-8000-0340": "Therapist",
+  "800-8000-0341": "Chiropractor",
+  "800-8000-0367": "Blood Bank",
+  "800-8100-0000": "Government or Community Facility",
+  "800-8100-0163": "City Hall",
+  "800-8100-0164": "Embassy",
+  "800-8100-0165": "Military Base",
+  "800-8100-0168": "County Council",
+  "800-8100-0169": "Civic-Community Center",
+  "800-8100-0170": "Court House",
+  "800-8100-0171": "Government Office",
+  "800-8100-0172": "Border Crossing",
+  "800-8100-0317": "Agricultural Checkpoint",
+  "800-8100-0318": "Military Checkpoint",
+  "800-8200-0000": "Education Facility",
+  "800-8200-0173": "Higher Education",
+  "800-8200-0174": "School",
+  "800-8200-0295": "Training and Development",
+  "800-8200-0360": "Coaching Institute",
+  "800-8200-0361": "Fine Arts",
+  "800-8200-0362": "Language Studies",
+  "800-8300-0000": "Other Library",
+  "800-8300-0175": "Library",
+  "800-8400-0000": "Fair and Convention Facility",
+  "800-8400-0176": "Convention-Exhibition Center",
+  "800-8500-0000": "Parking Facility",
+  "800-8500-0177": "Parking Garage-Parking House",
+  "800-8500-0178": "Parking Lot",
+  "800-8500-0179": "Park and Ride",
+  "800-8500-0315": "Cellphone Parking Lot",
+  "800-8600-0000": "Sports Facility-Venue",
+  "800-8600-0180": "Sports Complex-Stadium",
+  "800-8600-0181": "Ice Skating Rink",
+  "800-8600-0182": "Swimming Pool",
+  "800-8600-0183": "Tennis Court",
+  "800-8600-0184": "Bowling Center",
+  "800-8600-0185": "Indoor Ski",
+  "800-8600-0186": "Hockey",
+  "800-8600-0187": "Racquetball Court",
+  "800-8600-0188": "Shooting Range",
+  "800-8600-0189": "Soccer Club",
+  "800-8600-0190": "Squash Court",
+  "800-8600-0191": "Fitness-Health Club",
+  "800-8600-0192": "Indoor Sports",
+  "800-8600-0193": "Golf Course",
+  "800-8600-0194": "Golf Practice Range",
+  "800-8600-0195": "Race Track",
+  "800-8600-0196": "Sporting Instruction and Camps",
+  "800-8600-0197": "Sports Activities",
+  "800-8600-0199": "Basketball",
+  "800-8600-0200": "Badminton",
+  "800-8600-0314": "Rugby",
+  "800-8600-0316": "Diving Center",
+  "800-8700-0000": "Facilities",
+  "800-8700-0166": "Cemetery",
+  "800-8700-0167": "Crematorium",
+  "800-8700-0198": "Public Restroom-Toilets",
+  "800-8700-0296": "Clubhouse",
+  "800-8700-0297": "Offices",
+  "800-8700-0298": "Registration Office",
+  "900-9100-0214": "Hamlet",
+  "900-9100-0215": "Named Place",
+  "900-9100-0216": "Neighborhood",
+  "900-9200-0000": "Outdoor Area-Complex",
+  "900-9200-0218": "Industrial Zone",
+  "900-9200-0219": "Marina",
+  "900-9200-0220": "RV Parks",
+  "900-9200-0299": "Collective Community",
+  "900-9200-0301": "Island",
+  "900-9300-0221": "Residential Area-Building",
+  "900-9300-0335": "Business Area"
+ },
+ "profanity": [
+  {
+   "phrase": "@$$",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "3SOME",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "A NICE PLACE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "ABDULLAH AZZAM BRIGADES",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "ABORTION",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "ABU NIDAL ORGANIZATION",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "ABU SAYYAF",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "ABU SAYYAF",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "ADEN-ABYAN ISLAMIC ARMY",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "AKHIL BHARAT NEPALI EKTA SAMAJ",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "AKZEPTIEREN",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "AL MOUAKAOUNE BIDDAM",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "AL MOULATHAMOUN",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "AL MOURABITOUN",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "AL-AKHTAR TRUST INTERNATIONAL",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "AL-AQSA FOUNDATION",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "AL-AQSA MARTYRS' BRIGADES",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "AL-GAMA'A AL-ISLAMIYYA",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "AL-HARAMAIN & AL MASJED",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "AL-HARAMAIN FOUNDATION",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "AL-ISLAMIYA, REVIVAL OF",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "AL-ITIHAAD AL-ISLAMIYA",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "ALL TRIPURA TIGER FORCE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "ALLE RECHTE VORBEHALTEN",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "AL-MOURABITOUN",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "AL-NUR HONEY PRESS SHOPS",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "AL-NUSRA FRONT",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "AL-NUSRAH FRONT FOR THE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "AL-QAEDA IN",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "AL-QAIDA DANS LA PENINSULE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "AL-QAIDA IN IRAQ",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "AL-TAKFIR ET AL-HIJRA",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "AL-UMAR-MUJAHIDEEN",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "AM FINE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "ANAL ORIFICE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "ANAL",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "ANCOK",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "ANJING",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "ANJRIT",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "ANNOY",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "ANNOYING",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "ANSAR AL CHARIA",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "ANSAR AL-ISLAM",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "ANSAR AL-SHARIA (LIBYA)",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "ANSAR AL-SHARIA (TUNISIA)",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "ANSAR AL-SHARI'A IN TUNISIA",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "ANSAR BAIT AL-MAQDIS",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "ANSAR DINE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "ANSARUL MUSLIMINA FI",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "ANYING",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "ARMED ISLAMIC GROUP OF ALGERIA",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "ARMY OF ISLAM",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "ASBAT AL-ANSAR",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "ASOE",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "ASSHOLE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "ASSMUNCHER",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "ASSWIPE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "AUM SHINRIKYO",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "B@ST@RD",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "BABBAR KHALSA INTERNATIONAL",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "BAJINGAN",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "BAJINGUK",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "BALAECAK",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "BALL SACK",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "BALOCHISTAN LIBERATION ARMY",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "BANCI",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "BANGSAD",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "BANGSAT",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "BANGSATZ",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "BASTARD",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "BASTARDS",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "BEANER",
+   "whole_name": true,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "BEARDED CLAM",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "BEASTIALITY",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "BEAT THE MEAT",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "BEATOFF",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "BEDEBAH",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "BEGO",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "BEJAD",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "BEJAT",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "BELEGUG",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "BENCONG",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "BEND OVER",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "BENDMEOVERANDDOMEDRY",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "BENEVOLENCE INTERNATIONAL",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "BENGAK",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "BEOL",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "BERCINTA",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "BERSENGGAMA",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "BERSETUBUH",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "BIADAB",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "BIATCH",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "BINTITAN",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "BIRAHI",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "BISPAK",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "BITCH",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "BITCH",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "BITEN SLAP",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "BLASPHEMY",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "BLEED THE LIZARD",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "BLOJOB",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "BLO-JOB",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "BLO'ON",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "BLOW JOB",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "BLOW YOUR WAD",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "BLOWJOB",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "BLOWME",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "BODOH",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "BODOK",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "BOINK",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "BOKEP",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "BOKO HARAM",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "BOLOT",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "BONER",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "BOOB",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "BRENGSEK",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "BROWN EYE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "BRUHA",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "BRUTAL",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "BUAH DADA",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "BUDEK",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "BUGGER",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "BUGIL",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "BUMP UGLIES",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "BUNGHOLE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "BURAT",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "BURIT",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "BUSH BOOGIE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "BUTT DARTS",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "BUTT PIRATE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "BUTT",
+   "whole_name": false,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "BUTTHOLE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "BUTTPLUG",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "BWISET",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "BWISIT",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "CABUL",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "CANCEL",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "CANDY ASSED",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "CARELESSNESS",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "CARPET EATER",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "CARPETMUNCHER",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "CAUCASUS EMIRATE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "CEBOL",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "CEKING",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "CHE/DOVE/CHI CAZZO",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "CHINK",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "CHOKE THE CHICKEN",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "CHOT",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "CHOTE",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "CIPOK",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "CLICK TO OPEN",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "CLIENT LOGIN",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "CLIK ON",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "CLIT",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "CLUNGE",
+   "whole_name": true,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "COCK BLOCK",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "COCK SUCKER",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "COCKRING",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "COCKSMACKER",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "COCKSUCKER",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "COLI",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "COMITE' DE BLENFAISANCE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "CONCUBINE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "CONDEMNED",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "CONDOM",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "CONSPIRACY OF FIRE NUCLEI",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "CONTINUITY IRISH",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "COOCH",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "COON",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "COOTER",
+   "whole_name": true,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "CORN HOLE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "CRAP",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "CREAM PIE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "CROTCH",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "CUKI",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "CUKIMAI",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "CUKIMAY",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "CUMANN NA MBAN",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "CUMBUCKET",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "CUMBUY",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "CUMLICKER",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "CUMSUCKER",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "CUNNILIGUS",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "CUNNILINGUS",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "CUNT",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "CUPU",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "CÚT ĐI CÚT ĐI",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "CUT THE CHEESE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "CUTER",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "D#DDLE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "D@MN",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "DAECH",
+   "whole_name": true,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "DAESCH",
+   "whole_name": true,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "DAGO",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "DAMN",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "DANCUK",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "DATENSCHUTZ",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "DEENDAR ANJUMAN",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "DEEP THROAT",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "DEFAULT",
+   "whole_name": true,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "DESCRIBE ME",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "DESTROY",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "DEVRIMCI HALK KURTULUS",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "DICKHEAD",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "DICKJUICE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "DICKLESS",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "DICKTRACK",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "DICKWAD",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "DICKWEED",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "DILDO",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "DINGLEBERRY",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "DINK",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "DITCHLICKER",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "DJAMAT HOUMAT DAAWA SALAFIA",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "DONETSK PEOPLE'S REPUBLIC",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "DONGDOT",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "DOT HEAD",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "DOUSCHE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "DRAIN THE DRAGON",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "DRAIN THE MONSTER",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "DRAIN THE WORM",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "DRY HUMP",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "DUBUR",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "DUCK JOB",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "DUKHTARAN-E-MILLAT",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "DUMB HEAD",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "DUMBASS",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "DYKE",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "EAST TURKESTAN",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "EASTERN TURKISTAN ISLAMIC",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "EBUNG",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "EGYPTIAN ISLAMIC JIHAD",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "EJACULATE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "EJACULATION",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "EJAKULASI",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "EKIMNYA",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "ELO",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "EMPTY",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "ENGOT",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "ENTOT",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "FAIL",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "FATASS",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "FECAL",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "FECES",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "FELLATING",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "FELLATIO",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "FIANNA ÉIREANN",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "FISTING",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "FLATULENCE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "FLOG THE DOG",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "FLOG THE LOG",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "FLY FLY",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "FORCE 17",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "FORNICATE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "FRENCH TICKLER",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "FRICKIN",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "FRY IT",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "FUCK",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "FUDGE PACKER",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "FUGLY",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "GAGO",
+   "whole_name": true,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "GAMA'A AL-ISLAMIYYA",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "GANGBANG",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "GATELI",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "GAY",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "GAYWAD",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "GEBLEK",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "GEMBEL",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "GENITALIA",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "GENITALS",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "GENJE",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "GETTING HEAD",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "GINNY",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "GIVE A BJ",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "GIVING HEAD",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "GLOBAL RELIEF FOUNDATION",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "GO AWAY",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "GO DOWN ON",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "GOBBLE THE GOOSE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "GOBLOK",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "GODDAM",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "GODDAMN",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "GONAD",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "GONGONG",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "GREASE BALL",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "GREAT EASTERN ISLAM",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "GREATASS",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "GREEN BAY PACKER",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "GYPO",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "HAMAS",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "HANCEK",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "HANCIKI",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "HAQQANI NETWORK",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "HARAKAT SHAM AL-ISLAM",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "HARAKAT UL-MUJAHIDIN",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "HARAKAT-UL JIHAD ISLAMI",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "HARAKAT-UL-MUJAHIDEEN/ALAMI",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "HARD ON",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "HARD-ON",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "HARKAT-AL-JIHAD",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "HARKAT-UL-JIHAD AL-ISLAMI",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "HARKAT-UL-MUJAHIDEEN",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "HARLOT",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "HATE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "HAUHAU",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "HAYUP",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "HE WILL",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "HELSAY",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "HEZB",
+   "whole_name": true,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "HEZB-E ISLAMI GULBUDDIN",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "HEZBOLLAH (EXT",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "HEZBOLLAH (MILITARY WING)",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "HEZBOLLAH AL-HEJAZ",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "HEZBOLLAH",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "HEZBOLLAH",
+   "whole_name": true,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "HILAFET DEVLETI",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "HINAYUPAK",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "HISNWAY",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "HIZB UT-TAHRIR",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "HIZBUL MUJAHEDIN",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "HIZBUL MUJAHIDEEN",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "HNCIKERS",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "HNCIKI",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "HODE",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "HOFSTAD NETWORK",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "HOLY LAND FOUNDATION FOR",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "HOLY LAND FOUNDATION",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "HOMOSEXUALITY",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "HOMOSEXUALS",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "HONKEY",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "HORNY",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "HOSE BAG",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "HOUTHIS",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "HOW MANY",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "HUGEASS",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "HUGEDICK",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "HUGEGAP",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "HUNG OVER",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "HYMEN",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "I BUY",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "I CAN'T",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "I COMPARI",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "I CONDEMN",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "I CONSUMABL",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "I CREATE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "I DANCE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "I DEBATE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "I DOCTOR",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "I DON'T",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "I DRUNK",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "I FASCINATE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "I FEEL",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "I FOCUS",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "I FOUND",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "I FREE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "I GOT",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "I HEAR",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "I HEART",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "I HELP",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "I HOUSE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "I JAMMED",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "I KNOW",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "I LET",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "I LUNCH",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "I MEAN",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "I MET",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "I MISS",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "I MY",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "I NEED",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "I OPTICAL",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "I SCREAM",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "I SELL",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "I SHOULD",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "I STICK",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "I TEACH",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "I THINK",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "I TOOK",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "I WALK",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "I WANNA",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "I WANT",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "I WEAR",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "IDIOT",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "IF IT'S",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "IF YOU",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "IGNORE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "IJUT",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "I'M CRYING",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "I'M DRUNK",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "I'M FINALLY",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "I'M WATCHING",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "IMPRESSUM",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "IN THE BUT BOB",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "IN-BREDER",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "INBREEDER",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "INCEST",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "INDIAN MUJAHIDEEN",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "INFIDEL",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "INFIDELS",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "INSEST",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "INSULT",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "INTERCOURSE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "INTERNATIONAL SIKH",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "INTHEASS",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "INTHEBACK",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "IRISH NATIONAL LIBERATION ARMY",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "IRISH PEOPLE'S LIB",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "ISIL",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "ISIS",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "ISLAMIC INTERNATIONAL BRIGADE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "ISLAMIC JIHAD GROUP",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "ISLAMIC JIHAD UNION",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "ISLAMIC JIHAD",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "ISLAMIC MOVEMENT OF UZBEKISTAN",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "ISLAMIC STATE OF",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "ITIL",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "IT'S ALMOST",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "I'VE BEEN",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "IZZ AD-DIN AL-QASSAM BRIGADES",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "JABLAI",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "JABLAY",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "JACK OFF",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "JACKHOLE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "JACKING OFF",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "JACKOFF",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "JAG OFF",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "JAISH AL-MUHAJIREEN WAL-ANSAR",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "JAISH-E-MOHAMMED",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "JAISH-I-MOMHAMMED",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "JAMAAH ANSHARUT TAUHID",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "JAMAAH",
+   "whole_name": true,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "JAMAAT ANSAR AL-SUNNA",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "JAMAAT UL-FURQUAN",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "JAMAAT",
+   "whole_name": true,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "JAMA'ATU AHLIS SUNNA",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "JAMAAT-UL-MUJAHIDEEN",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "JAMIAT AL-ISLAH AL-IDZHTIMAI",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "JAMIAT UL-ANSAR",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "JAMIAT-E ISLAMI",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "JAM'YAH TA'AWUN AL-ISLAMIA",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "JANACKUS",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "JANCHUK",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "JANCOK",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "JANCUK",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "JELEK",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "JEMAAH ISLAMIYA",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "JEMAAH ISLAMIYAH",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "JEMAAH",
+   "whole_name": true,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "JEMBI",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "JEMBUT",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "JERKOFF",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "JIHAD",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "JIJIK",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "JILMEK",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "JILTOK",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "JISM",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "JISSUM",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "JITAK",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "JUGS",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "JUND AL-SHAM",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "JUND",
+   "whole_name": true,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "JUNDALLAH",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "JUNGLE BUNNIES",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "KACH AND KAHANE CHAI",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "KAMPRET",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "KANGLEI YAWOL KANNA LUP",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "KANGLEIPAK COMMUNIST PARTY",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "KANJUT",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "KANTOT",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "KATA'IB HEZBOLLAH",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "KEKIJILAN",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "KEMEM",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "KENCING",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "KESMAT",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "KHALISTAN COMMANDO FORCE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "KHALISTAN ZINDABAD FORCE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "KHUDDAM UL-ISLAM",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "KIKASS",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "KILL BARBER",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "KILL",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "KIMAKNYA",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "KIMCIL",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "KIMEK",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "KIPUH",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "KISS MY ASS",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "KLIT",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "KLITOR",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "KNOCKERS",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "KOMALAH",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "KONDOM",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "KONGRA GELE KURDISTAN",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "KONTOL",
+   "whole_name": true,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "KONTOL",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "KONYOL",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "KOPLAK",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "KOPLOK",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "KUMA SULTRA",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "KUNT",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "KUNTIL",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "KUNYUK",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "KUPAL",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "KURDISTAN FREEDOM FALCONS",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "KURDISTAN WORKERS' PARTY",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "LACUK",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "LACUKWARA",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "LAMBEMU",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "LAPDANCE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "LASHKAR E-TAYYIBA",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "LASHKAR I JHANGVI",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "LASHKAR-E-JHANGVI",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "LASHKAR-E-TAIBA",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "LBH (LOUD BUT HARMLESS)",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "LEMOT",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "LESBIAN",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "LESBO",
+   "whole_name": true,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "LET ONE RIP",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "LETSE",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "LIBERATION TIGERS",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "LIBERATION",
+   "whole_name": true,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "LIBYAN ISLAMIC FIGHTING GROUP",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "LINTEK",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "LINTIK",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "LIP LOCK",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "LONG DONG",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "LONTE",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "LONTHE",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "LOVE JUICE",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "LOVE LUBE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "LOVE MUSCLE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "LOVE WAND",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "LOYALIST VOLUNTEER FORCE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "LUGANSK PEOPLE'S REPUBLIC",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "MAHO",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "MAKEOUT",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "MANIPUR PEOPLE'S",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "MAOIST COMMUNIST",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "MARXIST-LENINIST",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "MASOCISM",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "MASTURBASI",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "MASTURBATE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "MATANE",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "MBEBET",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "MEBUYAI",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "MEGAJUGS",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "MEGATITS",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "MEHAMUK",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "MEKIS",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "MELANZANG",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "MEMBER LOGIN",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "MEMEK",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "MENAGE A TROIS",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "MESUM",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "MILF",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "MOFO",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "MOMOK",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "MONYET",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "MOROCCAN ISLAMIC COMB",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "MUFF",
+   "whole_name": true,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "MUFFDIVER",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "MUJAHEDIN",
+   "whole_name": true,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "MUJAHIDEEN SHURA",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "MUJAHIDEEN",
+   "whole_name": true,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "MULENJOHN",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "MULTIPLE ORGASMS",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "MUNAFIK",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "MURDER",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "MY NICE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "NADA MANAGEMENT ORG",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "NADS",
+   "whole_name": true,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "NAKAKABURAT",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "NAKED",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "NAME TRANSLATED",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "NAME_TRANSLATED",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "NATIONAL LIBERATION ARMY",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "NATIONAL LIBERATION",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "NEW PEOPLE'S ARMY",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "NGACENG",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "NGALOCO",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "NGANGKANG",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "NGEHE",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "NGEHEK",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "NGENTOT",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "NGESEX",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "NGEWE",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "NGIJUT",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "NGISEP",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "NGOCOK",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "NIGATOLOL",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "NIGGER",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "NIGTOL",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "NIPPLE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "NOCKERS",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "NONE",
+   "whole_name": true,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "NOOKIE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "NOOKY",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "NOONER",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "NUMBNUTS",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "NUMBNUTZ",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "NUNGGING",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "NYATOK",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "NYEPONG",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "NYMPHO",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "NYMPOH",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "OHMEGOD",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "OHMIGOD",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "OLDFART",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "OLDPUSSSY",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "ON THE RAG",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "ONANI",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "ONE EYED SNAKE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "ONE-EYED MONSTER",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "ORANGE VOLUNTEERS",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "ORGASM",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "ORGIE",
+   "whole_name": true,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "ORGY",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "OSBAT AL-ANSAR",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "OTONG",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "OUR BOY",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "OUR FISH",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "PAEDOPHILE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "PAKSHET",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "PAKYU",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "PALESTINE AL-MUSLIMA",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "PALESTINE LIBERATION FRONT",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "PALESTINIAN ISLAMIC JIHAD",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "PALESTINIAN RELIEF",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "PANTAT",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "PANTEK",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "PANTIES",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "PARTY OF FREE LIFE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "PASSOUT",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "PAYUDARA",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "PECUN",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "PEE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "PEHOL",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "PEJU",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "PEJUH",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "PEKOK",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "PELACUR",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "PELER",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "PELIT",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "PEMBUALAN",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "PENETRATION",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "PENIS",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "PENIS",
+   "whole_name": true,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "PENIS",
+   "whole_name": true,
+   "countries": [
+    "IDN",
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "PENTIL",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "PEOPLE'S CONGRESS OF",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "PEOPLE'S MUJAHEDIN OF IRAN",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "PEOPLE'S REVOLUTIONARY",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "PEPEK",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "PEREK",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "PERKOSA",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "PERSETAN",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "PERVERT",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "PIE HOLE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "PIKEY",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "PINCHING LOAF",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "PISS",
+   "whole_name": true,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "PLAYBOY",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "POKPOK",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "POLISH THE HELMET",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "POOL POCKET",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "POOP",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "POPULAR FRONT FOR",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "PORN",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "PORNO",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "PRICK",
+   "whole_name": true,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "PRON",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "PROSTITUEE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "PROSTITUTE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "PROSTITUTION",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "PROVISIONAL IRISH",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "PUBES",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "PUBIC",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "PUBIC",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "PUCHA",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "PUDD",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "PUDER",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "PUDWHACKER",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "PUKI",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "PUKIAYAM",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "PUKIMAK",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "PUNTANG",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "PUNYETA",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "PURPLE HEADED WARRIOR",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "PUSSY",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "PUTA",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "PUTAIN",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "PUTAINS",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "PUTANGINA",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "QAEDA",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "QUDS FORCE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "QUEEF",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "QUEF",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "QUICKIE",
+   "whole_name": true,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "QUIEF",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "RABITA TRUST",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "RAG HEAD",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "RAJAH SOLAIMAN MOVEMENT",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "RAPE",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "REAL IRISH REPUBLICAN ARMY",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "RECTAL",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "RECTUM",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "RED HAND COMMANDO",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "RED HAND DEFENDERS",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "REDRUM",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "RESIDENT LOGIN",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "RETARD",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "REVIVAL OF ISLAMIC HERITAGE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "REVOLUTIONARY ARM",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "REVOLUTIONARY ORG",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "REVOLUTIONARY PARTY",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "REVOLUTIONARY PEO",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "REVOLUTIONARY STRUGGLE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "REVOLUTIONARY",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "RIMJOB",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "RIM-JOB",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "RIYADUS-SALIKHIN",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "ROODY POO",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "RUMP RANGER",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "SADISM",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "SADISM",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "SADIST",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "SALAMISLAPPER",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "SAOR ÉIRE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "SCHLONG",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "SCREW",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "SCREWED",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "SCROAT",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "SCROT",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "SCRUNT",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "SCUM",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "SEDUCE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "SEKS",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "SEKSUAL",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "SEMEN",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "SEMEN",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "SENDERO LUMINOSO",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "SENSUAL",
+   "whole_name": false,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "SEPONG",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "SETAN",
+   "whole_name": false,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "SEX",
+   "whole_name": true,
+   "countries": [
+    "IDN",
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "SEXMACHINE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "SH*T",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "SHIAT",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "SHINING PATH[68]",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "SHIT",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "SHOOT A WAD",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "SHOW ON MAP",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "SHUNGA",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "SIAL",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "SILENT BUT DEADLY",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "SILIT",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "SIPAH-E-SAHABA PAKISTAN",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "SITEMAP",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "SIXTYNINE",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "SKANK",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "SKIN FLUTE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "SLANT",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "SLAP THE SALAMI",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "SLAVE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "SLIT",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "SLONG",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "SLUT",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "SLUT",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "SLUTS",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "SNATCH",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "SNUFF",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "SODOMI",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "SODOMY",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "SOMPLAK",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "SORRY",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "SPACKER",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "SPANK THE MONKEY",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "SPAZ",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "SPEARCHUCKER",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "SPECIAL PURPOSE ISLAMIC",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "SPERM",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "SPERMA",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "SPHINCHTER",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "SPOOK",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "SPUNK",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "STARTSEITE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "STICHTING AL AQSA",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "STRIPTEASE",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "STUDENTS ISLAMIC",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "STUPID",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "SUCK",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "SUCKING",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "SUFFER",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "SUPREME MILITARY MAJLIS",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "SUSMARYOSEP",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "SWINGER",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "TAEK",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "TAHEK",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "TAI",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "TAIK",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "TAILASOJENANA",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "TAKE A WHIZ",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "TAKFIR WAL-HIJRA",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "TAMIL NADU LIBERATION ARMY",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "TAMIL NATIONAL RETRIEVAL",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "TANTE GIRANG",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "TAR BABY",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "TARANTADO",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "TATOR HOLE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "TEABAGGIN",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "TEHREEK-E-NAFAZ",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "TEHRIK-E TALIBAN PAKISTAN",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "TEHRIK-I-TALIBAN PAKISTAN",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "TELANJANG",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "TELASO",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "TELENGONG",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "TEMPEK",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "TEMPIK",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "TERMS OF USE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "TESTICAL",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "TESTICLE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "TESTIS",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "TETEK",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "TEVHID-SELAM (AL-QUDS ARMY)",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "TEYRBAZEN AZADIYA KURDISTAN",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "THẰNG CHÓ THẰNG CHÓ",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "THE ORGANIZATION OF AL-QAIDA",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "THE SAVED SECT",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "THEY WILL",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "THREESOME",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "TILANDEMU",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "TITE",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "TITIT",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "TITS",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "TITT",
+   "whole_name": true,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "TITTY",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "TO CUT",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "TOKET",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "TO'OL",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "TOSSING SALAD",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "TRAILER TRASH",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "TRAMP",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "TRANSSEXUAL",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "TROLLOP",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "TUBE STEAK",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "TUNISIAN COMBATANT GROUP",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "TURD BURGLER",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "TURD",
+   "whole_name": true,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "TUSBOL",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "TWATT",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "TWO CAN CHEW",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "UGLY",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "ULOL",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "ULSTER DEFENCE ASSOCIATION",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "ULSTER VOLUNTEER FORCE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "UMDUPSTER",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "UMSHOT",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "UNGANG",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "UNGAS",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "UNITED LIBERATIO",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "UNITED SELF-DEFENSE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "UP HILL GARDENER",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "UP THE BUT BOB",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "UP YOURS",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "UPSET",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "URINAL",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "URINE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "URINE",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "USIR",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "UTERUS",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "VAGINA",
+   "whole_name": true,
+   "countries": [
+    "IDN",
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "VAGINAL",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "VANGUARDS OF CONQUEST",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "VẾU CHÓ VẾU CHÓ",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "VIAGRA",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "VIBRATOR",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "VIRGIN",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "VOMIT",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "VULVA",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "WANGER",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "WANK",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "WE GET",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "WE TURN",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "WEDUS",
+   "whole_name": true,
+   "countries": [
+    "IDN"
+   ]
+  },
+  {
+   "phrase": "WEINIE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "WET BACK",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "WHACK OFF",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "WHERE-IS",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "WHICK THE WILLY",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "WHORE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "WHORE",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "WORLD TAMIL MOVEMENT",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "WORLD UYGUR YOUTH CONGRESS",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "WORRY",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "WTF",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "X-RATED",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "XXX",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "XXX",
+   "whole_name": true,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "YOU BET YOU ASS",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "YOU BET YOUR ASS",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "YOU HAVE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "YOU LEAVE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "YOU REFERRED",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "YOU REMOVE",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "YOU WEEP",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "YOU WORKED",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "YOUR ASS",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "YOU'RE NOT",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "ZIPPERHEAD",
+   "whole_name": false,
+   "countries": [
+    "ALL"
+   ]
+  },
+  {
+   "phrase": "เ เ ม่ ง",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "เ ย็ ด",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "เ ย็ด",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "เ สื อ ก",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "เ.ป.ร.ต",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "เ.ย็.ด",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "เ.ย็.ด.แ.ม่",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "เ.สื.อ.ก",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "เเคมปลิ้น",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "เงี่ยน",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "เงี้ยน",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "เจดแม่",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "เจ็ดยับ",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "เจ็ทแม่",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "เจสแม่",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "เจี๊ยว",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "เจือก",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "เช่าวัก",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "เซ็ก",
+   "whole_name": true,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "เซ็กจัด",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "เซ็กซ์",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "เตี่ย",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "เป.ร.ต.",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "เย็ ด",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "เย็.ด",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "เย้ด",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "เย๊ด",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "เย็ด",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "เยดเข้",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "เย็ดเข้",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "เย็ดแม่",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "เย็ต",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "เย็ท",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "เลวมาก",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "เลวสัด",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "เลียหัวนม",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "เวรตะไล",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "เสียวจัง",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "เสียวว้อย",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "เสือก",
+   "whole_name": true,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "เหี้ย ๆ",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "เหี้ยๆ",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "เอากันปะ",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "เอาทีดิ",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "เอาหัวนม",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "เฮงซวย",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "เฮี่ย",
+   "whole_name": true,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "แ ต ด",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "แ ตด",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "แ ร ด",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "แ รด",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "แต ด",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "แตด",
+   "whole_name": true,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "แม่เย็ด",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "แม่ต",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "แม่ตาย",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "แม่ตายเหรอ",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "แม่มรึงตาย",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "แม่ย้อย",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "แย่เม็ด",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "แสรด",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "โคดพ่อ",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "โค-ต-ร",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "โคตรแม่",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "โคตรพ่อ",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "โครตแม่",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "โครตพ่",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "โครตพ่อ",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ใอ้สัด",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ใอ้สัต",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ไ อ่",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ไ อ้",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ไ.อ้.หั",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ไ.อ้เ.ฮี้.ย",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ไปดู",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ไปตายซะ",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ไปตายสะ",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ไปตายห่า",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ไอ่",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ไอ้",
+   "whole_name": true,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "กระเจี้ยว",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "กระเจี๊ยว",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "กระเจี๋ยว",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "กระเด้า",
+   "whole_name": true,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "กระจู๋",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "กระดอ",
+   "whole_name": true,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "กระทวย",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "กระปู๋",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "กระหรี่",
+   "whole_name": true,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "กะเจี๊ยว",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "กะโปก",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "กะสัน",
+   "whole_name": true,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "กะหรี่",
+   "whole_name": true,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "กาเจี้ยว",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "กาเจี๊ยว",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "กาจู๋",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "กาหรี่",
+   "whole_name": true,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ขอร่ว",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ขายตัว",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ค . ว . ย",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ค ร ว ย",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ค ร วย",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ค รว ย",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ค ว ย",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ค วย",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ควย",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ควายเอ้ย",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ควายจริงๆ",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ควายจิงๆ",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ควายย",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "คอยเย็ด",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "คอ-ว-ย",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ฅ ว ย",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ฅ วย",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ฅว ย",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ฅวย",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ฅว-ย",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ฅ-วย",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ฅ-ว-ย",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ฆวย",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "จัญไร",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "จันไร",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ชักว่าว",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ชั่วช้า",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ชาติชั่ว",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ชาติหมา",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ชิบหาย",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ดวก",
+   "whole_name": true,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ดอกทอง",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ดูดหัวนม",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ติดเหี้ย ๆ",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ติดเหี้ย",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ติดเหี้ยๆ",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ติดสัส ๆ",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ติดสัส",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ติดสัสๆ",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ตีกะหรี่",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ตีกาหรี่",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ตี๋หิด",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ตูด",
+   "whole_name": true,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ถอก",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ถ่อย",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ทุเรศ",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "นมใหญ่จัง",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "นมทะลัก",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "น่าม่อ",
+   "whole_name": true,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "น่าหม้อ",
+   "whole_name": true,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "น้ำกาม",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "บริก",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "บ๊วบ",
+   "whole_name": true,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "บัดซบ",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "บ้าป่าววะ",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "บีบหัวนม",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ปิ๊",
+   "whole_name": true,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "พ่ อ มึ",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "พ่อเมิง",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "พ่อเมิงตาย",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "พ่อแ",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "พ่อไ",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "พ่อคิ",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "พ่อคุณเหรอ",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "พ่อตาย",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "พ่อมรึงตาย",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "พ่อมรึงสิ",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "พ่อมึงตาย",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "พ่อสิ้น",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ฟวย",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ฟัก ยู",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ฟักยู",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "มึ ง",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "มึง",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ยักสุเน็ต",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ยัดแม่",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ร่วมเพศ",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ระยำ",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ร่าน",
+   "whole_name": true,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "รุมโทรม",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ล่อแม่",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ลาวสัด",
+   "whole_name": true,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ลูก",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ลูกอี",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ลูกอีสาด",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "สถุน",
+   "whole_name": true,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "สถุล",
+   "whole_name": true,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ส้นตีน",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "สราด",
+   "whole_name": true,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "สัด ๆ",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "สัด",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "สัดๆ",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "สันดาน",
+   "whole_name": true,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "สัส ๆ",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "สัส",
+   "whole_name": true,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "สัสๆ",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "สาดเอ้ย",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "สาดเอ๊ย",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "สาดด",
+   "whole_name": true,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "สาดหมา",
+   "whole_name": true,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "สารเลว",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "สีแหบ",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "หกกระดี๋",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "หนังหี",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "หน้า",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "หน้าเหรี้ย",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "หน้าคว",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "หน้าหนัง",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "หน้าหมา",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "หน้าหี",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "หมอย",
+   "whole_name": true,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "หมา",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "หมาไม่แดก",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "หยาบช้า",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "หยีเหม็น",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ห้วดอ",
+   "whole_name": true,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "หอกหัก",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "หัวควย",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "หัวนม",
+   "whole_name": true,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ห่า",
+   "whole_name": true,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "หาดสะอี๋",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "หี",
+   "whole_name": true,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "หีแตด",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "หีระเบิด",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "หีหมา",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "หื่น",
+   "whole_name": true,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "องคชาติ",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "อมหัวดอ",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "อยากเ",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "อยากเสียว",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "อ่อนสัด",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "อัณฑะ",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "อัดถั่วดำ",
+   "whole_name": true,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "อ้าย",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "อ้ายเ ว ร",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "อายเชี้ย",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "อ้ายเหรี้ย",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "อ้ายฟาย",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "อ้ายสัด",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "อ้ายสาด",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "อ้ายสาดหมา",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "อ้ายห่า",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "อิฉัด",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "อิผี",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "อิสัด",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "อิสัส",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "อี แรด",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "อี ชาติหมา",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "อี ดอก",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "อีเดียด",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "อีเป็งสุดา",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "อีเปรต",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "อีเลว",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "อีเวร",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "อีเห็ดสด",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "อีแตรด",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "อีแมงดา",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "อีแรด",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "อีโง่",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "อีไพร่",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "อีกระหรี่",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "อีกะหรี",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "อีช้างเย๊ด",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "อีชาติชั้ว",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "อีด อก",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "อีด/อก",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "อีดอก",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "อีด-อก",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "อีตัว",
+   "whole_name": true,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "อีตุ๊ด",
+   "whole_name": true,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "อีบ้า",
+   "whole_name": true,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "อีมะขวิด",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "อีลูก",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "อีวอก",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "อีสัด",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "อีสัส",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "อีสาด",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "อีหอยดอง",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "อีหัวสำรอก",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "อีห่า",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "อีหา",
+   "whole_name": true,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "อีห่าราก",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "อีอับปรี",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "ฮีเป็นหนอง",
+   "whole_name": false,
+   "countries": [
+    "THA"
+   ]
+  },
+  {
+   "phrase": "Nag Jajakol",
+   "whole_name": false,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "Jajakol",
+   "whole_name": false,
+   "countries": [
+    "PHL"
+   ]
+  },
+  {
+   "phrase": "Nag Jajakol sa",
+   "whole_name": false,
+   "countries": [
+    "PHL"
+   ]
+  }
+ ],
+ "chains": {
+  "IDN": [
+   "% ARABICA",
+   "21 Cineplex",
+   "3 Store",
+   "4FINGERS",
+   "99 Ranch Market",
+   "A BATHING APE",
+   "A&W",
+   "ADIRA FINANCE",
+   "AEON CREDIT SERVICE",
+   "AEON Mall",
+   "AG",
+   "ALDO",
+   "ALiLA",
+   "ANGSANA",
+   "APOTEK K24",
+   "AUTOGRAPH COLLECTION HOTELS",
+   "AVIS",
+   "Ace Hardware",
+   "Agung Rent a Car",
+   "Alfaexpress",
+   "Alfamart",
+   "Alfamidi",
+   "Aloft",
+   "Andaz",
+   "Apotek GENERIK",
+   "Auntie Anne's",
+   "Avenue",
+   "Ayam Bakar Wong Solo",
+   "BAKMI Naga",
+   "BANK BPD BALI",
+   "BANK BPD DIY",
+   "BANK BUKOPIN",
+   "BANK DKI",
+   "BANK GANESHA",
+   "BANK INDONESIA",
+   "BANK JASA JAKARTA",
+   "BANK KALBAR",
+   "BANK MASPION",
+   "BANK MAYAPADA",
+   "BANK MEGA",
+   "BANK MEGA SYARIAH",
+   "BANK MESTIKA",
+   "BANK NEGARA INDONESIA",
+   "BANK OF CHINA",
+   "BANK PAPUA",
+   "BANK RAKYAT INDONESIA",
+   "BANK SUMSELBABEL",
+   "BCA syariah",
+   "BFI FINANCE",
+   "BLACK CANYON COFFEE",
+   "BNP PARIBAS",
+   "BORNGA",
+   "BURGER KING",
+   "BVLGARI HOTELS & RESORTS",
+   "BW Signature Collection",
+   "BYD",
+   "BYD Facilities",
+   "Bakmi GM",
+   "Bank Aceh",
+   "Bank Bank Capital Indonesia",
+   "Bank Bjb",
+   "Bank Capital",
+   "Bank Capital Indonesia",
+   "Bank Central Asia",
+   "Bank Jateng",
+   "Bank MAYORA",
+   "Bank Muamalat",
+   "Bank Nagari",
+   "Bank SUMUT",
+   "Bank Sahabat Sampoerna",
+   "Bank Sinarmas",
+   "Bank Syariah Indonesia",
+   "Bank Tabungan Negara",
+   "Bank bjb",
+   "Bank of India",
+   "BankNTB",
+   "Baskin-Robbins",
+   "Bata",
+   "Bath & Body Works",
+   "Batik Keris",
+   "Benihana",
+   "Bershka",
+   "Best Western",
+   "Best Western PLUS",
+   "Best Western PREMIER",
+   "Boots",
+   "Boston",
+   "BreakFree",
+   "Buccheri",
+   "CALVIN KLEIN",
+   "CELEBRITY Fitness",
+   "CELINE",
+   "CFC",
+   "CGV Cinemas",
+   "CHERY",
+   "CHICHA San Chen",
+   "CIMB BANK",
+   "CIMB NIAGA",
+   "CIMB NIAGA syariah",
+   "CIRCLE K",
+   "CITY-LINK Express",
+   "COACH",
+   "COLD STONE CREAMERY",
+   "CONRAD",
+   "CONVERSE",
+   "COTTON ON",
+   "COURTYARD by Marriott",
+   "CROWNE PLAZA",
+   "CTBC BANK",
+   "Carrefour",
+   "Carvil",
+   "Century",
+   "Charles & Keith",
+   "Chatime",
+   "Colorbox",
+   "Commonwealth Bank",
+   "Continental",
+   "Crocs",
+   "Crystal Jade",
+   "D' COST Seafood",
+   "DAISO",
+   "DBS",
+   "DECATHLON",
+   "DHL",
+   "DOUBLE TREE by Hilton",
+   "DUNKIN'",
+   "Dairy Queen",
+   "Danamon",
+   "Danamon Syariah",
+   "Days Inn",
+   "Dcrepes",
+   "Denny's",
+   "Design Hotels",
+   "Deutsche Bank",
+   "Dian Pelangi",
+   "Dior",
+   "Domino's Pizza",
+   "Doner Kebab",
+   "ES TELER 77",
+   "ESL Express",
+   "Early Learning Centre",
+   "Eiger",
+   "Electronic Solution",
+   "Element",
+   "Elizabeth",
+   "English First",
+   "FOUR POINTS BY SHERATON",
+   "FOX HOTELS",
+   "Fairfield Inn by Marriott",
+   "Fairfield Marriott",
+   "Family Mart",
+   "FedEx",
+   "Fish & Co",
+   "Fitness First",
+   "Fladeo",
+   "Flash Coffee",
+   "Ford",
+   "Four Seasons",
+   "Funworld",
+   "GAP",
+   "GENKI SUSHI",
+   "GEOX",
+   "GIORDANO",
+   "GOLDEN TULIP",
+   "GOODYEAR",
+   "GRAN MELIÁ HOTELS & RESORTS",
+   "GRAND HYATT",
+   "GRAND MERCURE",
+   "GUCCI",
+   "GUESS",
+   "Garuda Indonesia",
+   "Gaudi",
+   "Giant Food Stores",
+   "Globe",
+   "Gosh",
+   "GraPARI Telkomsel",
+   "Gramedia",
+   "Guardian",
+   "Gyu-Kaku",
+   "H&M",
+   "HANAMASA",
+   "HARRIS HOTELS",
+   "HERO",
+   "HOLLAND BAKERY",
+   "HOOTERS",
+   "HOSHINOYA",
+   "HSBC",
+   "HUGO BOSS",
+   "HYATT PLACE",
+   "HYATT REGENCY",
+   "Haagen-Dazs",
+   "Hammer",
+   "Handwritten COLLECTION",
+   "Happy Puppy",
+   "Hard Rock CAFE",
+   "Hertz",
+   "Hilton",
+   "Hilton Garden Inn",
+   "HokBen",
+   "Holiday Inn",
+   "Holiday Inn Express",
+   "Holiday Inn Express Hotel & Suites",
+   "Holiday Inn Resort",
+   "Honda",
+   "Hotel 88",
+   "Hotel Indigo",
+   "Hotel Santika",
+   "Howard Johnson",
+   "Hush Puppies",
+   "Hypermart",
+   "Hyundai Capital",
+   "Hyundai Engineering",
+   "Hyundai Engineering & Construction",
+   "Hyundai KEFICO",
+   "Hyundai TRANSYS",
+   "I CAN READ",
+   "ICBC",
+   "ICHIBAN SUSHI",
+   "IHG Independent SPHC",
+   "IKEA",
+   "INNOCEAN WORLDWIDE",
+   "INNSIDE BY MELIÁ",
+   "Indomaret",
+   "InterContinental",
+   "Inul Vizta",
+   "J&T Express",
+   "J.Co Donuts & Coffee",
+   "JAKARTA COFFEE HOUSE",
+   "JET",
+   "JNE",
+   "JW Marriott",
+   "KEB Hana Bank",
+   "KFC",
+   "KIMPTON",
+   "KIMUKATSU",
+   "KLENGER BURGER",
+   "KOI Thé",
+   "KOPITIAM",
+   "KPMG",
+   "KUMON",
+   "Kafe Betawi",
+   "Kate Spade",
+   "Kipling",
+   "Krispy Kreme",
+   "Kuretake Inn",
+   "Kyriad Hotel",
+   "LACOSTE",
+   "LAWSON",
+   "LOTTE Grosir",
+   "LOTTE Mart",
+   "LXR Hotels & Resorts",
+   "Le MERIDIEN",
+   "Levi's",
+   "Lion parcel",
+   "Longchamp",
+   "MANGO",
+   "MARKS & SPENCER",
+   "MELIÁ HOTELS & RESORTS",
+   "METRO Department Store",
+   "MICHAEL KORS",
+   "MITSUBISHI",
+   "MONTATO",
+   "MUFG",
+   "Marriott",
+   "Marriott EXECUTIVE APARTMENTS",
+   "Marriott VACATION CLUB",
+   "Martabak Pizza Orins",
+   "Massimo Dutti",
+   "Matahari",
+   "Maybank",
+   "Mazda",
+   "Mazda Facilities",
+   "McDonald's",
+   "Medikids",
+   "Mercure",
+   "Midori",
+   "Mister Baso",
+   "Mister Donut",
+   "Moxy Hotels",
+   "Mr Jeff",
+   "MÖVENPICK HOTELS & RESORTS",
+   "Mövenpick",
+   "NAV",
+   "NIKE",
+   "NIPPON EXPRESS",
+   "NISSAN",
+   "NOBU NATIONAL BANK",
+   "NOVOTEL",
+   "Natural Lawson",
+   "New Look",
+   "Nokia",
+   "OCBC Bank",
+   "OCBC NISP",
+   "OLDTOWN WHITE COFFEE",
+   "OOTOYA",
+   "OPTIK MELAWAI",
+   "ORACLE Facilities",
+   "OYSHO",
+   "Oakley",
+   "Oke Shop",
+   "Old Chang Kee",
+   "Oppo",
+   "OshKosh B'gosh",
+   "Outback Steakhouse",
+   "PARADISUS BY MELIÁ",
+   "PARK HYATT",
+   "PEPPERS",
+   "PERIPLUS",
+   "PERTAMINA",
+   "PHO 24",
+   "PRADA",
+   "PREFERENCE HOTELS",
+   "PULL&BEAR",
+   "PUMA",
+   "Pahala Express",
+   "Panasonic",
+   "PaninBank",
+   "Payless Shoesource",
+   "Pegadaian",
+   "Pepper Lunch",
+   "PermataBank",
+   "PermataBank Syariah",
+   "Pizza Hut",
+   "Planet Surf",
+   "Pojok Busana",
+   "Polo",
+   "Popeyes LOUISIANA KITCHEN",
+   "Pos Indonesia",
+   "Potato Corner",
+   "Presotea",
+   "Prodia",
+   "Prudential",
+   "QNB KESAWAN",
+   "QUALCOMM Facilities",
+   "Quick CHICKEN",
+   "Quiznos Sub",
+   "RAMADA",
+   "RENAISSANCE",
+   "RESTORAN garuda",
+   "RIP CURL",
+   "ROCKET CHICKEN",
+   "ROYAL HIDEAWAY HOTELS & RESORTS",
+   "Rabbani",
+   "Radisson Blu",
+   "Ramada encore by Wyndham",
+   "Reebok",
+   "Regent Hotels & Resorts",
+   "Rice Bowl",
+   "Richeese Factory",
+   "Ritz-Carlton",
+   "Rotelli",
+   "Rotiboy",
+   "SAIC Facilities",
+   "SAIC MG",
+   "SAMSUNG",
+   "SEDERHANA",
+   "SEPHORA",
+   "SHABURI-KINTAN BUFFET",
+   "SICEPAT EKSPRES",
+   "SIMPANG RAYA",
+   "SIX SENSES",
+   "SKECHERS",
+   "SLH",
+   "SMBC Nikko Securities",
+   "SO/",
+   "SOL BY MELIÁ",
+   "SOLARIA",
+   "SONY",
+   "SPBU Vivo",
+   "ST. REGIS",
+   "STARBUCKS",
+   "STARBUCKS RESERVE",
+   "SUBWAY",
+   "SUPER INDO",
+   "SUSHI HIRO",
+   "SUZUKI",
+   "SWAROVSKI",
+   "Salesforce Facilities",
+   "Salsa",
+   "Samsonite",
+   "Sari Bundo",
+   "Sate Khas SENAYAN",
+   "Sentra Ponsel",
+   "Shell",
+   "Shell Recharge",
+   "Shell SELECT",
+   "Sheraton",
+   "Shihlin Taiwan Street Snacks",
+   "Shop & Drive",
+   "Sizzler",
+   "Snap Fitness",
+   "Sophie Paris",
+   "Sour Sally",
+   "Sports Station",
+   "Steve Madden",
+   "Stradivarius",
+   "Sun Life",
+   "Super 8",
+   "TACO BELL",
+   "TANAMERA COFFEE INDONESIA",
+   "TEDi",
+   "TEXAS CHICKEN",
+   "THE BODY SHOP",
+   "TIKI",
+   "TOUS les JOURS",
+   "TOYOTA",
+   "TRAC-Astra Rent a Car",
+   "TRIBE",
+   "Ta Wan",
+   "Tag Heuer",
+   "The Cheesecake Factory",
+   "The Coffee Bean & Tea Leaf",
+   "The Executive",
+   "The Luxury Collection",
+   "Timezone",
+   "Toko Gunung Agung",
+   "Tribute Portfolio",
+   "UD Trucks",
+   "UNDER ARMOUR",
+   "UNIQLO",
+   "United Overseas Bank",
+   "VANS",
+   "VERSACE",
+   "VICTORIA'S SECRET",
+   "VICTORIA'S SECRET PINK",
+   "Vivo",
+   "Voco",
+   "W HOTELS",
+   "WAHANA Express",
+   "WAROENG STEAK & SHAKE",
+   "WARUNG Léko",
+   "WESTERN UNION",
+   "WESTIN",
+   "WORLDHOTELS",
+   "WYNDHAM",
+   "Wacoal",
+   "Wendy's",
+   "Wyndham Garden",
+   "XL",
+   "XPENG",
+   "Xiaomi-Mi",
+   "YOMART",
+   "YOSHINOYA",
+   "YVES SAINT LAURENT",
+   "Yello HOTELS",
+   "Yongki Komaladi",
+   "ZARA",
+   "ZARA HOME",
+   "Zoya",
+   "adidas",
+   "amaris hotel",
+   "anteraja",
+   "atmos",
+   "bank NTT",
+   "bank bjb syariah",
+   "bank btpn",
+   "bank jatim",
+   "bank victoria",
+   "bankaltimtara",
+   "bankbanten",
+   "bp",
+   "caffe bene",
+   "citibank",
+   "dji",
+   "ecco",
+   "electronic city",
+   "erafone",
+   "favehotel",
+   "global art",
+   "havaianas",
+   "ibis",
+   "im3",
+   "janji jiwa",
+   "kimia farma",
+   "kopi kenangan",
+   "mandiri",
+   "mothercare",
+   "new balance",
+   "next",
+   "ninja xpress",
+   "pop! HOTELS",
+   "prima FRESHMART",
+   "sinaya btpn",
+   "smart JV",
+   "smartfren",
+   "swatch",
+   "swiss-belhotel",
+   "vertu HOTELS",
+   "watsons"
+  ],
+  "THA": [
+   "% ARABICA",
+   "7-Eleven",
+   "99 Speed Mart",
+   "AEKO SHOP",
+   "AEON CREDIT SERVICE",
+   "AIIZ",
+   "AION",
+   "AIS 3BB Fibre 3",
+   "ALDO",
+   "AMAN RESORTS",
+   "AMARI",
+   "AMERICAN EAGLE OUTFITTERS",
+   "AMI",
+   "ANANTARA",
+   "ANGSANA",
+   "ANYTIME FITNESS",
+   "ASTON MARTIN",
+   "AURORA Gold and Jewelry",
+   "AUTOGRAPH COLLECTION HOTELS",
+   "AVIS",
+   "All Seasons",
+   "Aloft",
+   "Ambassador",
+   "Andaz",
+   "Apple Store",
+   "Ascott the Residence",
+   "Audi",
+   "Auntie Anne's",
+   "B2S",
+   "BAAC",
+   "BANG & OLUFSEN",
+   "BANK OF CHINA",
+   "BANYAN TREE",
+   "BAR B Q PLAZA",
+   "BEAMS",
+   "BEAUTY BUFFET",
+   "BENTLEY",
+   "BETAGRO Shop",
+   "BLACK CANYON COFFEE",
+   "BLACK CANYON Kitchen",
+   "BMW",
+   "BMWi",
+   "BODY GLOVE",
+   "BONCAFE",
+   "BOON TONG KEE",
+   "BORNGA",
+   "BURBERRY",
+   "BURGER KING",
+   "BW Signature Collection",
+   "BYD",
+   "BYD Facilities",
+   "Bake a wish",
+   "Bangkok Bank",
+   "Bangkok Drugstore",
+   "Banrie Coffee",
+   "Barceló HOTELS & RESORTS",
+   "Bata",
+   "Beard Papa's",
+   "Bellinee's Bake & Brew",
+   "Benihana",
+   "Best Western",
+   "Best Western PLUS",
+   "Best Western PREMIER",
+   "Big C Depot",
+   "Big C Extra",
+   "Big C Food Services",
+   "Big C Market",
+   "Big C Place",
+   "Big C Supercenter",
+   "Big C foodplace",
+   "BoConcept",
+   "BonChon Chicken",
+   "Boost Juice Bars",
+   "Boots",
+   "Bora Korean Mart",
+   "BreadTalk",
+   "Budget",
+   "CALTEX",
+   "CALVIN KLEIN",
+   "CAMPER",
+   "CELINE",
+   "CENTARA",
+   "CHABUTON",
+   "CHAIXI",
+   "CHAO DOI COFFEE",
+   "CHEVROLET",
+   "CIMB THAI",
+   "CINNABON",
+   "CJ MORE",
+   "COCKPIT",
+   "COFFMAN",
+   "COLD STONE CREAMERY",
+   "COLD STORAGE",
+   "CONRAD",
+   "COS",
+   "COTTON ON",
+   "COURTYARD by Marriott",
+   "CROWNE PLAZA",
+   "CRÉDIT AGRICOLE",
+   "Cafe Amazon",
+   "Cafe DOITUNG",
+   "Caffe D'Oro",
+   "Caffe RITAZZA",
+   "Carrefour",
+   "Cartier",
+   "Castrol AUTO SERVICE",
+   "Central Plaza",
+   "ChaTraMue",
+   "Chairit Leasing",
+   "Char-grill Yakitori Ichiban",
+   "Chester's",
+   "Chokdee Dimsum",
+   "CoCo Fresh Tea & Juice",
+   "CoCo ICHIBANYA",
+   "Cobra PUMA Golf",
+   "Coffee World",
+   "Continental",
+   "Crocs",
+   "Curio Collection by Hilton",
+   "DAKASI",
+   "DOI CHAANG COFFEE",
+   "DOUBLE TREE by Hilton",
+   "DUNKIN'",
+   "Dairy Queen",
+   "Damacai",
+   "Days Inn",
+   "Deepal",
+   "Deloitte",
+   "Design Hotels",
+   "Deutsche Bank",
+   "Din Tai Fung",
+   "Dollar Rent A Car",
+   "Domino's Pizza",
+   "Ducati",
+   "Dusit Thani",
+   "EA Anywhere",
+   "ESPRIT",
+   "EXIM THAILAND",
+   "EXIMBANK",
+   "Eat Am Are",
+   "Eggs 'n Things",
+   "Enterprise",
+   "Europcar",
+   "Exta Plus",
+   "FITNESS24SEVEN",
+   "FLIGHT CENTRE",
+   "FOODLAND",
+   "FORTUNE",
+   "FOUR POINTS BY SHERATON",
+   "FQ&L",
+   "FRASER SUITES",
+   "FRESH ME",
+   "FUJI",
+   "FUKU MATCHA",
+   "Fascino",
+   "Ferrari",
+   "Five Star Chicken",
+   "Flash Coffee",
+   "Foot Locker",
+   "Ford",
+   "Four Seasons",
+   "G H BANK",
+   "GA/GA",
+   "GATEAUX HOUSE",
+   "GEOX",
+   "GIFFARINE",
+   "GIORDANO",
+   "GNC",
+   "GOLD'S GYM",
+   "GOLDEN TULIP",
+   "GRAND COFFEE BOY",
+   "GRAND HYATT",
+   "GRAND MERCURE",
+   "GREY HOUND CAFÉ",
+   "GUCCI",
+   "GUESS",
+   "Global House",
+   "Gloria Jean's Coffees",
+   "Great Wall Motor",
+   "Guss Damn Good",
+   "H&M",
+   "HACHIBAN-RAMEN",
+   "HERE",
+   "HOOTERS",
+   "HOP Chafe",
+   "HUA SENG HONG",
+   "HUGO BOSS",
+   "HYATT PLACE",
+   "HYATT REGENCY",
+   "Haagen-Dazs",
+   "Handwritten COLLECTION",
+   "Hard Rock CAFE",
+   "Hard Rock Hotel",
+   "Hertz",
+   "Hilton",
+   "Hilton Garden Inn",
+   "Hokkaido Baked Cheese Tart",
+   "Holiday Inn",
+   "Holiday Inn Express",
+   "Holiday Inn Express Hotel & Suites",
+   "Holiday Inn Hotel & Suites",
+   "Holiday Inn Resort",
+   "Homey Hotel",
+   "Honda",
+   "Hotel Indigo",
+   "Hotel JAL City",
+   "Howard Johnson",
+   "Hyundai Engineering",
+   "Hyundai Motor Company",
+   "I CAN READ",
+   "ICBC",
+   "IGA",
+   "IKEA",
+   "IKEA Pick-up Location",
+   "ING",
+   "INNSIDE BY MELIÁ",
+   "ISLAMIC BANK OF THAILAND",
+   "ISUZU",
+   "Iceland",
+   "InterContinental",
+   "Inthanin Coffee",
+   "Ippudo",
+   "J&T Express",
+   "JAGUAR",
+   "JIANG FISH BALL",
+   "JIB",
+   "JW Marriott",
+   "Jeffer STEAK",
+   "Jiffy",
+   "Joom Zap Hut",
+   "JustCo",
+   "KAGONOYA",
+   "KAMU",
+   "KASIKORNBANK",
+   "KATSUYA",
+   "KENZO",
+   "KEX",
+   "KFC",
+   "KIKO",
+   "KIMPTON",
+   "KOI Thé",
+   "KPMG",
+   "KUBKAO' KUBPLA",
+   "Kempinski",
+   "Kia Corporation",
+   "Kiatnakin Phatra Bank",
+   "Kipling",
+   "Kita Tea Stand",
+   "Krungsri",
+   "Kuretake Inn",
+   "L'Occitane",
+   "LACOSTE",
+   "LAMBORGHINI",
+   "LAND ROVER",
+   "LEMONY",
+   "LEXUS",
+   "LH Bank",
+   "LOTUS",
+   "LYN",
+   "Le MERIDIEN",
+   "Levi's",
+   "Little Caesars",
+   "Lotus's",
+   "Lotus's go fresh",
+   "MAJOR CINEPLEX",
+   "MARKS & SPENCER",
+   "MARU WAFFLE",
+   "MASERATI",
+   "MEGA Don Quijote",
+   "MELIÁ HOTELS & RESORTS",
+   "MEZZO",
+   "MGallery",
+   "MICHAEL KORS",
+   "MICHELIN",
+   "MITSUBISHI",
+   "MIXUE",
+   "MK RESTAURANTS",
+   "MODENA BY FRASER",
+   "MOS BURGER",
+   "MR DIY",
+   "MUANGTHAI LEASING",
+   "MUFG",
+   "Mandarin Oriental",
+   "Marriott",
+   "Marriott EXECUTIVE APARTMENTS",
+   "Marriott VACATION CLUB",
+   "Massimo Dutti",
+   "MaxMara",
+   "MaxValu",
+   "MaxValu Tanjai",
+   "Mazda",
+   "Mazda Facilities",
+   "Mc JEANS",
+   "McCafé",
+   "McDonald's",
+   "Melia",
+   "Mercedes-Benz Facilities",
+   "Mitr Sin Duan",
+   "ModusLink Facilities",
+   "Mon Cher",
+   "Montbell",
+   "Moxy Hotels",
+   "Mr Jeff",
+   "Mövenpick",
+   "NARAI PIZZERIA",
+   "NESPRESSO",
+   "NESTE OIL",
+   "NH",
+   "NIKE",
+   "NINE WEST",
+   "NIPPON EXPRESS",
+   "NISSAN",
+   "Naiin",
+   "Nanpu",
+   "Natural Lawson",
+   "Ngern Tid Lor",
+   "Nikko",
+   "Nimseeseng Leasing",
+   "OISHI RAMEN",
+   "ORACLE Facilities",
+   "OWL CHA",
+   "Oakwood",
+   "Ochaya",
+   "OfficeMate",
+   "Outback Steakhouse",
+   "PANDORA",
+   "PARK HYATT",
+   "PAUL",
+   "PENNY",
+   "PEUGEOT",
+   "PORSCHE",
+   "PREFERENCE HOTELS",
+   "PROTON",
+   "PT",
+   "PUENG NGEE CHIANG",
+   "PUMA",
+   "PURE",
+   "Panasonic AUTOMOTIVE Facilities",
+   "Park Inn by Radisson",
+   "Park Plaza",
+   "Pepper Lunch",
+   "Phungnoi Bakery",
+   "Pizza Hut",
+   "PluZ",
+   "Pop Mart",
+   "Potato Corner",
+   "Power Buy",
+   "Premier Inn",
+   "PricewaterhouseCoopers",
+   "PunThai Coffee",
+   "Pure Pharmacy",
+   "Quick Leasing",
+   "Quick Service",
+   "RABIKA COFFEE",
+   "RADISSON INDIVIDUALS",
+   "RAMADA",
+   "RED Radisson",
+   "RENAISSANCE",
+   "RENAULT",
+   "RIU PALACE",
+   "ROBINSON",
+   "ROLLS-ROYCE",
+   "Radisson",
+   "Radisson Blu",
+   "Red Lobster",
+   "Reebok",
+   "Regent Hotels & Resorts",
+   "Rent a Car",
+   "Rin Rin Bubble Milk Tea",
+   "Ritz-Carlton",
+   "S&P",
+   "SAIC Facilities",
+   "SAIC MG",
+   "SAINT ETOILE by yamazaki",
+   "SAKURA",
+   "SANTA FE STEAK",
+   "SAVE DRUG",
+   "SCANIA",
+   "SCB Life Assurance",
+   "SCG",
+   "SE-ED Book Center",
+   "SEE FAH",
+   "SF",
+   "SHIBA Hokkaido Milk Tea",
+   "SIAM COMMERCIAL BANK",
+   "SIX SENSES",
+   "SKODA",
+   "SLH",
+   "SME Development Bank",
+   "SO/",
+   "SOFITEL",
+   "SOMERSET SERVICED RESIDENCE",
+   "SOTETSU GRAND FRESA",
+   "SOUTHERN COFFEE",
+   "SQUEEZE Bar",
+   "ST. REGIS",
+   "STARBUCKS",
+   "STARBUCKS RESERVE",
+   "SUBARU",
+   "SUBWAY",
+   "SUKIYA",
+   "SUNNY",
+   "SUSCO",
+   "SUSHI EXPRESS",
+   "SUZUKI",
+   "SWAROVSKI",
+   "SWENSEN'S",
+   "Sabina",
+   "Saksiam Panit Leasing",
+   "Salesforce Facilities",
+   "Salvatore Ferragamo",
+   "Samsonite",
+   "Santander",
+   "Secret Recipe",
+   "Segafredo",
+   "Sekai-no-Yamachan",
+   "Shabushi",
+   "Shake Shack",
+   "Shama",
+   "Shangri-La",
+   "Shell",
+   "Shell HELIX OILCHANGE+",
+   "Shell SELECT",
+   "Sheraton",
+   "Siam Gas",
+   "Sizzler",
+   "Somwang Ngern Sang Dai",
+   "Sports World",
+   "Srisawad Power 1979",
+   "Srisawat",
+   "Standard Chartered",
+   "Staybridge Suites",
+   "Steak Lung Nuat",
+   "Suki Teenoi",
+   "Sukishi Buffet",
+   "Sukishi KOREAN CHARCOAL GRILL",
+   "Super U",
+   "SuperCheap",
+   "SureStay Collection by Best Western",
+   "SureStay Plus by Best Western",
+   "SureStay by Best Western",
+   "Sushiro",
+   "Swissôtel",
+   "TACO BELL",
+   "TEXACO",
+   "THAI EXPRESS",
+   "THAISRI INSURANCE",
+   "THANN",
+   "THE ALLEY",
+   "THE BODY SHOP",
+   "THE CHOCOLATE FACTORY",
+   "THE COFFEE CLUB",
+   "THE LION MILK TEA",
+   "THE NORTH FACE",
+   "THE VIRIYAH INSURANCE",
+   "THINK SPACE B2S",
+   "TIFFANY & CO.",
+   "TISCO Bank",
+   "TOM N TOMS",
+   "TOMMY HILFIGER",
+   "TOP CHAROEN",
+   "TOYOTA",
+   "TOYOTA Facilities",
+   "TPI",
+   "TPTEA",
+   "TRIBE",
+   "TSURUHA",
+   "TTB",
+   "TYRE PLUS",
+   "Tackle Berry",
+   "Tapestry Collection by Hilton",
+   "Tesla",
+   "Tesla EV",
+   "Thai Credit Retail Bank",
+   "The Cheesecake Factory",
+   "The Crest Collection",
+   "The IMPERIAL",
+   "The Luxury Collection",
+   "The Mall Lifestore",
+   "The PIZZA Company",
+   "The Shoko Chukin Bank",
+   "Thongsmith",
+   "Tim Hortons",
+   "Timberland",
+   "Ting Ting",
+   "Tokyo Megane",
+   "Tops",
+   "Tops Food Hall",
+   "Tops daily",
+   "Toys\"R\"Us",
+   "Trademark Collection",
+   "Travelodge Hotels",
+   "UD Trucks",
+   "UMAY PLUS",
+   "UNDER ARMOUR",
+   "Umm Milk",
+   "United Overseas Bank",
+   "Ups",
+   "VERSACE",
+   "VICTORIA'S SECRET",
+   "VICTORIA'S SECRET PINK",
+   "VIGNETTE COLLECTION",
+   "VOLVO",
+   "Viet Cuisine",
+   "Voco",
+   "Volkswagen",
+   "W",
+   "W HOTELS",
+   "WARAPORN SALAPAO",
+   "WESTIN",
+   "WHITE STORY",
+   "WORLDHOTELS",
+   "WYNDHAM",
+   "Wacoal",
+   "Waldorf Astoria Hotels & Resorts",
+   "Wawee Coffee",
+   "Wine Connection",
+   "Wyndham Garden",
+   "Wyndham Grand",
+   "X-ACT",
+   "XPENG",
+   "Xiaomi-Mi",
+   "YENTAFO KRUENG SONGE",
+   "YUM SAAP",
+   "YVES ROCHER",
+   "YVES SAINT LAURENT",
+   "Yayoi",
+   "ZARA HOME",
+   "ZEEKR",
+   "ZEN",
+   "adidas",
+   "atmos",
+   "au bon pain",
+   "banana leaf",
+   "bangchak",
+   "bossini",
+   "ecco",
+   "global art",
+   "go wow",
+   "iberry",
+   "ibis styles",
+   "lyf",
+   "lyn around",
+   "makro",
+   "makro foodservice",
+   "marimekko",
+   "max mart",
+   "mini Big C",
+   "moma's bubble tea bar",
+   "mx cakes bakery",
+   "new balance",
+   "nobi Cha",
+   "olino Crepe & Tea",
+   "on the table",
+   "ptt station",
+   "pullman",
+   "scoozi",
+   "sisley",
+   "smart JV",
+   "true coffee",
+   "true coffee GO",
+   "twenty Shop",
+   "watsons",
+   "เชลล์ รีชาร์จ"
+  ],
+  "PHL": [
+   "% ARABICA",
+   "2Go",
+   "7-Eleven",
+   "AJISEN RAMEN",
+   "ANGEL'S PIZZA",
+   "ANYTIME FITNESS",
+   "ASICS",
+   "ASTORIA",
+   "AVIS",
+   "AXA",
+   "Ace Hardware",
+   "Alberto's Pizza",
+   "Alfamart",
+   "All Day",
+   "All Day Supermarket",
+   "Angel's Burger",
+   "Auntie Anne's",
+   "Ayala Malls",
+   "BANK OF THE PHILIPPINE ISLANDS",
+   "BDO",
+   "BLACK CANYON COFFEE",
+   "BMWi",
+   "BORNGA",
+   "BPI",
+   "BURGER KING",
+   "Bacolod Chicken Inasal",
+   "Bank of Commerce",
+   "Bench",
+   "Best Western",
+   "Best Western PLUS",
+   "Binalot",
+   "Bo's Coffee",
+   "BoConcept",
+   "BonChon Chicken",
+   "Budget",
+   "Buffalo Wild Wings",
+   "CALTEX",
+   "CHIC-BOY",
+   "CHICHA San Chen",
+   "CINNABON",
+   "CONRAD",
+   "COTTON ON",
+   "COURTYARD by Marriott",
+   "CROWNE PLAZA",
+   "CSi",
+   "CTBC BANK",
+   "Cabalen",
+   "Cafe Amazon",
+   "California Pizza Kitchen",
+   "Candy Corner",
+   "Char-grill Yakitori Ichiban",
+   "Chatime",
+   "Chili's Grill & Bar",
+   "China Bank",
+   "Chowking",
+   "Citi HARDWARE",
+   "Classic Savory",
+   "CoCo Tea",
+   "Country Style",
+   "Crocs",
+   "Curves",
+   "Dairy Queen",
+   "Danbo",
+   "Days Inn",
+   "Denny's",
+   "Deutsche Bank",
+   "Development Bank of the Philippines",
+   "Din Tai Fung",
+   "Domino's",
+   "Dongfeng",
+   "Eastern",
+   "Eastwest Unibank",
+   "El Pollo Loco",
+   "Enterprise",
+   "Europcar",
+   "Ever SUPERMARKET",
+   "FIRST CONSOLIDATED BANK",
+   "FOUR POINTS BY SHERATON",
+   "Fairfield Inn by Marriott",
+   "Fairfield Marriott",
+   "Family Mart",
+   "Figaro",
+   "Five Star Chicken",
+   "Fogo de Chao",
+   "Ford",
+   "GAISANO GRAND",
+   "GIORDANO",
+   "GRAND HYATT",
+   "GUCCI",
+   "GUESS",
+   "Generika drugstore",
+   "Globe",
+   "Goldilocks",
+   "Gong cha",
+   "Greenwich",
+   "H&M",
+   "HANDYMAN",
+   "HSBC",
+   "HYATT REGENCY",
+   "Haagen-Dazs",
+   "Hap Chan",
+   "Hard Rock CAFE",
+   "Hertz",
+   "Hilton",
+   "Holiday Inn",
+   "Holiday Inn Express",
+   "Honda",
+   "Hush Puppies",
+   "Hyundai Engineering",
+   "Hyundai Rotem",
+   "IKEA",
+   "IKEA Pick-up Location",
+   "IMAX",
+   "Icebergs",
+   "Italianni's",
+   "J.Co Donuts & Coffee",
+   "JETTI",
+   "JINS",
+   "Jockey",
+   "Jollibee",
+   "KFC",
+   "KUMON",
+   "Kamiseta",
+   "Kenny Rogers Roasters",
+   "Kintan Buffet",
+   "Kowloon House",
+   "Krispy Kreme",
+   "Kuya J Restaurant",
+   "LACOSTE",
+   "Land Bank of the Philippines",
+   "Levi's",
+   "Lydia's Lechon",
+   "MANGO",
+   "MAX",
+   "MONKI",
+   "MUFG",
+   "Mang Inasal",
+   "Marriott",
+   "Max's Restaurant",
+   "Maybank",
+   "Mazda",
+   "Mazda Facilities",
+   "McDonald's",
+   "Med EXPRESS Drugstore",
+   "Memo",
+   "Mercedes-Benz Facilities",
+   "Mercury Drug",
+   "Mesa",
+   "Metro Bank",
+   "Metro Oil",
+   "Metro Supermarket",
+   "Metrobank",
+   "Microtel Inns & Suites",
+   "Mister Donut",
+   "Mossimo",
+   "Mr Jeff",
+   "MÖVENPICK HOTELS & RESORTS",
+   "NIKE",
+   "NINE WEST",
+   "NIPPON EXPRESS",
+   "National Book Store",
+   "Natural Lawson",
+   "North Park",
+   "ORACLE Facilities",
+   "Outback Steakhouse",
+   "PETRON",
+   "PHILIPPINE BANK OF COMMUNICATIONS",
+   "PHILIPPINE SAVINGS BANK",
+   "PHOENIX",
+   "PNB",
+   "PUMA",
+   "Pancake House",
+   "Pancit Ng Mga Taga Malabon",
+   "Panda Express",
+   "Penshoppe",
+   "Pepper Lunch",
+   "Philippine National Bank",
+   "Philippine Trust Bank",
+   "Pho Hoa",
+   "Pizza Hut",
+   "Planters Bank",
+   "Popeyes LOUISIANA KITCHEN",
+   "Potato Corner",
+   "RAMADA",
+   "RANDY'S DONUTS",
+   "RCBC",
+   "ROBINSON",
+   "Racks",
+   "Ramada encore by Wyndham",
+   "Red Ribbon",
+   "Reyes Barbecue",
+   "Robinsons Bank",
+   "Robinsons Department Store",
+   "Robinsons Easymart",
+   "Robinsons Malls",
+   "Robinsons Supermarket",
+   "Rose Pharmacy",
+   "Rustan's Supermarket",
+   "SAIC Facilities",
+   "SAIC MG",
+   "SBARRO",
+   "SCANIA",
+   "SEA OIL",
+   "SEATTLE'S BEST COFFEE",
+   "SECURITY BANK",
+   "SHABURI-KINTAN BUFFET",
+   "SKECHERS",
+   "SLH",
+   "SM Appliance Center",
+   "SM Department Store",
+   "SM Hypermarket",
+   "SM Supermalls",
+   "SM Supermarket",
+   "STARBUCKS",
+   "STARBUCKS RESERVE",
+   "SUBWAY",
+   "Salvatore",
+   "Shell",
+   "Shell Recharge",
+   "Shell Shop",
+   "Sheraton",
+   "Sizzler",
+   "South Star Drug",
+   "Standard Chartered",
+   "Steak Escape",
+   "Sterling Bank of Asia",
+   "Sun Life",
+   "Super8 Grocery",
+   "SureStay Plus by Best Western",
+   "SureStay STUDIO by BEST WESTERN",
+   "TACO BELL",
+   "TGI Friday's",
+   "THE ALLEY",
+   "THE BODY SHOP",
+   "THE MARKETPLACE",
+   "Tapa King",
+   "Teriyaki Boy",
+   "Tesla",
+   "Texas Roadhouse",
+   "The Coffee Bean & Tea Leaf",
+   "The Generics Pharmacy",
+   "Tim Hortons",
+   "Timberland",
+   "TotalEnergies",
+   "Toyoko Inn",
+   "True Value",
+   "Tryp by Wyndham",
+   "Tsurumaru Udon",
+   "Tully's",
+   "Tumi",
+   "Turks",
+   "UCC Cafe Mercado",
+   "UNIQLO",
+   "Uncle John's",
+   "Unioil",
+   "UnionBank",
+   "United Overseas Bank",
+   "VICTORIA'S SECRET PINK",
+   "WESTIN",
+   "Wendy's",
+   "Wilcon Depot",
+   "Xiaomi-Mi",
+   "YELLOW CAB Pizza Co.",
+   "YIFANG TAIWAN FRUIT TEA",
+   "YOSHINOYA",
+   "YVES SAINT LAURENT",
+   "Yayoi",
+   "Zagu",
+   "atmos",
+   "bonjour",
+   "global art",
+   "lyf",
+   "ninja xpress",
+   "prince hypermart",
+   "ptt station",
+   "smart JV",
+   "ultra mega",
+   "watsons"
+  ]
+ },
+ "find_places": {
+  "accommodation": "500-5100-0000",
+  "administrative areas buildings": "900-9300-0335",
+  "administrative region": "900-9100-0215",
+  "airport": "400-4000-4581",
+  "amusement holiday park": "550-5520-0000",
+  "atm bank exchange": "700-7000-0107",
+  "bar pub": "200-2000-0011",
+  "body of water": "350-3500-0233",
+  "bookshop": "600-6700-0087",
+  "building": "900-9300-0221",
+  "business industry": "700-7250-0136",
+  "camping": "500-5100-0056",
+  "car dealer repair": "700-7850-0000",
+  "car rental": "700-7851-0117",
+  "casino": "200-2300-0021",
+  "cinema": "200-2100-0019",
+  "city town village": "900-9100-0215",
+  "clothing accessories shop": "600-6800-0000",
+  "coffee tea": "100-1100-0010",
+  "communication media": "700-7100-0000",
+  "dance night club": "200-2000-0012",
+  "department store": "600-6200-0063",
+  "education facility": "800-8200-0000",
+  "electronics shop": "600-6500-0072",
+  "facilities": "800-8700-0000",
+  "facility": "800-8700-0000",
+  "fair convention facility": "800-8400-0176",
+  "ferry terminal": "400-4100-0044",
+  "food drink": "600-6000-0000",
+  "forest heath vegetation": "350-3522-0239",
+  "going out": "200-2000-0000",
+  "government community facility": "800-8100-0000",
+  "hardware house garden shop": "600-6600-0077",
+  "hospital health care facility": "800-8000-0000",
+  "hostel": "500-5100-0055",
+  "hotel": "500-5000-0053",
+  "kiosk convenience store": "600-6000-0061",
+  "landmark attraction": "300-3000-0023",
+  "library": "800-8300-0175",
+  "mall": "600-6100-0062",
+  "motel": "500-5000-0054",
+  "mountain hill": "350-3510-0236",
+  "museum": "300-3100-0000",
+  "natural geographical": "350-3550-0336",
+  "outdoor area complex": "900-9200-0000",
+  "parking facility": "800-8500-0000",
+  "petrol station": "700-7600-0116",
+  "pharmacy": "600-6400-0070",
+  "police emergency": "700-7300-0112",
+  "post office": "700-7450-0114",
+  "public toilet rest area": "800-8700-0198",
+  "public transport": "400-4100-0042",
+  "railway station": "400-4100-0035",
+  "recreation": "550-5510-0000",
+  "religious place": "300-3200-0309",
+  "restaurant": "100-1000-0000",
+  "service": "700-7400-0000",
+  "shop": "600-6900-0000",
+  "shopping": "600-6900-0000",
+  "snacks fast food": "100-1000-0009",
+  "sport outdoor shop": "600-6900-0094",
+  "sports facility venue": "800-8600-0000",
+  "taxi stand": "400-4100-0047",
+  "theatre music culture": "200-2200-0000",
+  "tourist information": "700-7460-0115",
+  "transport": "400-4200-0241",
+  "travel agency": "700-7400-0133",
+  "undersea feature": "350-3520-0224"
+ },
+ "foodtypes": {
+  "100-000": "North American",
+  "101-000": "American",
+  "101-001": "American-Californian",
+  "101-002": "American-Southwestern",
+  "101-003": "American-Barbecue/Southern",
+  "101-004": "American-Creole",
+  "101-039": "American-Native American",
+  "101-040": "American-Soul Food",
+  "101-070": "American-Cajun",
+  "102-000": "Mexican",
+  "102-005": "Mexican-Yucateca",
+  "102-006": "Mexican-Oaxaquena",
+  "102-007": "Mexican-Veracruzana",
+  "102-008": "Mexican-Poblana",
+  "103-000": "Canadian",
+  "150-000": "Australian",
+  "151-000": "Hawaiian/Polynesian",
+  "152-000": "Caribbean",
+  "153-000": "Cuban",
+  "200-000": "Asian",
+  "201-000": "Chinese",
+  "201-009": "Chinese-Szechuan",
+  "201-010": "Chinese-Cantonese",
+  "201-041": "Chinese-Shanghai",
+  "201-042": "Chinese-Beijing",
+  "201-043": "Chinese-Hunan/Hubei",
+  "201-044": "Chinese-Jiangsu/Zhejiang",
+  "201-045": "Chinese-Shandong",
+  "201-046": "Chinese-Northeastern",
+  "201-047": "Chinese-Inner Mongolian",
+  "201-048": "Chinese-Yunnan/Guizhou",
+  "201-049": "Chinese-Taiwanese",
+  "201-050": "Chinese-Guangxi",
+  "201-051": "Chinese-Jiangxi",
+  "201-052": "Chinese-Northwestern",
+  "201-053": "Chinese-Porridge",
+  "201-054": "Chinese-Islamic",
+  "201-055": "Chinese-Hot Pot",
+  "202-000": "Indian",
+  "202-011": "Indian-Tandoori",
+  "202-012": "Indian-Punjabi",
+  "202-013": "Indian-Rajasthani",
+  "202-014": "Indian-Mughlai",
+  "202-015": "Indian-Bengali",
+  "202-016": "Indian-Goan",
+  "202-017": "Indian-Jain",
+  "202-018": "Indian-Konkani",
+  "202-019": "Indian-Gujarati",
+  "202-020": "Indian-Parsi",
+  "202-021": "Indian-South Indian",
+  "202-022": "Indian-Maharashtrian",
+  "202-023": "Indian-North Indian",
+  "202-024": "Indian-Malvani",
+  "202-025": "Indian-Hyderabadi",
+  "203-000": "Japanese",
+  "203-026": "Japanese-Sushi",
+  "204-000": "Southeast Asian",
+  "205-000": "Thai",
+  "206-000": "Vietnamese",
+  "207-000": "Korean",
+  "208-000": "Pakistani",
+  "209-000": "Malaysian",
+  "210-000": "Bruneian",
+  "211-000": "Indonesian",
+  "212-000": "Filipino",
+  "250-000": "Middle Eastern",
+  "251-000": "Azerbaijani",
+  "252-000": "Turkish",
+  "253-000": "Lebanese",
+  "254-000": "Yemeni",
+  "255-000": "Burmese",
+  "256-000": "Cambodian",
+  "257-000": "Singaporean",
+  "258-000": "Sri Lankan",
+  "259-000": "Tibetan",
+  "300-000": "European",
+  "301-000": "French",
+  "301-027": "French-Alsatian",
+  "301-028": "French-Auvergnate",
+  "301-029": "French-Basque",
+  "301-030": "French-Corse",
+  "301-031": "French-Lyonnaise",
+  "301-032": "French-Provencale",
+  "301-033": "French-Sud-ouest",
+  "302-000": "German",
+  "303-000": "Greek",
+  "304-000": "Italian",
+  "305-000": "Irish",
+  "306-000": "Austrian",
+  "307-000": "Belgian",
+  "308-000": "British Isles",
+  "309-000": "Dutch",
+  "310-000": "Swiss",
+  "311-000": "Spanish",
+  "311-034": "Spanish-Tapas",
+  "313-000": "Portuguese",
+  "314-000": "Maltese",
+  "315-000": "Sicilian",
+  "350-000": "Scandinavian",
+  "351-000": "Finnish",
+  "352-000": "Swedish",
+  "353-000": "Norwegian",
+  "354-000": "Danish",
+  "370-000": "East European",
+  "371-000": "Hungarian",
+  "372-000": "Mediterranean",
+  "373-000": "Baltic",
+  "374-000": "Belorussian",
+  "375-000": "Ukrainian",
+  "376-000": "Polish",
+  "377-000": "Russian",
+  "378-000": "Bohemian",
+  "379-000": "Balkan",
+  "380-000": "Caucasian",
+  "381-000": "Romanian",
+  "382-000": "Armenian",
+  "400-000": "South American",
+  "401-000": "Surinamese",
+  "402-000": "Venezuelan",
+  "403-000": "Latin American",
+  "404-000": "Argentinean",
+  "405-000": "Chilean",
+  "406-000": "Brazilian",
+  "406-035": "Brazilian-Baiana",
+  "406-036": "Brazilian-Capixaba",
+  "406-037": "Brazilian-Mineira",
+  "406-038": "Brazilian-Bakery",
+  "407-000": "Peruvian",
+  "500-000": "African",
+  "501-000": "Moroccan",
+  "502-000": "Egyptian",
+  "503-000": "Ethiopian",
+  "504-000": "Seychellois",
+  "505-000": "South African",
+  "506-000": "North African",
+  "600-000": "Oceanic",
+  "800-056": "Steak House",
+  "800-057": "Pizza",
+  "800-058": "Snacks & Beverages",
+  "800-059": "Hot Dogs",
+  "800-060": "Sandwich",
+  "800-061": "Breakfast",
+  "800-062": "Chicken",
+  "800-063": "Ice Cream",
+  "800-064": "International",
+  "800-065": "Continental",
+  "800-066": "Fusion",
+  "800-067": "Burgers",
+  "800-068": "Creperie",
+  "800-069": "Pastries",
+  "800-071": "Fondue",
+  "800-072": "Brunch",
+  "800-073": "Bistro",
+  "800-074": "BrewPub",
+  "800-075": "Seafood",
+  "800-076": "Vegan",
+  "800-077": "Vegetarian",
+  "800-078": "Grill",
+  "800-079": "Jewish/Kosher",
+  "800-080": "Soup",
+  "800-081": "Lunch",
+  "800-082": "Dinner",
+  "800-083": "Natural/Healthy",
+  "800-084": "Organic",
+  "800-085": "Noodles"
+ },
+ "chain_ids": {
+  "IDN": {
+   "A&W": "1625",
+   "AG": "6948",
+   "ANZ": "2493",
+   "Alfamart": "3664",
+   "BANK BUKOPIN": "3627",
+   "BANK MASPION": "3643",
+   "BANK MAYAPADA": "3644",
+   "BANK MEGA": "3646",
+   "BANK NEGARA INDONESIA": "3647",
+   "BANK RAKYAT INDONESIA": "3626",
+   "BCA syariah": "32604",
+   "Bank Bjb": "35818",
+   "Bank Central Asia": "3629",
+   "Bank Muamalat": "6952",
+   "Bank Nagari": "24151",
+   "Bank SUMUT": "7922",
+   "Bank Sinarmas": "9285",
+   "Bank Syariah Indonesia": "33920",
+   "Bank Tabungan Negara": "7923",
+   "Boston": "5969",
+   "CFC": "6964",
+   "CIMB BANK": "7087",
+   "CIMB NIAGA": "3648",
+   "CIMB NIAGA syariah": "24439",
+   "Danamon": "3630",
+   "Danamon Syariah": "24434",
+   "ESL Express": "30956",
+   "H&M": "4199",
+   "Indomaret": "8650",
+   "JNE": "30944",
+   "KEB Hana Bank": "6270",
+   "Lion parcel": "36982",
+   "MANGO": "4292",
+   "Maybank": "3657",
+   "New Look": "6063",
+   "OCBC Bank": "6920",
+   "OCBC NISP": "8711",
+   "PaninBank": "3656",
+   "PermataBank": "3650",
+   "Pos Indonesia": "30954",
+   "Ramayana": "9286",
+   "SEDERHANA": "24145",
+   "SICEPAT EKSPRES": "36981",
+   "SMBC": "24982",
+   "SPKLU PLN": "303460",
+   "STARBUCKS": "1396",
+   "TEXAS CHICKEN": "7013",
+   "TIKI": "30945",
+   "TOYOTA": "251",
+   "United Overseas Bank": "7899",
+   "WAHANA Express": "36984",
+   "WESTERN UNION": "3183",
+   "amaris hotel": "24514",
+   "anteraja": "36983",
+   "bank sinarmas": "6955",
+   "bank victoria": "3652",
+   "ibis": "23",
+   "ibis styles": "22195",
+   "kopi kenangan": "32781",
+   "mandiri": "3642",
+   "next": "6064",
+   "ninja xpress": "36976"
+  },
+  "THA": {
+   "7-Eleven": "425",
+   "71 EXPORT": "26370",
+   "AMARI": "24530",
+   "ANYTIME FITNESS": "21487",
+   "Advice": "26399",
+   "B2S": "22413",
+   "BANG & OLUFSEN": "5971",
+   "BAR B Q PLAZA": "7961",
+   "BEAUTY COTTAGE": "31282",
+   "BETAGRO Shop": "25778",
+   "BLACK CANYON COFFEE": "6959",
+   "BURBERRY": "8267",
+   "BaNANA": "26401",
+   "Bake a wish": "36603",
+   "Balenciaga": "24965",
+   "Bangkok Bank": "3625",
+   "Bangkok Drugstore": "28597",
+   "Bangkok Grill": "26418",
+   "Bata": "5086",
+   "Best Western": "2",
+   "BonChon Chicken": "25234",
+   "Boots": "6960",
+   "CALVIN KLEIN": "5181",
+   "CHAO DOI COFFEE": "25779",
+   "CHARGE+": "303383",
+   "CIMB THAI": "6967",
+   "CITY CHAIN": "9645",
+   "COACH": "4186",
+   "COTTON ON": "9822",
+   "CP Fresh Mart": "8153",
+   "Cafe Amazon": "6961",
+   "Cartier": "24685",
+   "ChaTraMue": "28589",
+   "Chester's": "6966",
+   "Coffee World": "3778",
+   "DHL": "6807",
+   "DIESEL": "5958",
+   "DOI CHAANG COFFEE": "25773",
+   "DUNKIN'": "33502",
+   "Dairy Queen": "1518",
+   "ESPRIT": "4288",
+   "EV STATION PLUZ": "303381",
+   "EVOLT": "303390",
+   "Eat Am Are": "36588",
+   "Exta Plus": "25932",
+   "FRESH ME": "36597",
+   "FUKU MATCHA": "36579",
+   "Five Star Chicken": "28377",
+   "Forte": "89",
+   "GATEAUX HOUSE": "9094",
+   "GINKA": "303421",
+   "GIORDANO": "8255",
+   "GUCCI": "5208",
+   "GUESS": "7035",
+   "Government Savings Bank": "6976",
+   "HACHIBAN-RAMEN": "6977",
+   "HUA SENG HONG": "36601",
+   "HUGO BOSS": "5212",
+   "Honda": "119",
+   "IT CITY": "26406",
+   "JIANG FISH BALL": "6980",
+   "JIB": "26407",
+   "Jeffer STEAK": "25776",
+   "Jelly Bunny": "28592",
+   "KAMU": "36596",
+   "KASIKORNBANK": "6982",
+   "KATSUYA": "36599",
+   "KEX": "31268",
+   "KOI Thé": "33621",
+   "KRUNGTHAI BANK": "6986",
+   "Kipling": "9241",
+   "Krungsri": "6953",
+   "Kudsan Bakery & Coffee": "32289",
+   "LACOSTE": "4437",
+   "LAWSON 108": "26414",
+   "LEE": "21407",
+   "LEMONY": "36623",
+   "LH Bank": "8569",
+   "LYN": "26383",
+   "Levi's": "4439",
+   "Lotus's": "7012",
+   "Lotus's go fresh": "9091",
+   "MINISO": "28666",
+   "MIXUE": "36578",
+   "MK RESTAURANTS": "6989",
+   "Mister Donut": "6988",
+   "NARAI PIZZERIA": "7964",
+   "NIKE": "4217",
+   "Naiin": "22415",
+   "OWL CHA": "36581",
+   "Ochaya": "26429",
+   "OneCharge": "303439",
+   "Oppo": "26085",
+   "PROCheck": "22402",
+   "Pepper Lunch": "23139",
+   "Phungnoi Bakery": "26430",
+   "Potato Corner": "33913",
+   "Pretty Girl": "5229",
+   "Puff & Pie": "26432",
+   "PunThai Coffee": "31274",
+   "RALPH LAUREN": "4223",
+   "REVER SHARGER": "303388",
+   "S&P": "7000",
+   "SAMSUNG": "7671",
+   "SE-ED Book Center": "20403",
+   "SIAM COMMERCIAL BANK": "22417",
+   "SIMPLE": "5244",
+   "SME Development Bank": "8571",
+   "SONY": "3921",
+   "SOUTHERN COFFEE": "32291",
+   "SUBWAY": "1605",
+   "SWAROVSKI": "7195",
+   "SWENSEN'S": "1865",
+   "Sabina": "26389",
+   "Salvatore Ferragamo": "25834",
+   "Samsonite": "4360",
+   "Shabushi": "8574",
+   "Siam Gas": "9096",
+   "Suki Teenoi": "36574",
+   "THE LION MILK TEA": "36595",
+   "THE NORTH FACE": "66",
+   "THE VIRIYAH INSURANCE": "25782",
+   "TIFFANY & CO.": "20097",
+   "TOYOTA": "251",
+   "TTB": "7017",
+   "Telewiz": "26409",
+   "The PIZZA Company": "7016",
+   "Tops": "7958",
+   "Tops daily": "22410",
+   "Toys\"R\"Us": "3384",
+   "UMAY PLUS": "24520",
+   "United Overseas Bank": "7899",
+   "WESTERN UNION": "3183",
+   "Wawee Coffee": "7950",
+   "Wine Connection": "28591",
+   "YOSHINOYA": "3393",
+   "YUM SAAP": "7963",
+   "Yamazaki": "22236",
+   "Yayoi": "7022",
+   "ZEIN": "26395",
+   "acer": "21582",
+   "adidas": "5911",
+   "coffee Today": "8573",
+   "dji": "36565",
+   "dtac": "26402",
+   "iStudio": "26405",
+   "makro foodservice": "35800",
+   "moma's bubble tea bar": "36591",
+   "mr bun": "26439",
+   "new balance": "21095",
+   "nobi Cha": "36580",
+   "pullman": "26",
+   "swatch": "7769",
+   "true": "26438",
+   "watsons": "7019",
+   "สตาร์บัคส์": "1396",
+   "เคเอฟซี": "1559",
+   "เชลล์": "10",
+   "แมคโดนัลด์": "1566"
+  },
+  "PHL": {
+   "7-Eleven": "425",
+   "ACMobility": "303425",
+   "ALDO": "4166",
+   "Abenson": "8705",
+   "Adobo Connection": "30962",
+   "All Day": "32300",
+   "Asia Trust Bank": "7530",
+   "Asia United Bank": "8692",
+   "BANK OF THE PHILIPPINE ISLANDS": "8682",
+   "BBQ Chicken": "26073",
+   "BDO": "8681",
+   "BPI": "2971",
+   "BYD": "6220",
+   "Bank of Commerce": "8689",
+   "Bank of the Philippine Islands": "8682",
+   "Bench": "8674",
+   "Binalot": "30964",
+   "BonChon Chicken": "25234",
+   "BreadTalk": "22338",
+   "Bridgestone": "6353",
+   "CTBC BANK": "2504",
+   "California Pizza Kitchen": "1499",
+   "Carrefour": "42",
+   "Chatime": "9131",
+   "China Bank": "8685",
+   "Chowking": "8088",
+   "Classic Savory": "30966",
+   "CoCo Fresh Tea & Juice": "36593",
+   "DAISO": "25953",
+   "DUNKIN'": "33502",
+   "Dairy Queen": "1518",
+   "Eastwest Unibank": "8693",
+   "GOLD'S GYM": "33803",
+   "Generika drugstore": "22343",
+   "Gerry's Grill": "9087",
+   "Giligan's Restaurant": "30967",
+   "Gong cha": "21425",
+   "Greenwich": "8090",
+   "HANDYMAN": "22344",
+   "HANG TEN": "7369",
+   "Hush Puppies": "8955",
+   "Ineng's Special BBQ": "30970",
+   "J.Co Donuts & Coffee": "24330",
+   "JRS Express": "22347",
+   "Jollibee": "7403",
+   "KFC": "1559",
+   "Kashieca": "25532",
+   "Kenny Rogers Roasters": "7882",
+   "Kuya J Restaurant": "30989",
+   "LAWSON": "6309",
+   "LBC": "20705",
+   "Land Bank": "6893",
+   "Land Bank of the Philippines": "7531",
+   "Levi's": "4439",
+   "Lydia's Lechon": "30973",
+   "MANGO": "4292",
+   "Mang Inasal": "8091",
+   "Mann Hann": "30974",
+   "Max's Restaurant": "8698",
+   "Maybank": "3657",
+   "McCafé": "5314",
+   "McDonald's": "1566",
+   "Mercury Drug": "8700",
+   "Metrobank": "8683",
+   "Mint": "25535",
+   "Mister Donut": "6988",
+   "MoneyGram": "20442",
+   "NORMA": "1200",
+   "National Book Store": "8669",
+   "OCTAGON": "22348",
+   "PETRON": "7065",
+   "PHILIPPINE BANK OF COMMUNICATIONS": "7532",
+   "PHILIPPINE BUSINESS BANK": "8696",
+   "PHILIPPINE SAVINGS BANK": "8688",
+   "PNB": "29087",
+   "PUMA": "7635",
+   "Pepper Lunch": "23139",
+   "Philippine National Bank": "7058",
+   "Philippine Trust Bank": "7533",
+   "Pho Hoa": "30990",
+   "Popeyes LOUISIANA KITCHEN": "1584",
+   "Potato Corner": "33913",
+   "Puregold": "8708",
+   "RCBC": "8756",
+   "Rai Rai Ken": "30976",
+   "Razon's of Guagua": "30977",
+   "Red Ribbon": "8094",
+   "Reyes Barbecue": "8095",
+   "Robinsons Supermarket": "8709",
+   "SAMSUNG": "7671",
+   "SBARRO": "1591",
+   "SECURITY BANK": "8687",
+   "SKECHERS": "4226",
+   "SM Appliance Center": "22350",
+   "STARBUCKS": "1396",
+   "SUBWAY": "1605",
+   "Slice N' Dice": "30991",
+   "Sterling Bank of Asia": "4397",
+   "THE BODY SHOP": "8201",
+   "The French Baker": "30980",
+   "The Generics Pharmacy": "8701",
+   "Tokyo Tokyo": "8097",
+   "Tully's": "1398",
+   "Turks": "36563",
+   "Uncle John's": "35830",
+   "UnionBank": "7320",
+   "WESTERN UNION": "3183",
+   "Wendy's": "1620",
+   "YELLOW CAB Pizza Co.": "8099",
+   "cache cache": "5180",
+   "evro": "303409",
+   "havaianas": "22846",
+   "next": "6064",
+   "watsons": "7019"
+  }
+ },
+ "templates": {
+  "new": {
+   "file": "Supplier Name_POI_New_DDMMYY.xlsx",
+   "sha256": "3a8b4af8e958108eb97c3a80883091bd34c512d550a3a79c9ce2e800f414cdee"
+  },
+  "update": {
+   "file": "Supplier Name_POI_Updated_DDMMYY.xlsx",
+   "sha256": "5edea990a29695793fdb96a68a291ac17f99da8f440f1e155647d2a3e9765a2b"
+  },
+  "delete": {
+   "file": "Supplier Name_POI_Deleted_DDMMYY.xlsx",
+   "sha256": "f0df681fcd79b6567917ad308f2060ada4b5a0362658ff8de996b4680ded014d"
+  }
+ }
+}

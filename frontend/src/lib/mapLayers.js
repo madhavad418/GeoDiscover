@@ -70,7 +70,11 @@ function addPoints(map, L) {
   });
   add({
     id: `${L.id}-plbl`, type: 'symbol', source: L.id, filter: notCluster, minzoom: 16,
-    layout: { 'text-font': FONT, 'text-size': 11, 'text-variable-anchor': ['top', 'bottom', 'left', 'right'], 'text-radial-offset': 0.9, 'text-max-width': 9, 'text-padding': 2 },
+    layout: {
+      'text-font': FONT, 'text-size': 11, 'text-variable-anchor': ['top', 'bottom', 'left', 'right'], 'text-radial-offset': 0.9, 'text-padding': 2,
+      // No wrapping for complex-script places: MapLibre 6.16 line breaking throws on some Thai text.
+      'text-max-width': ['case', ['to-boolean', ['get', '_nowrap']], 100, 9],
+    },
   }, ANCHOR_LABELS);
 }
 

@@ -6,6 +6,8 @@ import InfoPanel from './components/InfoPanel.jsx';
 import EmptyState from './components/EmptyState.jsx';
 import Toasts, { useToasts } from './components/Toasts.jsx';
 import Icon from './components/Icon.jsx';
+import Loading from './components/Loading.jsx';
+import AreaCollection from './components/AreaCollection.jsx';
 import { ACCEPT, LAYER_COLORS, readFiles, exportableFeature, download, slug } from './lib/loaders.js';
 import { BASEMAPS } from './lib/mapStyle.js';
 import { mergeBbox, fmtNum, inBbox, pointInGeom } from './lib/geo.js';
@@ -22,8 +24,10 @@ function focusOf(L, fid) {
 
 const params = new URLSearchParams(location.search);
 let layerSeq = 0;
+let taskSeq = 0;
 
 export default function AoiViewer({ datasetId }) {
+  const [collectionFeature, setCollectionFeature] = useState(null);
   const [layers, setLayers] = useState([]);
   const [selected, setSelected] = useState(null); // { layerId, fid }
   const [hover, setHover] = useState(null);
@@ -33,6 +37,15 @@ export default function AoiViewer({ datasetId }) {
   const [basemapOpen, setBasemapOpen] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [dragging, setDragging] = useState(false);
+  // Loading tasks (file reads, saved-dataset download). Each finishes independently; the newest message shows.
+  const [tasks, setTasks] = useState([]);
+  const startTask = useCallback((message) => {
+    const id = ++taskSeq;
+    setTasks((all) => [...all, { id, message }]);
+    let done = false;
+    return () => { if (!done) { done = true; setTasks((all) => all.filter((t) => t.id !== id)); } };
+  }, []);
+  const busy = tasks.length ? tasks[tasks.length - 1].message : '';
   const [toasts, toast] = useToasts();
 
   const mapRef = useRef(null);
@@ -57,7 +70,15 @@ export default function AoiViewer({ datasetId }) {
   const handleFiles = useCallback(async (fileList) => {
     const files = [...fileList];
     if (!files.length) return;
-    const { layers: loaded, qmds } = await readFiles(files, toast);
+    const finish = startTask(`Reading ${files.length === 1 ? files[0].name : `${files.length} files`}…`);
+    // Let the loader paint before parsing large CSV/Excel files on the main thread.
+    await new Promise((r) => setTimeout(r, 30));
+    let loaded, qmds;
+    try {
+      ({ layers: loaded, qmds } = await readFiles(files, toast));
+    } finally {
+      finish();
+    }
 
     // Match .qmd sidecars to layers by base name; keep unmatched ones for later loads.
     for (const { base, meta } of qmds) pendingMeta.current.set(base, meta);
@@ -72,8 +93,9 @@ export default function AoiViewer({ datasetId }) {
     const added = loaded.map((L) => withMeta({ ...L, id: `L${++layerSeq}`, color: LAYER_COLORS[colorIdx.current++ % LAYER_COLORS.length] }));
 
     setLayers((prev) => {
-      // Re-loading a file with the same name replaces the old layer.
-      const kept = prev.filter((l) => !added.some((a) => a.base === l.base)).map(withMeta);
+      // Re-loading a file with the same name replaces the old layer of the same kind
+      // (a saved places dataset may share its base name with the AOI boundary file).
+      const kept = prev.filter((l) => !added.some((a) => a.base === l.base && a.kind === l.kind)).map(withMeta);
       const next = [...kept, ...added];
       if (next.length && !next.some((l) => l.expanded)) next[0] = { ...next[0], expanded: true };
       return next;
@@ -86,19 +108,23 @@ export default function AoiViewer({ datasetId }) {
     } else if (qmds.length) {
       toast(`Read metadata from ${qmds.length} .qmd file${qmds.length > 1 ? 's' : ''}`);
     }
-  }, [toast, fitBbox]);
+  }, [toast, fitBbox, startTask]);
 
   useEffect(() => {
     if (!datasetId) return;
     const controller = new AbortController();
+    const finish = startTask('Loading saved dataset…');
     fetch(`/api/customer-data/datasets/${encodeURIComponent(datasetId)}/geojson`, { signal: controller.signal })
       .then(async res => {
-        if (!res.ok) throw new Error('Could not load the saved dataset. Check customer storage.');
-        const geojson = await res.json();
-        if (!controller.signal.aborted) await handleFiles([{ name: `${geojson.name || 'Customer baseline'}.geojson`, text: async () => JSON.stringify(geojson) }]);
-      }).catch(e => { if (e.name !== 'AbortError') toast(e.message, 'error'); });
-    return () => controller.abort();
-  }, [datasetId, handleFiles, toast]);
+        if (!res.ok) throw new Error(res.status === 404 ? 'That saved dataset no longer exists.' : 'Could not load the saved dataset. Check customer storage.');
+        const text = await res.text();
+        const name = JSON.parse(text).name || 'Customer baseline';
+        if (!controller.signal.aborted) await handleFiles([{ name: `${name}.geojson`, text: async () => text }]);
+      })
+      .catch(e => { if (e.name !== 'AbortError') toast(e.message, 'error'); })
+      .finally(finish);
+    return () => { controller.abort(); finish(); };
+  }, [datasetId, handleFiles, toast, startTask]);
 
   // ?file=a.geojson&file=b.geojson loads files by URL (when served over http).
   useEffect(() => {
@@ -294,6 +320,7 @@ export default function AoiViewer({ datasetId }) {
       />
 
       <InfoPanel
+        onCollect={setCollectionFeature}
         layer={selectedLayer}
         fid={sel?.fid}
         onClose={() => setSelected(null)}
@@ -307,7 +334,9 @@ export default function AoiViewer({ datasetId }) {
         }}
       />
 
-      {layers.length === 0 && <EmptyState onBrowse={openPicker} />}
+      {layers.length === 0 && !busy && <EmptyState onBrowse={openPicker} />}
+      {collectionFeature && <AreaCollection feature={collectionFeature} onClose={() => setCollectionFeature(null)} />}
+      {busy && <div className="viewer-loading"><Loading size={16}>{busy}</Loading></div>}
 
       <input
         ref={fileInputRef}
