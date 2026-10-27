@@ -17,6 +17,7 @@ const TaskWindow = lazy(() => import('./components/TaskWindow.jsx'));
 const Delivery = lazy(() => import('./components/Delivery.jsx'));
 const TeamOps = lazy(() => import('./components/TeamOps.jsx'));
 const ProviderComparison = lazy(() => import('./components/ProviderComparison.jsx'));
+const SavedComparisons = lazy(() => import('./components/SavedComparisons.jsx'));
 const AREAS = [
   { name: 'Divisoria', country: 'Philippines', code: 'PHL', city: 'Metro Manila', color: '#61b8ff' },
   { name: 'Kampung Bali', country: 'Indonesia', code: 'IDN', city: 'Jakarta', color: '#379fdf' },
@@ -24,7 +25,7 @@ const AREAS = [
 ];
 const PATHS = {
   overview: '/', data: '/customer-data', viewer: '/aoi-viewer', operations: '/poc-operations', sources: '/sources',
-  map: '/compare', providers: '/here-vs-providers', work: '/my-work', delivery: '/delivery', ops: '/operations-dashboard',
+  map: '/compare', providers: '/here-vs-providers', results: '/comparison-results', work: '/my-work', delivery: '/delivery', ops: '/operations-dashboard',
 };
 
 /** Current page and its argument (dataset, run or task id) from the URL. */
@@ -90,7 +91,7 @@ export default function App() {
       <nav aria-label="Main navigation">
         <button className={['overview', 'data', 'operations'].includes(page) ? 'active' : ''} onClick={() => navigate('overview')}>POI workspace</button>
         <button className={workPages[page] ? 'active' : ''} onClick={() => navigate('work')}><Icon name="copy" />My work</button>
-        <button className={['sources', 'map', 'providers'].includes(page) ? 'active' : ''} onClick={() => navigate('sources')}><Icon name="layers" />Compare</button>
+        <button className={['sources', 'map', 'providers', 'results'].includes(page) ? 'active' : ''} onClick={() => navigate('sources')}><Icon name="layers" />Compare</button>
         <button className={page === 'viewer' ? 'active' : ''} onClick={() => navigate('viewer', selectedDataset || datasets[0]?.id)}><Icon name="map" />AOI Viewer</button>
       </nav>
       <span className="project-tag">SEA PLACES POC</span>
@@ -109,6 +110,7 @@ export default function App() {
             <button className={page === 'data' ? 'active' : ''} onClick={() => navigate('data')}><Icon name="copy" />Customer Data<span className="nav-count">{loading ? <Spinner size={10} /> : error ? '!' : datasets.length}</span></button>
             <button className={page === 'sources' ? 'active' : ''} onClick={() => navigate('sources')}><Icon name="link" />Sources & comparison</button>
             {isSupervisor(user) && <button className={page === 'providers' ? 'active' : ''} onClick={() => navigate('providers')}><Icon name="target" />HERE vs Google/Grab</button>}
+            <button className={page === 'results' ? 'active' : ''} onClick={() => navigate('results')}><Icon name="layers" />Comparison results</button>
             <button className={workPages[page] ? 'active' : ''} onClick={() => navigate('work')}><Icon name="type" />My work</button>
             {hasRole(user, 'ops_manager', 'qc_lead', 'qc_analyst') && <button className={page === 'delivery' ? 'active' : ''} onClick={() => navigate('delivery')}><Icon name="download" />Delivery</button>}
             {isSupervisor(user) && <button className={page === 'ops' ? 'active' : ''} onClick={() => navigate('ops')}><Icon name="target" />Operations dashboard</button>}
@@ -120,7 +122,8 @@ export default function App() {
         <main className="workspace-main" ref={mainRef}>
           {page === 'operations' ? lazyPage(<OperationsWorkspace datasets={datasets} />, 'Loading POC readiness…') :
            page === 'sources' ? lazyPage(<ComparisonDashboard datasets={datasets} user={user} onOpenMap={(run) => navigate('map', run)} />, 'Loading comparison…') :
-           page === 'providers' ? lazyPage(<ProviderComparison datasets={datasets} />, 'Loading comparison…') :
+           page === 'providers' ? lazyPage(<ProviderComparison datasets={datasets} onSaved={() => navigate('results')} />, 'Loading comparison…') :
+           page === 'results' ? lazyPage(<SavedComparisons user={user} />, 'Loading comparison results…') :
            page === 'work' ? lazyPage(<MyWork onOpenTask={(id) => navigate('task', id)} />, 'Loading your work…') :
            page === 'task' ? lazyPage(<TaskWindow key={arg} taskId={arg} user={user} onBack={() => navigate('work')} />, 'Loading task…') :
            page === 'delivery' ? lazyPage(<Delivery datasets={datasets} user={user} />, 'Loading delivery…') :

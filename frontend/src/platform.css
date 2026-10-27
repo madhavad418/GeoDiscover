@@ -140,3 +140,4 @@
 .platform-page > .outcome-toggles { display: flex; flex-wrap: wrap; gap: 8px 20px; margin: 16px 0 4px; }
 .platform-page > .outcome-toggles label { display: inline-flex; align-items: center; gap: 6px; }
 .platform-page > .outcome-toggles i { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+.records-table tr.selected td { background: #10304a; }

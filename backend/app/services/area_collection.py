@@ -214,7 +214,7 @@ def public(job):
         return json.loads(json.dumps({k:v for k,v in job.items() if k not in ('owner','rows','cancel','geometry')}))
 
 
-def start(owner, name, geometry, queries, budget, grid, language, providers=('google','grab')):
+def start(owner, name, geometry, queries, budget, grid, language, providers=('google','grab'), max_depth=2):
     geom = validate_geometry(geometry)
     cells = tiles(geom,grid)
     with LOCK:
@@ -227,7 +227,7 @@ def start(owner, name, geometry, queries, budget, grid, language, providers=('go
         while len(JOBS) >= 20:
             del JOBS[next(iter(JOBS))]
         job = {'id':str(uuid4()),'owner':str(owner),'name':name,'created':now,'state':'running',
-               'geometry':geometry,'queries':queries,'language':language,'grid_metres':grid,
+               'geometry':geometry,'queries':queries,'language':language,'grid_metres':grid,'max_depth':max_depth,
                'cells':len(cells),'budget_per_provider':budget,'cancel':threading.Event(),'rows':{},
                'providers':{p:{'state':'queued','requests':0,'records':0,'duplicates':0,'outside':0,
                                'invalid_results':0,'capped_queries':0,'remaining_queries':len(cells)*len(queries),'error':None}
@@ -273,7 +273,7 @@ def run(job, geom, cells, budget, language):
                     queue.appendleft((bounds,query,depth,next_token,page+1))
                 elif cap:
                     with LOCK: stats['capped_queries'] += 1
-                    if depth < 2:
+                    if depth < job['max_depth']:  # each level quarters the capped search area
                         w,s,e,n = bounds; x,y = (w+e)/2,(s+n)/2
                         for child in ((w,s,x,y),(x,s,e,y),(w,y,x,n),(x,y,e,n)):
                             if geom.intersection(box(*child)).area > 0: queue.append((child,query,depth+1,None,0))

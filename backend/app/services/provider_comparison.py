@@ -314,12 +314,13 @@ def workbook(lists, stats, meta):
     ws.column_dimensions['B'].width = 40
     for kind, label in KINDS.items():
         sheet = wb.create_sheet(kind.capitalize())
-        columns = HEADERS + EXTRA[kind]
+        columns = HEADERS + EXTRA[kind] + ['map_latitude', 'map_longitude']  # where the row is plotted on the map
         sheet.append(columns)
         for cell in sheet[1]:
             cell.font = Font(bold=True, color='FFFFFF')
             cell.fill = PatternFill('solid', fgColor='005B96')
         for r in lists[kind]:
+            r = r | {'map_latitude': r.get('_lat', ''), 'map_longitude': r.get('_lon', '')}
             sheet.append([ILLEGAL_CHARACTERS_RE.sub('', v)[:32767] if isinstance(v, str) else v for v in (r.get(c, '') for c in columns)])
             for cell in sheet[sheet.max_row]:
                 if isinstance(cell.value, str):
@@ -335,3 +336,68 @@ def workbook(lists, stats, meta):
 
 def public_row(row):
     return json.loads(json.dumps(row, default=str))
+
+
+SHEETS = {k.capitalize(): k for k in KINDS}
+
+
+def read_comparison_workbook(content):
+    """(meta, lists, stats) from a workbook written by workbook(): Summary plus one sheet per list."""
+    try:
+        wb = load_workbook(io.BytesIO(content), read_only=True, data_only=True)
+    except Exception as exc:
+        raise ValueError('Upload a comparison workbook downloaded from HERE vs Google/Grab.') from exc
+    if 'Summary' not in wb.sheetnames or not set(SHEETS) <= set(wb.sheetnames):
+        raise ValueError('The workbook needs Summary, New, Update, Delete, Matched and Review sheets.')
+    summary = {str(r[0]).strip(): r[1] for r in wb['Summary'].iter_rows(values_only=True) if r and r[0]}
+    lists = {}
+    for sheet, kind in SHEETS.items():
+        it = wb[sheet].iter_rows(values_only=True)
+        header = [str(h or '').strip() for h in next(it, [])]
+        items = []
+        for values in it:
+            if not any(v not in (None, '') for v in values):
+                continue
+            row = {h: ('' if v is None else v) for h, v in zip(header, values) if h}
+            row['_lat'], row['_lon'] = None, None
+            for lat, lon in (('map_latitude', 'map_longitude'), ('displaylatitude', 'displaylongitude')):
+                try:
+                    row['_lat'], row['_lon'] = float(row.pop(lat, None) if lat.startswith('map') else row.get(lat)),                         float(row.pop(lon, None) if lon.startswith('map') else row.get(lon))
+                    break
+                except (TypeError, ValueError):
+                    continue
+            items.append(row)
+        lists[kind] = items
+    wb.close()
+    providers = {k[:-5]: v for k, v in summary.items() if k.endswith(' POIs') and k != 'HERE POIs'}
+    stats = {'here_records': summary.get('HERE POIs') or 0, 'provider_records': providers,
+             'linked_businesses': summary.get('Linked businesses (Google+Grab deduplicated)') or 0,
+             'counts': {k: len(v) for k, v in lists.items()},
+             'delete_breakdown': {b: sum(1 for r in lists['delete'] if r.get('delete_basis') == b)
+                                  for b in ('Closed per provider', 'Not found in Google or Grab')}}
+    meta = {'aoi': str(summary.get('HERE vs Google/Grab comparison') or ''), 'dataset': str(summary.get('HERE dataset') or ''),
+            'extract': str(summary.get('Provider extract') or ''), 'compared_at': str(summary.get('Compared at') or '')}
+    return meta, lists, stats
+
+
+def save(db, *, aoi, dataset, lists, stats, extract, source_filename='', user=None):
+    """Store one comparison and all its rows; returns the ProviderComparison."""
+    from sqlalchemy import insert
+    from ..models.provider import ProviderComparison, ProviderComparisonRow
+    comparison = ProviderComparison(aoi=aoi, dataset_id=dataset.id if dataset else None,
+                                    dataset_filename=dataset.filename if dataset else '', extract_filename=extract or '',
+                                    source_filename=source_filename, stats=public_row(stats), created_by=user.id if user else None)
+    db.add(comparison)
+    db.flush()
+    rows = []
+    for kind, items in lists.items():
+        for i, r in enumerate(items):
+            data = public_row({k: v for k, v in r.items() if not k.startswith('_') and v not in ('', None)})
+            search = ' '.join(str(r.get(c) or '') for c in ('name1', 'here_placeid', 'placeid', 'upaddress', 'primarycategorynm',
+                                                            'source_place_ids', 'sources')).lower()
+            rows.append({'comparison_id': comparison.id, 'kind': kind, 'position': i, 'name': str(r.get('name1') or '')[:500],
+                         'here_placeid': str(r.get('here_placeid') or '')[:120], 'delete_basis': str(r.get('delete_basis') or '')[:60],
+                         'search_text': search[:2000], 'latitude': r.get('_lat'), 'longitude': r.get('_lon'), 'data': data})
+    for start in range(0, len(rows), 2000):
+        db.execute(insert(ProviderComparisonRow), rows[start:start + 2000])
+    return comparison

@@ -78,6 +78,25 @@ def test_new_update_delete_matched_through_api(sqlite_app):
     assert [c.value for c in wb['New'][1]][:35] == area_collection.HEADERS
     assert wb['New']['B2'].value == 'Kopi Baru Nusantara' and wb['Delete'].max_row == 3
 
+    # Save to the database, both straight from the run and by uploading the downloaded workbook.
+    saved = client.post(f'/api/provider-comparison/runs/{run_id}/save')
+    assert saved.status_code == 201 and saved.json()['stats']['counts']['new'] == 1
+    workbook_bytes = client.get(f'/api/provider-comparison/runs/{run_id}/excel').content
+    uploaded = client.post('/api/provider-comparison/saved', files={'file': ('Kampung.xlsx', workbook_bytes)})
+    assert uploaded.status_code == 201, uploaded.text
+    body = uploaded.json()
+    assert body['aoi'] == 'Kampung Bali' and body['stats']['counts'] == run['stats']['counts']
+    assert len(login(app, 'rev').get('/api/provider-comparison/saved').json()['comparisons']) == 2  # any signed-in user can view
+    sid = body['id']
+    upd = client.get(f'/api/provider-comparison/saved/{sid}/rows', params={'kind': 'update'}).json()
+    assert upd['total'] == 1 and upd['rows'][0]['here_placeid'] == 'here-2'
+    assert client.get(f'/api/provider-comparison/saved/{sid}/rows', params={'kind': 'new', 'q': 'kopi'}).json()['total'] == 1
+    assert client.get(f'/api/provider-comparison/saved/{sid}/rows/update/0').json()['proposed_phone'] == '62215559999'
+    assert len(client.get(f'/api/provider-comparison/saved/{sid}/map').json()['features']) == 5
+    again = load_workbook(io.BytesIO(client.get(f'/api/provider-comparison/saved/{sid}/excel').content))
+    assert again['New']['B2'].value == 'Kopi Baru Nusantara'
+    assert client.delete(f'/api/provider-comparison/saved/{sid}').status_code == 204
+
 
 def test_bad_upload_is_rejected(sqlite_app):
     app, Session = sqlite_app
