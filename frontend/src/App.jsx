@@ -96,7 +96,7 @@ export default function App() {
       </nav>
       <span className="project-tag">SEA PLACES POC</span>
       <span className="user-chip" title={user.roles.join(', ')}><span className="workspace-avatar">{user.display_name.slice(0, 1).toUpperCase()}</span>
-        <span>{user.display_name}<small>{Object.values(user.role_names || {}).join(' · ')}</small></span>
+        <span>{user.display_name}<small>{user.roles.length >= 5 ? 'Administrator · all roles' : Object.values(user.role_names || {}).join(' · ')}</small></span>
         <button className="ws-link" onClick={signOut}>Sign out</button></span>
     </header>
     {page === 'viewer' ? <div className="viewer-shell"><Suspense fallback={<div className="map-loading"><Loading size={22}>Opening AOI Viewer…</Loading></div>}><AoiViewer datasetId={arg} /></Suspense></div> :

@@ -127,13 +127,29 @@ def row(run_id: UUID, kind: str, index: int, user: User = Depends(operator)):
     return service.public_row({k: v for k, v in items[index].items() if v not in ('', None)})
 
 
+# Point properties shown in the map's details panel (the full row stays one click away via /rows/{kind}/{index}).
+MAP_FIELDS = {'name1': 'name', 'primarycategorynm': 'category', 'here_placeid': 'here_place_id', 'upaddress': 'address',
+              'phone_numbers': 'phone', 'mobile_numbers': 'mobile', 'webaddress': 'website', 'opening_hours': 'opening_hours',
+              'sources': 'found_in', 'changed_fields': 'changed', 'delete_basis': 'delete_basis', 'distance_m': 'distance_m',
+              'candidate_here_names': 'possible_here_matches', 'reason': 'why'}
+
+
+def _feature_collection(rows):
+    features = []
+    for kind, index, data, lat, lon in rows:
+        if lat is None or lon is None:
+            continue
+        props = {'kind': kind, 'list': service.KINDS[kind].split(' — ')[0], 'index': index}
+        props |= {label: data[key] for key, label in MAP_FIELDS.items() if data.get(key) not in (None, '')}
+        props.setdefault('name', '(unnamed)')
+        features.append({'type': 'Feature', 'geometry': {'type': 'Point', 'coordinates': [lon, lat]}, 'properties': props})
+    return {'type': 'FeatureCollection', 'features': features}
+
+
 @router.get('/runs/{run_id}/map')
 def points(run_id: UUID, user: User = Depends(operator)):
     lists = _finished(run_id, user)['lists']
-    return {'type': 'FeatureCollection', 'features': [
-        {'type': 'Feature', 'geometry': {'type': 'Point', 'coordinates': [r['_lon'], r['_lat']]},
-         'properties': {'kind': kind, 'index': i, 'name': r.get('name1', ''), 'category': r.get('primarycategorynm', '')}}
-        for kind, items in lists.items() for i, r in enumerate(items)]}
+    return _feature_collection((kind, i, r, r['_lat'], r['_lon']) for kind, items in lists.items() for i, r in enumerate(items))
 
 
 @router.get('/runs/{run_id}/excel')
@@ -232,12 +248,10 @@ def saved_row(comparison_id: UUID, kind: str, position: int, db: Session = Depen
 @router.get('/saved/{comparison_id}/map')
 def saved_map(comparison_id: UUID, db: Session = Depends(storage), _: User = Depends(current_user)):
     _saved(db, comparison_id)
-    rows = db.execute(select(ProviderComparisonRow.kind, ProviderComparisonRow.position, ProviderComparisonRow.name,
+    rows = db.execute(select(ProviderComparisonRow.kind, ProviderComparisonRow.position, ProviderComparisonRow.data,
                              ProviderComparisonRow.latitude, ProviderComparisonRow.longitude)
                       .where(ProviderComparisonRow.comparison_id == comparison_id, ProviderComparisonRow.latitude.is_not(None)))
-    return {'type': 'FeatureCollection', 'features': [
-        {'type': 'Feature', 'geometry': {'type': 'Point', 'coordinates': [lon, lat]}, 'properties': {'kind': kind, 'index': pos, 'name': name}}
-        for kind, pos, name, lat, lon in rows]}
+    return _feature_collection(rows)
 
 
 @router.get('/saved/{comparison_id}/excel')

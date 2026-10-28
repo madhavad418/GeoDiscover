@@ -55,10 +55,6 @@ export default function SavedComparisons({ user }) {
     {error && <div className="ws-notice error" role="alert">{error}</div>}
     {notice && <div className="ws-notice success" role="status">{notice}</div>}
 
-    {isSupervisor(user) && <form className="ops-panel provider-form" onSubmit={upload}>
-      <label>Comparison workbook (.xlsx, from HERE vs Google/Grab)<input type="file" accept=".xlsx" required onChange={(e) => setFile(e.target.files[0] || null)} disabled={uploading} /></label>
-      <button className="ws-button primary" disabled={!file || uploading}>{uploading ? <Spinner size={14} /> : <Icon name="upload" />}{uploading ? 'Saving…' : 'Save to database'}</button>
-    </form>}
 
     {!items ? <Loading>Loading saved comparisons…</Loading> : items.length === 0 ? <div className="ws-empty"><h3>No saved comparisons yet</h3>
       <p>Run one on HERE vs Google/Grab and choose “Save to database”, or upload a downloaded comparison workbook above.</p></div> : <>
@@ -66,16 +62,24 @@ export default function SavedComparisons({ user }) {
       <div className="metrics-grid five">
         {Object.entries(KINDS).map(([k, o]) => <div className="metric" key={k} style={{ borderTop: `3px solid ${o.color}` }}><span>{o.label}</span><strong>{n(total(k))}</strong><small>{o.hint}</small></div>)}
       </div>
-      <section className="ops-panel"><div className="records-table-wrap short"><table className="records-table">
+      <section className="ops-panel"><div className="records-table-wrap short"><table className="records-table results-table city-table">
         <thead><tr><th>City</th><th>HERE POIs</th><th>Google</th><th>Grab</th>{Object.values(KINDS).map((o) => <th key={o.label}>{o.label}</th>)}<th>Saved</th><th /></tr></thead>
         <tbody>{items.map((c) => <tr key={c.id} className={c.id === selected ? 'selected' : ''}>
           <td><button className="ws-link" onClick={() => setSelected(c.id)}>{c.aoi}</button><small className="cell-sub">{c.dataset}</small></td>
           <td>{n(c.stats.here_records)}</td><td>{n(c.stats.provider_records?.Google)}</td><td>{n(c.stats.provider_records?.Grab)}</td>
           {Object.keys(KINDS).map((k) => <td key={k}>{n(c.stats.counts[k])}</td>)}
           <td>{fmtDate(c.created_at)}</td>
-          <td>{hasRole(user, 'ops_manager') && <button className="ws-link" onClick={() => remove(c)}>Delete</button>}</td></tr>)}</tbody>
+          <td>{hasRole(user, 'ops_manager') && <button className="ws-link danger" onClick={() => remove(c)} title={`Delete the saved ${c.aoi} comparison`}><Icon name="trash" size={13} />Delete</button>}</td></tr>)}</tbody>
       </table></div></section>
-      {current && <ResultsBrowser key={current.id} base={`/provider-comparison/saved/${current.id}`} title={current.aoi} stats={current.stats} onError={setError} />}
+      <p className="muted table-hint">Select a city to see its lists, map and Excel below.</p>
+      {current && <ResultsBrowser key={current.id} base={`/provider-comparison/saved/${current.id}`} title={current.aoi} aoi={current.aoi} stats={current.stats} onError={setError} />}
     </>}
+    {isSupervisor(user) && <details className="ops-panel provider-upload">
+      <summary><Icon name="upload" size={14} />Add a comparison from an Excel workbook</summary>
+      <form className="provider-form" onSubmit={upload}>
+        <label>Comparison workbook (.xlsx, downloaded from HERE vs Google/Grab)<input type="file" accept=".xlsx" required onChange={(e) => setFile(e.target.files[0] || null)} disabled={uploading} /></label>
+        <button className="ws-button primary" disabled={!file || uploading}>{uploading ? <Spinner size={14} /> : <Icon name="upload" />}{uploading ? 'Saving…' : 'Save to database'}</button>
+      </form>
+    </details>}
   </div>;
 }

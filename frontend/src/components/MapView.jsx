@@ -84,7 +84,8 @@ const MapView = forwardRef(function MapView(props, ref) {
     map.addControl(new AttributionControl({ compact: true }), 'bottom-right');
     map.addControl(new ScaleControl({ maxWidth: 110 }), 'bottom-right');
     map.addControl(new NavigationControl({ visualizePitch: true }), 'bottom-right');
-    map.addControl(new FullscreenControl(), 'bottom-right');
+    // Fullscreen the map's whole view (toolbar, sidebar, overlays), not just the canvas.
+    map.addControl(new FullscreenControl({ container: containerRef.current.parentElement }), 'bottom-right');
 
     map.on('dataloading', () => setMapLoading(true));
     map.on('idle', () => setMapLoading(false));

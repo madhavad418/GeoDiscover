@@ -65,7 +65,7 @@ function BoundaryDetails({ layer: L, fid, onClose, onZoom, onCopy, onExport, onC
       </details>
 
       <div className="info-actions">
-        {['Polygon','MultiPolygon'].includes(f.geometry.type) && <button className="btn-ghost" onClick={() => onCollect?.(f)}><Icon name="download" size={14} />Collect POIs (APIs)</button>}
+        {onCollect && ['Polygon','MultiPolygon'].includes(f.geometry.type) && <button className="btn-ghost" onClick={() => onCollect?.(f)}><Icon name="download" size={14} />Collect POIs (APIs)</button>}
         <button className="btn-ghost" onClick={onZoom}><Icon name="target" size={14} />Zoom to</button>
         <button className="btn-ghost" onClick={onCopy}><Icon name="copy" size={14} />Copy centre</button>
         <button className="btn-ghost" onClick={onExport}><Icon name="download" size={14} />GeoJSON</button>

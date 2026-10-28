@@ -26,7 +26,11 @@ const params = new URLSearchParams(location.search);
 let layerSeq = 0;
 let taskSeq = 0;
 
-export default function AoiViewer({ datasetId }) {
+/**
+ * The AOI Viewer. Other pages reuse it with `preset` ({ message, load(signal) -> layers }) for read-only layers,
+ * `uploads={false}` to hide file loading, and `overlay(layers, updateLayer)` for extra map controls.
+ */
+export default function AoiViewer({ datasetId, preset = null, uploads = true, overlay = null }) {
   const [collectionFeature, setCollectionFeature] = useState(null);
   const [layers, setLayers] = useState([]);
   const [selected, setSelected] = useState(null); // { layerId, fid }
@@ -126,8 +130,26 @@ export default function AoiViewer({ datasetId }) {
     return () => { controller.abort(); finish(); };
   }, [datasetId, handleFiles, toast, startTask]);
 
+  // Preset layers supplied by the embedding page (e.g. a comparison's lists and its AOI boundary).
+  useEffect(() => {
+    if (!preset) return;
+    const controller = new AbortController();
+    const finish = startTask(preset.message || 'Loading map layers…');
+    preset.load(controller.signal)
+      .then((loaded) => {
+        if (controller.signal.aborted) return;
+        setLayers(loaded);
+        const b = mergeBbox(loaded.filter((l) => l.visible).map((l) => l.bbox));
+        if (b) requestAnimationFrame(() => fitBbox(b));
+      })
+      .catch((e) => { if (e.name !== 'AbortError') toast(e.message, 'error'); })
+      .finally(finish);
+    return () => { controller.abort(); finish(); };
+  }, [preset, fitBbox, toast, startTask]);
+
   // ?file=a.geojson&file=b.geojson loads files by URL (when served over http).
   useEffect(() => {
+    if (!uploads) return;
     const urls = [...params.getAll('file'), ...(params.get('files') || '').split(',').filter(Boolean)];
     if (!urls.length) return;
     Promise.allSettled(urls.map(async (u) => {
@@ -140,7 +162,7 @@ export default function AoiViewer({ datasetId }) {
       results.filter((r) => r.status === 'rejected').forEach((r) => toast(String(r.reason.message || r.reason), 'error'));
       handleFiles(results.filter((r) => r.status === 'fulfilled').map((r) => r.value));
     });
-  }, [handleFiles, toast]);
+  }, [handleFiles, toast, uploads]);
 
   const openPicker = () => fileInputRef.current?.click();
 
@@ -232,6 +254,7 @@ export default function AoiViewer({ datasetId }) {
 
   /* ----- Drag & drop anywhere ----- */
   useEffect(() => {
+    if (!uploads) return undefined;
     let depth = 0;
     const hasFiles = (e) => [...(e.dataTransfer?.types || [])].includes('Files');
     const enter = (e) => { if (!hasFiles(e)) return; e.preventDefault(); depth++; setDragging(true); };
@@ -254,7 +277,7 @@ export default function AoiViewer({ datasetId }) {
       window.removeEventListener('dragleave', leave);
       window.removeEventListener('drop', drop);
     };
-  }, [handleFiles]);
+  }, [handleFiles, uploads]);
 
   // Boundary names that contain the selected place.
   const containers = useMemo(() => {
@@ -296,6 +319,7 @@ export default function AoiViewer({ datasetId }) {
         layers={layers}
         selected={sel}
         dragging={dragging}
+        allowUpload={uploads}
         onBrowse={openPicker}
         onClose={() => setSidebarOpen(false)}
         onClearAll={clearAll}
@@ -320,7 +344,7 @@ export default function AoiViewer({ datasetId }) {
       />
 
       <InfoPanel
-        onCollect={setCollectionFeature}
+        onCollect={uploads ? setCollectionFeature : undefined}
         layer={selectedLayer}
         fid={sel?.fid}
         onClose={() => setSelected(null)}
@@ -334,7 +358,8 @@ export default function AoiViewer({ datasetId }) {
         }}
       />
 
-      {layers.length === 0 && !busy && <EmptyState onBrowse={openPicker} />}
+      {layers.length === 0 && !busy && uploads && <EmptyState onBrowse={openPicker} />}
+      {overlay?.(layers, layerHandlers.update)}
       {collectionFeature && <AreaCollection feature={collectionFeature} onClose={() => setCollectionFeature(null)} />}
       {busy && <div className="viewer-loading"><Loading size={16}>{busy}</Loading></div>}
 

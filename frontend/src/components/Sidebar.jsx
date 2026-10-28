@@ -18,27 +18,27 @@ function Summary({ layers }) {
   );
 }
 
-export default function Sidebar({ layers, selected, dragging, onBrowse, onClose, onClearAll, layerHandlers }) {
+export default function Sidebar({ layers, selected, dragging, allowUpload = true, onBrowse, onClose, onClearAll, layerHandlers }) {
   return (
     <aside className="panel sidebar">
       <button className="icon-btn only-mobile sidebar-close" onClick={onClose} aria-label="Close sidebar" title="Close sidebar"><Icon name="x" /></button>
 
-      <button className={`dropzone ${dragging ? 'over' : ''}`} onClick={onBrowse}>
+      {allowUpload && <button className={`dropzone ${dragging ? 'over' : ''}`} onClick={onBrowse}>
         <span className="dz-icon"><Icon name="upload" size={18} /></span>
         <strong>Drop boundary files or <u>browse</u></strong>
         <span className="dz-hint">Boundaries: GeoJSON · Shapefile · .qmd<br />Places: CSV · Excel (.xlsx/.xls)</span>
-      </button>
+      </button>}
 
       <div className="section-head">
         <span>Layers</span>
         <span className="badge">{layers.length}</span>
         <div className="spacer" />
-        {layers.length > 0 && <button className="text-btn" onClick={onClearAll}>Clear all</button>}
+        {layers.length > 0 && allowUpload && <button className="text-btn" onClick={onClearAll}>Clear all</button>}
       </div>
 
       <div className="layers">
         {layers.length === 0
-          ? <div className="layers-empty">No layers yet. Add boundary files above.</div>
+          ? <div className="layers-empty">{allowUpload ? 'No layers yet. Add boundary files above.' : 'Loading layers…'}</div>
           : layers.map((L) => (
             <LayerCard
               key={L.id}

@@ -1,9 +1,8 @@
-import { Fragment, useEffect, useMemo, useRef, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import Icon from './Icon.jsx';
 import Loading, { Spinner } from './Loading.jsx';
-import MapView from './MapView.jsx';
+import ComparisonMap from './ComparisonMap.jsx';
 import { api, send } from '../lib/api.js';
-import { buildPointLayer, detectKeys } from '../lib/places.js';
 import './areaCollection.css';
 
 export const KINDS = {
@@ -19,7 +18,11 @@ const HEADINGS = {
   delete_basis: 'Basis', match_level: 'Match', candidate_here_names: 'Possible HERE matches',
 };
 const PAGE = 50;
-const FIELDS = ['name', 'category', 'kind', 'index', 'latitude', 'longitude'];
+// Row details list the identifying and comparison fields first, then the remaining HERE columns.
+const DETAIL_ORDER = ['name1', 'name2', 'primarycategorynm', 'primarycategory', 'here_placeid', 'placeid', 'changed_fields', 'delete_basis',
+  'reason', 'sources', 'source_place_ids', 'distance_m', 'match_level', 'candidate_here_names', 'candidate_here_placeids', 'upaddress',
+  'hno', 'streetname', 'postalcode', 'admin2', 'admin3', 'admin4', 'admin5', 'phone_numbers', 'mobile_numbers', 'webaddress',
+  'opening_hours', 'status', 'chainid', 'chainname', 'food_id', 'food_name', 'displaylatitude', 'displaylongitude'];
 
 async function download(url, fallbackName) {
   const res = await fetch(url, { credentials: 'same-origin' });
@@ -31,36 +34,6 @@ async function download(url, fallbackName) {
   setTimeout(() => URL.revokeObjectURL(href), 1000);
 }
 
-function ResultsMap({ base, hidden, onSelect }) {
-  const [layer, setLayer] = useState(null);
-  const [hover, setHover] = useState(null);
-  const [error, setError] = useState('');
-  const mapRef = useRef(null);
-  useEffect(() => {
-    const c = new AbortController();
-    api(`${base}/map`, { signal: c.signal }).then((geo) => {
-      const features = geo.features.map((f) => ({ ...f, properties: { ...f.properties, latitude: f.geometry.coordinates[1],
-        longitude: f.geometry.coordinates[0], category: KINDS[f.properties.kind].label } }));
-      const l = buildPointLayer({ fileName: 'comparison', base: 'comparison', title: 'Comparison', iso: '', fields: FIELDS,
-        keys: detectKeys(FIELDS), features, source: 'HERE vs Google/Grab' });
-      const color = Object.fromEntries(Object.values(KINDS).map((k) => [k.label, k.color]));
-      l.data.features.forEach((f) => { f.properties._cc = color[f.properties._cat]; });
-      l.categories = l.categories.map((cat) => ({ ...cat, color: color[cat.name] }));
-      setLayer({ ...l, id: 'comparison', title: 'Comparison', displayName: 'Comparison', color: '#a9b1c4', labels: false, expanded: false });
-    }).catch((e) => { if (e.name !== 'AbortError') setError(e.message); });
-    return () => c.abort();
-  }, [base]);
-  const layers = useMemo(() => (layer ? [{ ...layer, hiddenCats: hidden.map((k) => KINDS[k].label) }] : []), [layer, hidden]);
-  if (error) return <div className="ws-notice error" role="alert">{error}</div>;
-  return <div className="provider-map">
-    {!layer && <div className="table-loading"><Loading>Loading map…</Loading></div>}
-    {layer && <MapView ref={mapRef} layers={layers} basemap="dark" labelsOn={false} selected={null} hover={hover} measuring={false}
-      onHover={setHover} onSelect={(_, fid) => { const p = layer.data.features[fid]?.properties; if (p) onSelect(p.kind, p.index); }}
-      onClearSelection={() => {}} onZoomTo={(b) => mapRef.current?.fitBbox(b)} onExitMeasure={() => {}}
-      onReady={() => mapRef.current?.fitBbox(layer.bbox)} />}
-  </div>;
-}
-
 function RowDetail({ base, kind, index, onClose }) {
   const [row, setRow] = useState(null);
   const [error, setError] = useState('');
@@ -68,7 +41,9 @@ function RowDetail({ base, kind, index, onClose }) {
     api(`${base}/rows/${kind}/${index}`).then(setRow).catch((e) => setError(e.message));
   }, [base, kind, index]);
   const changed = row?.changed_fields ? row.changed_fields.split(', ') : [];
-  const entries = row ? Object.entries(row).filter(([k]) => !k.startsWith('_') && !/^(here|proposed)_(?!placeid)/.test(k)) : [];
+  const rank = (k) => { const i = DETAIL_ORDER.indexOf(k); return i < 0 ? DETAIL_ORDER.length : i; };
+  const entries = row ? Object.entries(row).filter(([k]) => !k.startsWith('_') && !/^(here|proposed)_(?!placeid)/.test(k))
+    .sort(([a], [b]) => rank(a) - rank(b) || a.localeCompare(b)) : [];
   return <div className="collection-overlay" onClick={onClose}><section className="collection-dialog provider-detail" role="dialog" aria-modal="true"
     aria-labelledby="row-title" onClick={(e) => e.stopPropagation()}>
     <header><div><small>{KINDS[kind].label.toUpperCase()}</small><h2 id="row-title">{row?.name1 || '…'}</h2><p>{row?.primarycategorynm}</p></div>
@@ -83,14 +58,13 @@ function RowDetail({ base, kind, index, onClose }) {
 }
 
 /** Cards, map, searchable table and row details for one comparison; `base` is its API path (in-memory run or saved). */
-export function ResultsBrowser({ base, title, stats: s, actions = null, onError }) {
+export function ResultsBrowser({ base, title, aoi = null, stats: s, actions = null, onError }) {
   const [kind, setKind] = useState('new');
   const [basis, setBasis] = useState('');
   const [q, setQ] = useState('');
   const [page, setPage] = useState(0);
   const [rows, setRows] = useState(null);
   const [showMap, setShowMap] = useState(false);
-  const [hidden, setHidden] = useState([]);
   const [detail, setDetail] = useState(null);
   const [downloading, setDownloading] = useState(false);
 
@@ -121,17 +95,13 @@ export function ResultsBrowser({ base, title, stats: s, actions = null, onError 
         translation to English: {s.name_matching.translation}</p>}</div>
       <div className="button-row">
         {actions}
-        <button className="ws-button" onClick={() => setShowMap((v) => !v)}><Icon name="map" />{showMap ? 'Hide map' : 'Show map'}</button>
+        <button className="ws-button" onClick={() => setShowMap(true)}><Icon name="map" />Open map</button>
         <button className="ws-button primary" onClick={excel} disabled={downloading}>{downloading ? <Spinner size={14} /> : <Icon name="download" />}Download Excel</button>
       </div></div>
-    <div className="outcome-grid">{Object.entries(KINDS).map(([k, o]) =>
+    <div className="outcome-grid five">{Object.entries(KINDS).map(([k, o]) =>
       <button key={k} className={`outcome-card ${kind === k ? 'active' : ''}`} style={{ '--o': o.color }} onClick={() => choose(k)}>
         <strong>{(s.counts[k] || 0).toLocaleString()}</strong><span>{o.label}</span><small className="cell-sub">{o.hint}</small></button>)}</div>
-    {showMap && <>
-      <div className="outcome-toggles">{Object.entries(KINDS).map(([k, o]) => <label key={k}><input type="checkbox" checked={!hidden.includes(k)}
-        onChange={() => setHidden((h) => (h.includes(k) ? h.filter((x) => x !== k) : [...h, k]))} /><i style={{ background: o.color }} />{o.label}</label>)}</div>
-      <ResultsMap base={base} hidden={hidden} onSelect={(k, i) => setDetail({ kind: k, index: i })} />
-    </>}
+    {showMap && <ComparisonMap base={base} aoi={aoi || title} title={title} kinds={KINDS} onClose={() => setShowMap(false)} />}
     <section className="records-panel">
       <div className="records-filters"><label className="records-search"><Icon name="search" /><input placeholder="Search name, place ID, address…"
         value={q} onChange={(e) => { setQ(e.target.value); setPage(0); }} /></label>
@@ -140,8 +110,9 @@ export function ResultsBrowser({ base, title, stats: s, actions = null, onError 
           {Object.entries(s.delete_breakdown || {}).map(([b, n]) => <option key={b} value={b}>{b} ({n.toLocaleString()})</option>)}</select></label>}</div>
       <div className="records-table-wrap">{!rows ? <div className="table-loading"><Loading>Loading {KINDS[kind].label.toLowerCase()}…</Loading></div> :
         rows.rows.length === 0 ? <div className="ws-empty compact"><p>No rows.</p></div> :
-        <table className="records-table"><thead><tr>{rows.columns.map((c) => <th key={c}>{HEADINGS[c] || c}</th>)}<th /></tr></thead>
-          <tbody>{rows.rows.map((r) => <tr key={r._index}>{rows.columns.map((c) => <td key={c} className={c === 'reason' ? 'why' : ''}>{String(r[c] ?? '') || '—'}</td>)}
+        <table className="records-table results-table"><thead><tr>{rows.columns.map((c) => <th key={c}>{HEADINGS[c] || c}</th>)}<th /></tr></thead>
+          <tbody>{rows.rows.map((r) => <tr key={r._index}>{rows.columns.map((c) => <td key={c} className={c === 'reason' ? 'why' : ''}
+            title={String(r[c] ?? '')}>{String(r[c] ?? '') || '—'}</td>)}
             <td><button className="ws-link" onClick={() => setDetail({ kind, index: r._index })}>Details ↗</button></td></tr>)}</tbody></table>}</div>
       {rows && <div className="records-pagination"><span>{rows.total.toLocaleString()} rows · page {page + 1} of {Math.max(1, Math.ceil(rows.total / PAGE))}</span>
         <div><button className="ws-button" disabled={page === 0} onClick={() => setPage((p) => p - 1)}>Previous</button>

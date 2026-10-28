@@ -92,7 +92,10 @@ def test_new_update_delete_matched_through_api(sqlite_app):
     assert upd['total'] == 1 and upd['rows'][0]['here_placeid'] == 'here-2'
     assert client.get(f'/api/provider-comparison/saved/{sid}/rows', params={'kind': 'new', 'q': 'kopi'}).json()['total'] == 1
     assert client.get(f'/api/provider-comparison/saved/{sid}/rows/update/0').json()['proposed_phone'] == '62215559999'
-    assert len(client.get(f'/api/provider-comparison/saved/{sid}/map').json()['features']) == 5
+    features = client.get(f'/api/provider-comparison/saved/{sid}/map').json()['features']
+    assert len(features) == 5
+    update = next(f['properties'] for f in features if f['properties']['kind'] == 'update')
+    assert update['here_place_id'] == 'here-2' and update['changed'] == 'phone' and update['list'] == 'Update'
     again = load_workbook(io.BytesIO(client.get(f'/api/provider-comparison/saved/{sid}/excel').content))
     assert again['New']['B2'].value == 'Kopi Baru Nusantara'
     assert client.delete(f'/api/provider-comparison/saved/{sid}').status_code == 204
