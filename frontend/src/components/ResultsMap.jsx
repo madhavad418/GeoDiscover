@@ -75,7 +75,7 @@ export default function ResultsMap({ runId, onBack }) {
   const counts = run?.stats.outcomes || {};
   return (
     <>
-      <MapView ref={mapRef} layers={shown} basemap="dark" labelsOn={false} selected={selected} hover={hover} measuring={false}
+      <MapView ref={mapRef} layers={shown} basemap="light" labelsOn={false} selected={selected} hover={hover} measuring={false}
         onHover={setHover} onSelect={select} onClearSelection={() => { setSelected(null); setDetail(null); }}
         onZoomTo={(b) => mapRef.current?.fitBbox(b)} onExitMeasure={() => {}}
         onReady={() => { if (pending.current) { mapRef.current?.fitBbox(pending.current); pending.current = null; } }} />

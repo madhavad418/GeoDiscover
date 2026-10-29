@@ -191,3 +191,9 @@ body.info-open .viewer-shell:fullscreen .compare-legend { top: calc(var(--gap) +
 .provider-upload[open] summary::after { content: '▾'; }
 .provider-detail .records-table td { white-space: normal; max-width: none; word-break: break-word; vertical-align: top; }
 .provider-detail .records-table td:first-child { white-space: nowrap; color: #c9d6e0; }
+/* Results search bar: own padding (no heading above it) and the Basis filter on the same line. */
+.results-filters { padding: 16px 20px; align-items: center; border-bottom: 1px solid #243240; }
+.results-filters .records-search input { height: 38px; box-sizing: border-box; }
+.results-filters .inline-select { display: flex; align-items: center; gap: 8px; margin: 0; white-space: nowrap; font-size: 12px; }
+.results-filters .inline-select select { height: 38px; box-sizing: border-box; min-width: 220px; }
+@media (max-width: 700px) { .results-filters { flex-wrap: wrap; } .results-filters .inline-select { width: 100%; } .results-filters .inline-select select { flex: 1; } }

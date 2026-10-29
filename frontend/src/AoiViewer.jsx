@@ -35,7 +35,7 @@ export default function AoiViewer({ datasetId, preset = null, uploads = true, ov
   const [layers, setLayers] = useState([]);
   const [selected, setSelected] = useState(null); // { layerId, fid }
   const [hover, setHover] = useState(null);
-  const [basemap, setBasemap] = useState(BASEMAPS[params.get('basemap')] ? params.get('basemap') : 'dark');
+  const [basemap, setBasemap] = useState(BASEMAPS[params.get('basemap')] ? params.get('basemap') : 'light');
   const [labelsOn, setLabelsOn] = useState(true);
   const [measuring, setMeasuring] = useState(false);
   const [basemapOpen, setBasemapOpen] = useState(false);

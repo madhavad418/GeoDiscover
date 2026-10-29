@@ -1,0 +1,61 @@
+/* Shared JSAN light palette for workspace pages, map chrome and dialogs. */
+:root{color-scheme:light;--bg:#f5f7f9;--panel:rgba(255,255,255,.95);--panel-solid:#fff;--panel-raise:#f3f7fa;--panel-hover:#eaf2f8;--border:#e0e8ef;--border-strong:#cbdbe6;--text:#19384d;--text-2:#506d82;--text-3:#718798;--accent:#005b96;--accent-2:#0875b8;--gold:#946515;--danger:#b44444;--ok:#23734c;--shadow:0 12px 36px #24496d12,0 2px 8px #24496d08;--jsan-accent:#005b96;--jsan-tint:#005b96;--jsan-surface:#edf5fa;--jsan-border:#dce9f2;--ws-panel:#fff}
+.app-light{color:#19384d;color-scheme:light}
+.app-light :is(.workspace-main,.platform-page,.poc-operations){color:#19384d}
+.app-light :is(.page-heading h1,.section-title h2,.records-heading h2,.import-title h2,.metric strong,.dataset-card strong,.ops-panel h2,.ops-panel h3,.task-action h3,.queue-card strong){color:#19384d}
+.app-light :is(.page-heading p:not(.eyebrow),.section-title p,.import-title p,.records-heading p,.muted,.cell-sub,.metric small,.dataset-filename,.dataset-meta small,.column-toggle,.records-pagination,.form-grid label,.wide-label,.inline-select,.get-tasks label,.field-chips,.legend-note,.kv-list dt,.ops-stage small,.ops-panel label){color:#617b8e}
+.app-light :is(.eyebrow,.task-panel h3,.task-panel h4,.task-action h4,.master-line,.nearby summary,.dataset-meta,.dataset-top,.import-help){color:#356b8e}
+.app-light :is(.metric,.dataset-card,.records-panel,.ops-panel,.task-panel,.queue-card,.outcome-card,.obs-card,.evidence-row,.record-dialog,.comparison-card){background:#fff;border-color:#dfe8ef;color:#19384d;box-shadow:0 5px 20px #24496d05}
+.app-light :is(.import-panel,.task-action){background:linear-gradient(115deg,#edf5fb,#fff);border-color:#d8e7f2}
+.app-light :is(.metric-icon,.ws-chip,.chip-btn,.ops-status){background:#edf5fb;border-color:#dce9f2;color:#005b96}
+.app-light :is(.metric>span:not(.metric-icon),.queue-card span,.outcome-card span,.reason-list,.ops-panel p,.ops-panel li){color:#506d82}
+.app-light :is(.dataset-card.selected,.queue-card.active,.decision.active){background:#edf5fb;border-color:#3784b4;color:#005b96}
+.app-light .outcome-card.active{background:color-mix(in srgb,var(--o) 8%,#fff)}
+.app-light .outcome-badge{color:color-mix(in srgb,var(--o) 55%,#142f43);background:color-mix(in srgb,var(--o) 10%,#fff)}
+.app-light :is(.workspace-main,.platform-page,.ops-panel,.record-dialog,.collection-dialog) :is(input:not([type=checkbox]):not([type=radio]),select,textarea){background:#fff;color:#19384d;border-color:#ccdce7;accent-color:#005b96}
+.app-light input::placeholder,.app-light textarea::placeholder{color:#8296a5}
+.app-light :is(input,textarea,select):focus-visible{outline:2px solid #338fbe;outline-offset:2px}
+.app-light input::file-selector-button{background:#eaf3fa;color:#005b96}
+.app-light .ws-button{background:#fff;color:#005b96;border-color:#cbdfea}
+.app-light .ws-button:hover{background:#eaf3fa}
+.app-light .ws-button.primary{background:#005b96;color:#fff;border-color:#005b96}
+.app-light .ws-button.primary:hover{background:#0875b8}
+.app-light .ws-link:hover{color:#003d66}
+.app-light :is(.records-table-wrap,.records-table td,.records-table th,.ops-panel td,.ops-panel th,.ops-stage,.record-dialog dl>div,.decision,.signal){border-color:#e1e9ef}
+.app-light .records-table th{background:#edf3f8;color:#4c6e85}
+.app-light .records-table td,.app-light .records-table td:nth-child(3){color:#294a60}
+.app-light .records-table tr:hover td{background:#f3f8fc}
+.app-light .records-table tr.selected td{background:#e8f3fb}
+.app-light .ops-panel th{color:#4c6e85}
+.app-light .ops-panel a{color:#005b96}
+.app-light .ws-empty{background:#fff;border-color:#d5e3ed;color:#617b8e}
+.app-light .ws-empty h3{color:#244a64}
+.app-light :is(.table-loading,.metric .loading-indicator){color:#386f96}
+.app-light .record-dialog .records-heading{background:#f6f9fc;color:#19384d}
+.app-light .record-dialog dt{color:#627f93}
+.app-light .record-dialog::backdrop{background:#19384d40}
+.app-light .ws-notice{background:#fff8e9;border-color:#e8d7b1;color:#7f5b20}
+.app-light .ws-notice.policy{background:#edf5fb;border-color:#c9e0f0;color:#2c658a}
+.app-light .ws-notice.success,.app-light .signal.yes{background:#edf8f1;border-color:#c2dfce;color:#23734c}
+.app-light .ws-notice.error,.app-light .signal.no{background:#fff1ef;border-color:#edcbc7;color:#a53d36}
+.app-light .signal{color:#5d7b90}.app-light .signal.warn{color:#8c641d;border-color:#e5d4ae;background:#fff9ed}
+.app-light :is(.map-loading,.compare-map-shell){background:#f5f7f9;color:#456d8b}
+.map-loading{background:#f5f7f9;color:#456d8b}
+.app-light :is(.tooltip,.viewer-loading){background:#fffffff2;color:#19384d;border-color:#d7e4ed;box-shadow:var(--shadow)}
+.app-light .drop-overlay,.app-light .collection-overlay{background:#19384d45}
+.app-light .drop-card{background:#f5fafff2}
+.app-light .maplibregl-ctrl-icon,.app-light .maplibregl-ctrl-attrib-button{filter:none}
+.app-light .maplibregl-ctrl-attrib{background:#ffffffed!important;color:#617b8e}
+.app-light .collection-dialog{background:#fff;color:#19384d;border-color:#d7e4ed;box-shadow:0 20px 80px #19384d25}
+.app-light .collection-dialog p{color:#567387}.app-light .collection-dialog small{color:#6b8699}
+.app-light .collection-note{background:#edf5fb}.app-light .collection-results article{border-color:#dce7ef}
+.app-light .collection-error{color:#a53d36!important}
+.app-light .compare-warning{background:#fff8e9;color:#7f5b20;border-color:#e8d7b1}
+.app-light .compare-count{background:#f7fafc;color:#3f627b;border-color:#dce7ef}
+.app-light .compare-count strong{color:color-mix(in srgb,var(--action-color) 55%,#142f43)}
+.app-light .compare-panel-footer,.app-light .compare-filters{border-color:#e0e8ef}
+.app-light .comparison-card.approved{background:#f3faf6}.app-light .review-action{background:#fff;color:#506d82;border-color:#cbdbe6}
+.app-light :is(.review-action.approve,.review-badge.approved){color:#23734c}.app-light :is(.review-action.reject,.review-badge.rejected){color:#a53d36}
+.app-light .change-badge{color:color-mix(in srgb,var(--action-color) 55%,#142f43)}
+.app-light :is(.ops-panel pre,.record-dialog pre){background:#f5f8fa;color:#385a71;border-radius:6px;padding:12px}
+.app-light ::-webkit-scrollbar-thumb{background:#c3d3df;border-radius:8px}.app-light *{scrollbar-color:#c3d3df transparent}

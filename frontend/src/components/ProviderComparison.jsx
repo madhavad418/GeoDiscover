@@ -103,7 +103,7 @@ export function ResultsBrowser({ base, title, aoi = null, stats: s, actions = nu
         <strong>{(s.counts[k] || 0).toLocaleString()}</strong><span>{o.label}</span><small className="cell-sub">{o.hint}</small></button>)}</div>
     {showMap && <ComparisonMap base={base} aoi={aoi || title} title={title} kinds={KINDS} onClose={() => setShowMap(false)} />}
     <section className="records-panel">
-      <div className="records-filters"><label className="records-search"><Icon name="search" /><input placeholder="Search name, place ID, address…"
+      <div className="records-filters results-filters"><label className="records-search"><Icon name="search" /><input placeholder="Search name, place ID, address…"
         value={q} onChange={(e) => { setQ(e.target.value); setPage(0); }} /></label>
         {kind === 'delete' && <label className="inline-select">Basis<select value={basis} onChange={(e) => { setBasis(e.target.value); setPage(0); }}>
           <option value="">All ({(s.counts.delete || 0).toLocaleString()})</option>
